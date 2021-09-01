@@ -1,0 +1,108 @@
+////////////////////////////////////
+// SCSS: BLOCK TESTIMONIALE
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+.block-testimoniale {
+  margin: auto;
+  position: relative;
+  z-index: 2;
+
+  .content {
+    margin: auto;
+    max-width: 110rem;
+    padding: 3rem;
+
+    h1 {
+      padding: 5rem 0 2rem 0;
+    }
+
+    .block-slider-columns {
+      width: 100%;
+      height: auto;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 70px;
+
+      .wrapper {
+        position: relative;
+        max-width: 287px;
+        overflow: hidden;
+
+        @media all and (min-width: 600px) {
+          max-width: 335px;
+        }
+
+        @media all and (min-width: 920px) {
+          max-width: 680px;
+        }
+
+        @media all and (min-width: 1150px) {
+          max-width: 1140px;
+        }
+
+        .overflow {
+          display: grid;
+          grid-template-columns: auto;
+          grid-auto-flow: column;
+          transform: translateX(0px);
+          transition: all 1s ease;
+
+          .slider {
+            width: 355px;
+            height: auto;
+            padding: 16px;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+
+            .box {
+              width: 300px;
+              height: auto;
+            }
+          }
+        }
+
+        .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50px;
+          right: 0px;
+          z-index: 10;
+          opacity: 1;
+
+          img {
+            width: auto;
+            height: 17px;
+          }
+
+          @media all and (min-width: 600px) {
+            top: 50px;
+            right: 335px;
+          }
+        }
+
+        .previous {
+          cursor: pointer;
+          position: absolute;
+          top: 50px;
+          left: 0px;
+          z-index: 10;
+          opacity: 0.3;
+
+          img {
+            width: auto;
+            height: 17px;
+          }
+
+          @media all and (min-width: 600px) {
+            top: 50px;
+            left: 335px;
+          }
+        }
+      }
+    }
+  }
+}

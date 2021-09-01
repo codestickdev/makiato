@@ -1,0 +1,14 @@
+////////////////////////////////////
+// SCSS: LINKS
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+a {
+  color: variables.$color-1;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

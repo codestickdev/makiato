@@ -1,0 +1,43 @@
+////////////////////////////////////
+// SCSS: VARIABLES
+////////////////////////////////////
+
+
+// Fonts
+$font-base-size: 16px;
+$font-header-size: 40px;
+$font-title-size: 30px;
+$font-subtitle-size: 20px;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Colors
+$color-1: #174045;
+$color-2: #F3D4BD;
+$color-3: #27C55D;
+$color-4: rgba(0, 0, 0, 0.1);
+$color-white: #fff;
+$color-black: #000;
+
+$color-danger: #A6292F;
+$color-success: #2C6E5A;
+$color-info: #F4BF54;
+
+$color-text: #353434;
+$color-text-light: #666666;
+
+$color-border: #D9D9D9;
+$color-line: #7D7878;
+$color-bg: #E5E5E5;
+
+// Transitions
+$transition-basic: all .35s ease;
+$transition-slider: all .75s ease-out;
+
+// Breakpoints
+$breakpoint-s: 320px;
+$breakpoint-m: 480px;
+$breakpoint-l: 768px;
+$breakpoint-xl: 1040px;
+$breakpoint-xxl: 1200px;
+$breakpoint-xxxl: 1400px;

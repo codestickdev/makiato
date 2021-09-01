@@ -1,0 +1,40 @@
+////////////////////////////////////
+// SCSS: BLOCK TEXT-BOX
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+.block-text-box,
+.block-text-box1,
+.block-text-box2,
+.block-text-box3,
+.block-text-box4,
+.block-text-box5,
+.block-text-box6 {
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  object-fit: cover;
+
+  @media all and (max-width: 1150px) {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+
+  .content,
+  .content1,
+  .content2,
+  .content3,
+  .content4,
+  .content5,
+  .content6 {
+    margin: auto;
+    max-width: 87.7rem;
+    font-size: 1.7rem;
+  }
+}
+
+.block-text-box {
+  color: variables.$color-white;
+}

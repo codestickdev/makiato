@@ -1,0 +1,110 @@
+////////////////////////////////////
+// SCSS: MENU
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+#menuToggle {
+  position: fixed;
+  display: block;
+  top: 5rem;
+  right: 5%;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(variables.$color-white, 80%);
+  border-radius: 50%;
+  z-index: 999;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: variables.$color-text;
+  font-size: 1.7rem;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: variables.$color-3;
+}
+
+#menuToggle a:active {
+  color: variables.$color-3;
+}
+
+#menuToggle input {
+  display: block;
+  width: 4rem;
+  height: 3.2rem;
+  position: absolute;
+  top: -.7rem;
+  left: -.5rem;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  position: relative;
+  display: block;
+  width: .5rem;
+  height: .5rem;
+  margin-bottom: .4rem;
+  left: 1.8rem;
+  top: .8rem;
+  background: variables.$color-black;
+  border-radius: .3rem;
+  z-index: 1;
+}
+
+#menu {
+  position: fixed;
+  width: 90%;
+  height: auto;
+  margin: 5rem 0 0 -90%;
+  padding: 7% 10%;
+  right: 5%;
+  background: variables.$color-white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(0%, 150%);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  opacity: 0;
+
+  .tit {
+    position: absolute;
+    right: .5rem;
+    top: -6rem;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid white;
+    margin: 4rem auto 0;
+  }
+}
+
+#menu li {
+  padding: 1rem 0;
+  font-size: 1.7rem;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#menu.show {
+  opacity: 1;
+}
+
+.footer-menu {
+  padding: 0 1rem 3rem 1rem;
+}
+
+.top-menu {
+  padding: 0 0 2rem 0;
+  border-bottom: 0.5px solid rgba(#7D7878, 15%);
+}

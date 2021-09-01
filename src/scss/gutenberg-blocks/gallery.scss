@@ -1,0 +1,83 @@
+////////////////////////////////////
+// SCSS: BLOCK GALLERY
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+.block-gallery {
+  margin: auto;
+
+  .images {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 2rem;
+    width: auto;
+    margin: auto;
+    padding: 0 10%;
+
+    @media all and (min-width: 1150px) {
+      grid-template-columns: 53.8rem 53.8rem;
+      width: max-content;
+      padding: 0;
+    }
+
+    .image {
+      height: 35.9rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1em;
+      background: rgba(0, 0, 0, 0.95);
+    }
+
+    .lightbox:target {
+      display: block;
+    }
+
+    .lightbox span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .pagination {
+    margin: auto;
+    text-align: center;
+    margin: 5.5rem 0 0 0;
+    line-height: 4.4rem;
+
+    span {
+      padding: 0 .9rem .5rem .9rem;
+      border-bottom: 1px solid variables.$color-3;
+      cursor: context-menu;
+    }
+
+    a {
+      color: variables.$color-1;
+      text-decoration: none;
+      padding: .9rem;
+
+      &:hover {
+        border-radius: 3rem;
+        background-color: variables.$color-3;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+////////////////////////////////////
+// SCSS: HEADER
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+header {
+  width: 100%;
+  text-align: center;
+  height: 0;
+  position: relative;
+  z-index: 999;
+
+  img {
+    width: 20rem;
+    height: auto;
+    padding-top: 5.5rem;
+  }
+}
+
+.page-header {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 49rem;
+    object-fit: cover;
+  }
+}

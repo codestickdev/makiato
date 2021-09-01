@@ -1,0 +1,56 @@
+////////////////////////////////////
+// SCSS: BLOCK ICONS
+////////////////////////////////////
+
+@use '../helpers/variables';
+
+.block-icons {
+  margin: auto;
+  position: relative;
+  z-index: 2;
+
+  .content {
+    margin: auto;
+    max-width: 110rem;
+    padding: 3rem;
+
+    h1 {
+      padding: 5rem 0 2rem 0;
+    }
+
+    .icons {
+      display: grid;
+      grid-template-columns: 100%;
+
+      @media all and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        padding: 4rem 0;
+      }
+
+      @media all and (min-width: 1150px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .icon {
+        text-align: center;
+        padding: 2rem;
+
+        .number {
+          display:inline-flex;
+
+          p {
+            padding: 1rem 2rem 0 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+          }
+        }
+
+        img {
+          width: auto;
+          height: 7rem;
+          padding-bottom: 2.2rem;
+        }
+      }
+    }
+  }
+}
