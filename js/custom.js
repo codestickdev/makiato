@@ -3,6 +3,6 @@
 $(document).ready(function() {
     $('.menu__icon').on('click', function()
     {
-        $('.menuMoible').toggleClass('menuMoible--active');
+        $('.menuMobile').toggleClass('menuMobile--active');
     });
 })

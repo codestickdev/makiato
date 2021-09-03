@@ -19,11 +19,11 @@ header {
                 z-index: 99999;
                 display: none;
                 position: fixed;
-                top: -100%;
+                bottom: -100%;
                 // top: 30%;
-                // left: 50%;
-                // transform: translate(-50%, -20%);
-                height: 65vh;
+                left: 50%;
+                transform: translate(-50%, -20%);
+                height: 80vh;
                 width: 90vw;
                 background-color: $white;
                 display: flex;
@@ -32,17 +32,39 @@ header {
                 flex-direction: column;
                 transition: all ease .5s;
                 margin: 0;
+                &::before {
+                    content: "";
+                    height: 30px;
+                    width: 30px;
+                    background-color: $white;
+                    position: absolute;
+                    top: -7px;
+                    right: 21px;
+                    transform: rotate(45deg);
+                }
+                div {
+                    width: 72vw;
+                }
                 &__items {
                     list-style-type: none;
                     text-align: center;
                     margin: 0;
+                    li {
+                        padding-bottom: 15px;
+                        padding-top: 15px;
+                        border-bottom: 1px solid $color-border;
+                        a {
+                            text-decoration: none;
+                            color: $color-5;
+                            font-size: $font-desctiption;
+                            line-height: $line-height-normal;
+                            font-weight: $font-weight-medium;
+                        }
+                    }
                 }
                 &--active {
-                    top: 30%;
-                    left: 50%;
-                    transform: translate(-50%, -20%);
+                    bottom: -12%;
                     li {
-                        margin-bottom: 30px;
                         a {
                             color: $color-5;
                             font-size: $font-desctiption;
@@ -53,14 +75,25 @@ header {
             }
             .menu__icon {
                 position: fixed;
-                top: 24px;
-                right: -0;
+                top: 60px;
+                right: 60px;
                 height: 35px;
                 width: 35px;
                 border-radius: 50%;
                 z-index: 9999;
-                background-color: $color-2;
+                background-color: $white;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .dot {
+                    height: 5px;
+                    width: 5px;
+                    border-radius: 50%;
+                    background-color: $color-5;
+                    margin-bottom: 2px;
+                }
             }
         }
         @media(min-width: 1200px) {
