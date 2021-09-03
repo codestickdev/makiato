@@ -128,6 +128,25 @@
                 </div>
             </div>
         </div>
+        <div class="contact">
+            <div class="title">
+                <h2>porozmawiajmy o aromatycznej kawie na Waszym weselu!</h2>
+            </div>
+            <form class="contactForm">
+                <div class="contactForm__box">
+                    <input type="text" name="form_name" placeholder="Adam Kowalski" required>
+                </div>
+                <div class="contactForm__box">
+                    <input type="text" name="form_email" placeholder="adam.kowal" required>
+                </div>
+                <div class="contactForm__box">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
+                </div>
+                <div class="contactForm__box">
+                    <input type="submit" name="form_submit" value="Wyślij wiadomość">
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 

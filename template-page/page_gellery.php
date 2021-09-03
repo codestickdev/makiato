@@ -10,10 +10,8 @@
     <div class="sectionBg gallery"></div>
     <div class="content">
     <div class="text__box">
-        <div>
-            <h1>galeria</h1>
-            <p>Zapraszamy na fotograficzny spacer po wspomnieniach z naszego weselnego Portfolio. Pamiętajcie, że oko obiektywu nie rejestruje doskonałego smaku, aromatycznego zapachu i wyjątkowej atmosfery, która unosi się w powietrzu… </p>
-        </div>
+        <h1>galeria</h1>
+        <p>Zapraszamy na fotograficzny spacer po wspomnieniach z naszego weselnego Portfolio. Pamiętajcie, że oko obiektywu nie rejestruje doskonałego smaku, aromatycznego zapachu i wyjątkowej atmosfery, która unosi się w powietrzu… </p>
     </div>
     <div class="block-gallery">
     <div class="images">
