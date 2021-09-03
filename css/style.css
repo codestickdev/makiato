@@ -941,45 +941,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   width: 310px;
 }
 
-.contact .title {
-  margin-bottom: 67px;
-}
-
-.contact .title h2 {
-  font-size: 29px;
-  line-height: 41px;
-  font-weight: 600;
-  color: #174045;
-  width: 680px;
-  letter-spacing: 0.04em;
-}
-
-.contact .contactForm__box input, .contact .contactForm__box textarea {
-  width: 724px;
-  height: 62px;
-  padding: 20px;
-  color: #174045;
-  border: none;
-  background-color: #fff;
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 10px;
-}
-
-.contact .contactForm__box textarea {
-  height: 289px;
-  margin-bottom: 28px;
-}
-
-.contact .contactForm__box:nth-of-type(4) input {
-  background-color: #F3D4BD;
-  width: 245px;
-  height: 67px;
-  border-radius: 180px;
-  margin-bottom: 0;
-}
-
 @media (max-width: 1124px) {
   .sectionContent .content .vice__master .leftSide {
     width: 450px;
@@ -1028,32 +989,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .sectionContent .content .inspiration p {
     width: auto;
-  }
-  .contact {
-    padding: 0 50px;
-  }
-  .contact .title h2 {
-    width: auto !important;
-  }
-}
-
-@media (max-width: 810px) {
-  .contact .contactForm__box input, .contact .contactForm__box textarea {
-    width: 650px;
-  }
-  .contact .contactForm__box textarea {
-    width: 650px;
-  }
-}
-
-@media (max-width: 710px) {
-  .contact .contactForm__box input, .contact .contactForm__box textarea {
-    width: 450px;
-    height: 52px;
-  }
-  .contact .contactForm__box textarea {
-    width: 450px;
-    height: 260px;
   }
 }
 
@@ -1615,6 +1550,74 @@ footer .socialMedia .media div:nth-last-of-type(1) {
 @media (max-width: 483px) {
   footer .socialMedia div {
     margin-right: 25px;
+  }
+}
+
+.contact .title h2 {
+  font-size: 29px;
+  line-height: 41px;
+  font-weight: 600;
+  color: #174045;
+  width: 680px;
+  letter-spacing: 0.04em;
+}
+
+.contact .contactForm {
+  margin-top: 67px;
+}
+
+.contact .contactForm__box input, .contact .contactForm__box textarea {
+  width: 724px;
+  height: 62px;
+  padding: 20px;
+  color: #174045;
+  border: none;
+  background-color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.contact .contactForm__box textarea {
+  height: 289px;
+  margin-bottom: 28px;
+}
+
+.contact .contactForm__box:nth-of-type(4) input {
+  background-color: #F3D4BD;
+  width: 245px;
+  height: 67px;
+  border-radius: 180px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 948px) {
+  .contact {
+    padding: 0 50px;
+  }
+  .contact .title h2 {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 810px) {
+  .contact .contactForm__box input, .contact .contactForm__box textarea {
+    width: 650px;
+  }
+  .contact .contactForm__box textarea {
+    width: 650px;
+  }
+}
+
+@media (max-width: 710px) {
+  .contact .contactForm__box input, .contact .contactForm__box textarea {
+    width: 450px;
+    height: 52px;
+  }
+  .contact .contactForm__box textarea {
+    width: 450px;
+    height: 260px;
   }
 }
 
