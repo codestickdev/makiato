@@ -987,6 +987,118 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   width: 814px;
 }
 
+.block-gallery {
+  margin: auto;
+  margin-top: 84px;
+}
+
+.block-gallery .images {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2rem;
+  width: auto;
+  margin: auto;
+  padding: 0 10%;
+}
+
+@media all and (min-width: 1150px) {
+  .block-gallery .images {
+    grid-template-columns: 32.8rem 32.8rem;
+    width: max-content;
+    padding: 0;
+  }
+}
+
+.block-gallery .images .image img {
+  height: 359px;
+  width: 538px;
+  object-fit: cover;
+}
+
+.block-gallery .images .lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.block-gallery .images .lightbox:target {
+  display: block;
+}
+
+.block-gallery .images .lightbox span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.block-gallery .pagination {
+  margin: auto;
+  text-align: center;
+  margin: 2.5rem 0 0 0;
+  line-height: 4.4rem;
+}
+
+.block-gallery .pagination span {
+  padding: 0 .9rem .5rem .9rem;
+  cursor: context-menu;
+}
+
+.block-gallery .pagination a {
+  text-decoration: none;
+  padding: .9rem;
+}
+
+.block-gallery .pagination a:hover {
+  border-radius: 3rem;
+}
+
+.btnCenter {
+  text-align: center;
+  padding: 2rem 0 0rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnCenter a {
+  text-decoration: none;
+}
+
+.btnCenter .btn, .btnCenter .btn__light, .btnCenter .btn__dark, .btnCenter .btn__acf {
+  cursor: pointer;
+  width: 227px;
+  height: 67px;
+  border-radius: 180px;
+  border: none;
+  font-size: 1.7rem;
+  text-decoration: none;
+  font-family: 'archia';
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 38px;
+  font-size: 17px;
+  background-color: #F3D4BD;
+  color: #174045;
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 400;
+}
+
+.btnCenter .btn__acf span {
+  padding-left: 1rem;
+}
+
 .sectionContent .sectionBg {
   background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
   height: 494px;
