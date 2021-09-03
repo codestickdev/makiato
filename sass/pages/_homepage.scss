@@ -1,0 +1,577 @@
+//import variables
+@import '../variables';
+
+//header
+.header_img {
+    background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/header-img.png');
+    height: 655px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            color: $white;
+            margin-top: 70px;
+        }
+    }
+    .border__position {
+        position: absolute;
+        border: 1px solid #F4FEFF;
+        border-radius: 6rem 6rem 0 0;
+        width: 70rem;
+        height: 40rem;
+        top: 3rem;
+        background-color: red !important;
+    }
+    .text__position {
+        position: absolute;
+        border: 1px solid #F4FEFF;
+        border-radius: 0 0 55rem 55rem;
+        width: 70rem;
+        height: 40rem;
+        margin-top: 0rem;
+        top: 32rem;
+        left: 11rem;
+        background-color: $color-2;
+        // border-radius: 50%;
+        // position: relative;
+        .first__text {
+            h1 {
+                margin-bottom: 30px;
+            }
+            p {
+                margin-bottom: 50px;
+            }
+        }
+        .sec__text {
+
+        }
+    }
+}
+
+//section after header
+.down_header {
+    background-color: $color-1;
+    height: 921px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    .customHeaderPadding {
+        padding: 0 295px;
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .text {
+                color: $white;
+                margin-bottom: 95px;
+                text-align: center;
+                h1 {
+                    margin-bottom: 16px;
+                    width: 852px;
+                }
+            }
+            .input {
+                margin-bottom: 63px;
+                button {
+                    background-color: $white;
+                    border: none;
+                    padding: 25px 38px;
+                    border-radius: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 845px) {
+    .down_header {
+        .customHeaderPadding {
+            padding: 0 50px !important;
+            .box {
+                .text {
+                    h1 {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//allInclusive
+
+.allInclusive {
+    padding: 126px 281px;
+    background-color: $color-bg;
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        h1 {
+            margin-bottom: 40px;
+            color: $color-1;
+        }
+        p {
+            color: $color-5;
+        }
+    }
+    @media(max-width: 1024px) {
+        padding: 126px 181px;
+    }
+
+    @media(max-width: 720px) {
+        padding: 126px 100px;
+    }
+}
+
+//ownBar section
+
+.ownBar {
+    background-color: $color-1;
+    padding: 96px 0 374px 0;
+    display: flex;
+    justify-content: center;
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 886px;
+        h1 {
+            margin-bottom: 40px;
+            color: $color-2;
+        }
+        p {
+            color: $white;
+        }
+    }
+}
+
+@media(max-width: 845px) {
+    .ownBar {
+        padding: 96px 50px 374px 50px;
+        .box {
+            width: auto !important;
+        }
+    }
+}
+
+
+//chess section
+.chess {
+    background-color: $color-bg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1345px;
+    .box {
+        display: flex;
+        background-color: $white;
+        .leftSide {
+            width: 540px;
+            padding: 71px 45px 95px 45px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            h1 {
+                margin-bottom: 31px;
+            }
+        }
+        .rightSide {
+            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img1.png');
+            width: 548px;
+            height: 548px;
+            background-repeat: no-repeat;
+            background-position: 100%;
+            margin-right: -8px;
+        }
+        &:nth-of-type(1) {
+            margin-top: -160px;
+        }
+        &:nth-of-type(2) {
+            .rightSide {
+                background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img2.png');
+            }
+        }
+        &:nth-of-type(3) {    
+            .rightSide {
+                background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img3.png');
+            }
+        }
+    }
+    .chess__special {
+        flex-direction: row-reverse;
+    }
+}
+
+@media(max-width: 1124px) {
+    .chess {
+        height: 1030px;
+        .box {
+            .leftSide {
+                width: 450px;
+                height: 450px;
+            }
+            .rightSide {
+                width: 450px;
+                height: 450px;
+            }
+            &:nth-of-type(1) {
+                margin-top: -160px
+            }
+        }
+    }
+}
+
+@media(max-width: 948px) {
+    .chess {
+        height: 2370px;
+        .box {
+            flex-direction: column;
+            .leftSide {
+                width: 450px;
+                height: 450px;
+            }
+            .rightSide {
+                width: 450px;
+                height: 450px;
+            }
+        }
+    }
+}
+
+@media(max-width: 520px) {
+    .chess {
+        .box {
+            .leftSide {
+                width: 100%;
+                height: 450px;
+            }
+            .rightSide {
+                width: 100%;
+                height: 450px;
+            }
+        }
+    }
+}
+
+//cafee section
+
+.caffee {
+    background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/caffee.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 345px 0 397px 0;
+    display: flex;
+    justify-content: center;
+    .box {
+        text-align: center;
+        color: $color-2;   
+        width: 896px;
+    }
+}
+
+@media(max-width: 845px) {
+    .caffee {
+        padding: 345px 50px 397px 50px;
+        .box {
+            width: auto !important;
+        }
+    }
+}
+
+
+//sec__chess section
+
+.sec__chess {
+    height: auto;
+    padding-bottom: 97px;
+    .box:nth-of-type(1) {
+        flex-direction: row-reverse;
+        .rightSide {
+            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img4.png');
+        }
+    }
+    .chess__special {
+        flex-direction: row;
+        .rightSide {
+            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img5.png');
+        }
+    }
+    .box:nth-of-type(3) {
+        flex-direction: row-reverse;
+        .rightSide {
+            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img6.png');
+        }
+    }
+}
+
+@media(max-width: 1124px) {
+    .sec__chess {
+        .box {
+            .leftSide {
+                width: 450px;
+                height: 450px;
+            }
+            .rightSide {
+                width: 450px;
+                height: 450px;
+            }
+            &:nth-of-type(1) {
+                margin-top: -160px
+            }
+        }
+    }
+}
+
+@media(max-width: 948px) {
+    .sec__chess {
+        .box {
+            flex-direction: column !important;
+            .leftSide {
+                width: 450px;
+                height: 450px;
+            }
+            .rightSide {
+                width: 450px;
+                height: 450px;
+            }
+        }
+    }
+}
+
+@media(max-width: 520px) {
+    .sec__chess {
+        .box {
+            .leftSide {
+                width: 100%;
+                height: 450px;
+            }
+            .rightSide {
+                width: 100%;
+                height: 450px;
+            }
+        }
+    }
+}
+
+//howWorks section
+
+.howWorks {
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 174px;
+    .title {
+        margin-top: 122px;
+        margin-bottom: 80px;
+        h1 {
+            white-space: nowrap;
+        }
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .box {
+            width: 350px;
+            text-align: center;
+            .img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // width: 42px;
+                // height: 60px;
+                margin-bottom: 22px;
+                span {
+                    margin-right: 29px;
+                }
+            }
+            &__description {
+
+            }
+            &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(3) {
+                margin-bottom: 61px;
+            }
+        }
+        @media(max-width: 1397px) {
+            .box {
+                margin-bottom: 61px;
+            }
+        }
+    }
+    .input {
+        margin-bottom: 61px;
+        margin-top: 107px;
+        button {
+            background-color: $color-2;
+            border: none;
+            padding: 25px 38px;
+            border-radius: 180px;
+        }
+    }
+    @media (max-width: 1047px) {
+        .content {
+            flex-direction: column;
+        }
+        .input {
+            margin-top: 60px;
+        }
+    }
+}
+
+//knowUs section
+
+.knowUs {
+    background-color: $color-bg;
+    padding: 123px 174px 0 174px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .text {
+        text-align: center;
+        h1 {
+            margin-bottom: 31px;
+            color: $color-1;
+        }
+        p {
+            padding-bottom: 72px;
+            color: $color-5;
+            width: 765px;
+        }
+    }
+    .slider {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .under__slider {
+        h1 {
+            margin-top: 66px;
+        }
+        p {
+            padding-bottom: 56px;
+        }
+    }
+    .input {
+        margin-bottom: 66px;
+        button {
+            background-color: $color-2;
+            border: none;
+            padding: 25px 38px;
+            border-radius: 180px;
+        }
+    }
+}
+
+@media(max-width: 750px) {
+    .knowUs {
+        padding: 123px 50px 0 50px;
+        .text {
+            p {
+                width: auto;
+            }
+        }
+    }
+}
+
+//testimoniale section
+
+.testimoniale {
+    background-color: $color-2;
+    padding: 69px 198px 88px 198px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .title {
+        text-align: center;
+        h1 {
+            color: $color-1;
+            margin-bottom: 72px;
+        }
+    }
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .box {
+            width: 304px;
+            text-align: center;
+            p {
+                color: $color-1;
+            }
+            &:nth-of-type(2) {
+                margin: 0 66px;
+            }
+        }
+    }
+    @media(max-width: 1024px) {
+        .content {
+            flex-direction: column;
+            .box {
+                margin-bottom: 50px;
+                &:nth-of-type(2) {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 520px) {
+    .testimoniale {
+        padding: 69px 50px 88px 50px;
+        .content {
+            .box {
+                margin-bottom: 50px;
+                &:nth-of-type(2) {
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+
+//ourShowcase section
+
+.ourShowcase {
+    background-color: $color-bg;
+    padding: 64px 318px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .text {
+        color: $color-1;
+        text-align: center;
+        h1 {
+            margin-bottom: 17px;
+        }
+        p {
+            width: 803px;
+        }
+    }
+    @media(max-width: 845px) {
+        padding: 63px 50px;
+        p {
+            width: auto !important;
+        }
+    }
+}

@@ -1,97 +1,186 @@
 <?php
+/**
+ * Makiato functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Makiato
+ */
 
-require_once('vendor/class-tgm-plugin-activation.php');
-
-function register_required_plugins()
-{
-    $plugins = array(
-      array(
-        'name'      => 'SVG Support',
-        'slug'      => 'svg-support',
-        'required'  => true,
-      ),
-    );
-
-    $config = array(
-      'id'           => 'makiato',
-      'default_path' => '',
-      'menu'         => 'tgmpa-install-plugins',
-      'parent_slug'  => 'themes.php',
-      'capability'   => 'edit_theme_options',
-      'has_notices'  => true,
-      'dismissable'  => true,
-      'dismiss_msg'  => '',
-      'is_automatic' => false,
-      'message'      => '',
-    );
-
-    tgmpa($plugins, $config);
-}
-add_action('tgmpa_register', 'register_required_plugins');
-
-function add_assets()
-{
-    wp_enqueue_style('bundle-custom-styles', get_stylesheet_directory_uri(). '/assets/css/bundle.css');
-    wp_enqueue_script('bundle-custom-scripts', get_stylesheet_directory_uri(). '/assets/js/bundle.js', array('jquery'), '', true);
-}
-add_action('wp_enqueue_scripts', 'add_assets');
-
-function setup_theme_features()
-{
-    $defaults = array(
-        'default-color'          => '#e8e8e8',
-        'default-image'          => '',
-        'default-repeat'         => 'no-repeat',
-        'default-position-x'     => 'center',
-        'default-position-y'     => 'center',
-        'default-size'           => 'cover',
-        'default-attachment'     => 'fixed',
-    );
-    add_theme_support('custom-background', $defaults);
-
-    add_theme_support('align-wide');
-    add_theme_support('editor-styles');
-    add_theme_support('html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ));
-    add_theme_support('responsive-embeds');
-    add_theme_support('title-tag');
-    add_theme_support('wp-block-styles');
-    add_theme_support('post-thumbnails');
-    add_image_size('category-thumbnail', 800, 600, true);
-
-    register_nav_menu('top', 'Top menu');
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
 }
 
-add_action('after_setup_theme', 'setup_theme_features');
+if ( ! function_exists( 'makiato_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function makiato_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Makiato, use a find and replace
+		 * to change 'makiato' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'makiato', get_template_directory() . '/languages' );
 
-// THEME OPTIONS
-if( function_exists('acf_add_options_page') ) {
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'Ustawienia główne',
-		'menu_title'	=> 'Opcje motywu',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-  acf_add_options_sub_page(array(
-		'page_title' 	=> 'Stopka',
-		'menu_title'	=> 'Stopka',
-		'parent_slug'	=> 'theme-general-settings',
-	));
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
 
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary', 'makiato' ),
+			)
+		);
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+				'style',
+				'script',
+			)
+		);
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'makiato_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+	}
+endif;
+add_action( 'after_setup_theme', 'makiato_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function makiato_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'makiato_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'makiato_content_width', 0 );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function makiato_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'makiato' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'makiato' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'makiato_widgets_init' );
+
+/**
+ * Enqueue scripts and styles.
+ */
+function makiato_scripts() {
+	wp_enqueue_style( 'makiato-style', get_template_directory_uri() . '/css/style.css', array(), _S_VERSION );
+	wp_style_add_data( 'makiato-style', 'rtl', 'replace' );
+
+	wp_enqueue_script( 'makiato-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	wp_register_script( 'jQuery', get_template_directory_uri() . '/plugins/jQuery/jquery-3.6.0.min.js', null, null, true );
+	wp_enqueue_script('jQuery');
+
+	wp_register_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', null, null, true );
+	wp_enqueue_script('custom-js');
+}
+add_action( 'wp_enqueue_scripts', 'makiato_scripts' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// MENU UP / DOWN
-function register_my_menus() {
-  register_nav_menus(
-    array(
-      'top-menu' => __( 'Menu górne' ),
-      'footer-menu' => __( 'Menu dolne' )
-    )
-  );
-}
-add_action( 'init', 'register_my_menus' );
-
-// BLOCKS WITH ACF
-require get_template_directory() . '/gutenberg.php';

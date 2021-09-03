@@ -1,0 +1,800 @@
+/*!
+Theme Name: Makiato
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: makiato
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Makiato is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+/* Import Normalize
+--------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 418px) {
+  .container {
+    max-width: 492px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 908px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 100%;
+    padding-right: 197px;
+    padding-left: 197px;
+  }
+}
+
+/* Import Pages
+--------------------------------------------- */
+.header_img {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/header-img.png");
+  height: 655px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.header_img .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_img .logo h1 {
+  color: #fff;
+  margin-top: 70px;
+}
+
+.header_img .border__position {
+  position: absolute;
+  border: 1px solid #F4FEFF;
+  border-radius: 6rem 6rem 0 0;
+  width: 70rem;
+  height: 40rem;
+  top: 3rem;
+  background-color: red !important;
+}
+
+.header_img .text__position {
+  position: absolute;
+  border: 1px solid #F4FEFF;
+  border-radius: 0 0 55rem 55rem;
+  width: 70rem;
+  height: 40rem;
+  margin-top: 0rem;
+  top: 32rem;
+  left: 11rem;
+  background-color: #F3D4BD;
+}
+
+.header_img .text__position .first__text h1 {
+  margin-bottom: 30px;
+}
+
+.header_img .text__position .first__text p {
+  margin-bottom: 50px;
+}
+
+.down_header {
+  background-color: #174045;
+  height: 921px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.down_header .customHeaderPadding {
+  padding: 0 295px;
+}
+
+.down_header .customHeaderPadding .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.down_header .customHeaderPadding .box .text {
+  color: #fff;
+  margin-bottom: 95px;
+  text-align: center;
+}
+
+.down_header .customHeaderPadding .box .text h1 {
+  margin-bottom: 16px;
+  width: 852px;
+}
+
+.down_header .customHeaderPadding .box .input {
+  margin-bottom: 63px;
+}
+
+.down_header .customHeaderPadding .box .input button {
+  background-color: #fff;
+  border: none;
+  padding: 25px 38px;
+  border-radius: 180px;
+}
+
+@media (max-width: 845px) {
+  .down_header .customHeaderPadding {
+    padding: 0 50px !important;
+  }
+  .down_header .customHeaderPadding .box .text h1 {
+    width: auto;
+  }
+}
+
+.allInclusive {
+  padding: 126px 281px;
+  background-color: #E5E5E5;
+}
+
+.allInclusive .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.allInclusive .box h1 {
+  margin-bottom: 40px;
+  color: #174045;
+}
+
+.allInclusive .box p {
+  color: #7D7878;
+}
+
+@media (max-width: 1024px) {
+  .allInclusive {
+    padding: 126px 181px;
+  }
+}
+
+@media (max-width: 720px) {
+  .allInclusive {
+    padding: 126px 100px;
+  }
+}
+
+.ownBar {
+  background-color: #174045;
+  padding: 96px 0 374px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ownBar .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 886px;
+}
+
+.ownBar .box h1 {
+  margin-bottom: 40px;
+  color: #F3D4BD;
+}
+
+.ownBar .box p {
+  color: #fff;
+}
+
+@media (max-width: 845px) {
+  .ownBar {
+    padding: 96px 50px 374px 50px;
+  }
+  .ownBar .box {
+    width: auto !important;
+  }
+}
+
+.chess {
+  background-color: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1345px;
+}
+
+.chess .box {
+  display: flex;
+  background-color: #fff;
+}
+
+.chess .box .leftSide {
+  width: 540px;
+  padding: 71px 45px 95px 45px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.chess .box .leftSide h1 {
+  margin-bottom: 31px;
+}
+
+.chess .box .rightSide {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img1.png");
+  width: 548px;
+  height: 548px;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  margin-right: -8px;
+}
+
+.chess .box:nth-of-type(1) {
+  margin-top: -160px;
+}
+
+.chess .box:nth-of-type(2) .rightSide {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img2.png");
+}
+
+.chess .box:nth-of-type(3) .rightSide {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img3.png");
+}
+
+.chess .chess__special {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1124px) {
+  .chess {
+    height: 1030px;
+  }
+  .chess .box .leftSide {
+    width: 450px;
+    height: 450px;
+  }
+  .chess .box .rightSide {
+    width: 450px;
+    height: 450px;
+  }
+  .chess .box:nth-of-type(1) {
+    margin-top: -160px;
+  }
+}
+
+@media (max-width: 948px) {
+  .chess {
+    height: 2370px;
+  }
+  .chess .box {
+    flex-direction: column;
+  }
+  .chess .box .leftSide {
+    width: 450px;
+    height: 450px;
+  }
+  .chess .box .rightSide {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 520px) {
+  .chess .box .leftSide {
+    width: 100%;
+    height: 450px;
+  }
+  .chess .box .rightSide {
+    width: 100%;
+    height: 450px;
+  }
+}
+
+.caffee {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/caffee.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 345px 0 397px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.caffee .box {
+  text-align: center;
+  color: #F3D4BD;
+  width: 896px;
+}
+
+@media (max-width: 845px) {
+  .caffee {
+    padding: 345px 50px 397px 50px;
+  }
+  .caffee .box {
+    width: auto !important;
+  }
+}
+
+.sec__chess {
+  height: auto;
+  padding-bottom: 97px;
+}
+
+.sec__chess .box:nth-of-type(1) {
+  flex-direction: row-reverse;
+}
+
+.sec__chess .box:nth-of-type(1) .rightSide {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img4.png");
+}
+
+.sec__chess .chess__special {
+  flex-direction: row;
+}
+
+.sec__chess .chess__special .rightSide {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img5.png");
+}
+
+.sec__chess .box:nth-of-type(3) {
+  flex-direction: row-reverse;
+}
+
+.sec__chess .box:nth-of-type(3) .rightSide {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img6.png");
+}
+
+@media (max-width: 1124px) {
+  .sec__chess .box .leftSide {
+    width: 450px;
+    height: 450px;
+  }
+  .sec__chess .box .rightSide {
+    width: 450px;
+    height: 450px;
+  }
+  .sec__chess .box:nth-of-type(1) {
+    margin-top: -160px;
+  }
+}
+
+@media (max-width: 948px) {
+  .sec__chess .box {
+    flex-direction: column !important;
+  }
+  .sec__chess .box .leftSide {
+    width: 450px;
+    height: 450px;
+  }
+  .sec__chess .box .rightSide {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sec__chess .box .leftSide {
+    width: 100%;
+    height: 450px;
+  }
+  .sec__chess .box .rightSide {
+    width: 100%;
+    height: 450px;
+  }
+}
+
+.howWorks {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 174px;
+}
+
+.howWorks .title {
+  margin-top: 122px;
+  margin-bottom: 80px;
+}
+
+.howWorks .title h1 {
+  white-space: nowrap;
+}
+
+.howWorks .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.howWorks .content .box {
+  width: 350px;
+  text-align: center;
+}
+
+.howWorks .content .box .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.howWorks .content .box .img span {
+  margin-right: 29px;
+}
+
+.howWorks .content .box:nth-of-type(1), .howWorks .content .box:nth-of-type(2), .howWorks .content .box:nth-of-type(3) {
+  margin-bottom: 61px;
+}
+
+@media (max-width: 1397px) {
+  .howWorks .content .box {
+    margin-bottom: 61px;
+  }
+}
+
+.howWorks .input {
+  margin-bottom: 61px;
+  margin-top: 107px;
+}
+
+.howWorks .input button {
+  background-color: #F3D4BD;
+  border: none;
+  padding: 25px 38px;
+  border-radius: 180px;
+}
+
+@media (max-width: 1047px) {
+  .howWorks .content {
+    flex-direction: column;
+  }
+  .howWorks .input {
+    margin-top: 60px;
+  }
+}
+
+.knowUs {
+  background-color: #E5E5E5;
+  padding: 123px 174px 0 174px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.knowUs .text {
+  text-align: center;
+}
+
+.knowUs .text h1 {
+  margin-bottom: 31px;
+  color: #174045;
+}
+
+.knowUs .text p {
+  padding-bottom: 72px;
+  color: #7D7878;
+  width: 765px;
+}
+
+.knowUs .slider img {
+  width: 100%;
+  height: 100%;
+}
+
+.knowUs .under__slider h1 {
+  margin-top: 66px;
+}
+
+.knowUs .under__slider p {
+  padding-bottom: 56px;
+}
+
+.knowUs .input {
+  margin-bottom: 66px;
+}
+
+.knowUs .input button {
+  background-color: #F3D4BD;
+  border: none;
+  padding: 25px 38px;
+  border-radius: 180px;
+}
+
+@media (max-width: 750px) {
+  .knowUs {
+    padding: 123px 50px 0 50px;
+  }
+  .knowUs .text p {
+    width: auto;
+  }
+}
+
+.testimoniale {
+  background-color: #F3D4BD;
+  padding: 69px 198px 88px 198px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.testimoniale .title {
+  text-align: center;
+}
+
+.testimoniale .title h1 {
+  color: #174045;
+  margin-bottom: 72px;
+}
+
+.testimoniale .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimoniale .content .box {
+  width: 304px;
+  text-align: center;
+}
+
+.testimoniale .content .box p {
+  color: #174045;
+}
+
+.testimoniale .content .box:nth-of-type(2) {
+  margin: 0 66px;
+}
+
+@media (max-width: 1024px) {
+  .testimoniale .content {
+    flex-direction: column;
+  }
+  .testimoniale .content .box {
+    margin-bottom: 50px;
+  }
+  .testimoniale .content .box:nth-of-type(2) {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 520px) {
+  .testimoniale {
+    padding: 69px 50px 88px 50px;
+  }
+  .testimoniale .content .box {
+    margin-bottom: 50px;
+  }
+  .testimoniale .content .box:nth-of-type(2) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.ourShowcase {
+  background-color: #E5E5E5;
+  padding: 64px 318px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ourShowcase .text {
+  color: #174045;
+  text-align: center;
+}
+
+.ourShowcase .text h1 {
+  margin-bottom: 17px;
+}
+
+.ourShowcase .text p {
+  width: 803px;
+}
+
+@media (max-width: 845px) {
+  .ourShowcase {
+    padding: 63px 50px;
+  }
+  .ourShowcase p {
+    width: auto !important;
+  }
+}
+
+/* Import Partials
+--------------------------------------------- */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  position: absolute;
+}
+
+@media (max-width: 1999px) {
+  .menu .menuDesktop {
+    display: none;
+  }
+  .menu .menuMobile ul {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu .menuDesktop {
+    display: block;
+  }
+  .menu .menuDesktop ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+  .menu .menuDesktop ul li {
+    margin-right: 10px;
+  }
+  .menu .menuDesktop ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .menu .menuMobile {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #174045;
+  padding: 46px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .text {
+  color: #fff;
+  text-align: center;
+}
+
+footer .text h1 {
+  margin-bottom: 15px;
+}
+
+footer .text p {
+  margin-bottom: 55px;
+  width: 647px;
+}
+
+footer .socialMedia {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer .socialMedia div {
+  margin-right: 52px;
+  color: #fff;
+  cursor: pointer;
+}
+
+footer .socialMedia div:nth-last-of-type(1) {
+  margin-right: 0;
+}
+
+footer .socialMedia .media {
+  display: flex;
+}
+
+footer .socialMedia .media div {
+  margin-right: 18px;
+}
+
+footer .socialMedia .media div:nth-last-of-type(1) {
+  margin-right: 0;
+}
+
+@media (max-width: 845px) {
+  footer {
+    padding: 45px 50px;
+  }
+  footer .text p {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 483px) {
+  footer .socialMedia div {
+    margin-right: 25px;
+  }
+}
+
+/* Import Partials
+--------------------------------------------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Black.ttf") format("ttf"), url("/fonts/Montserrat-Bold.ttf") format("ttf"), url("/fonts/Montserrat-Regular.ttf") format("ttf");
+}
+
+* {
+  font-family: 'Archivo', sans-serif;
+}
+
+button {
+  white-space: nowrap;
+}
+/*# sourceMappingURL=style.css.map */

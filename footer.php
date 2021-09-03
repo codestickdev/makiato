@@ -1,39 +1,35 @@
 <?php
-$phone = get_field('footer-phone', 'option');
-$email = get_field('footer-email', 'option');
-$instagram = get_field('footer-instagram', 'option');
-$facebook = get_field('footer-facebook', 'option');
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Makiato
+ */
 ?>
 
-<?php wp_footer(); ?>
+	<footer>
+		<div class="text">
+			<h1>zamów bar kawowy na wesele</h1>
+			<p>przyrządzimy dla Was aromatyczną ofertę, która oczaruje Waszych Gości i zapewni Wam satysfakcję doskonałego wyboru! </p>
+		</div>
+		<div class="socialMedia">
+			<div class="tel">780 744 123</div>
+			<div class="email">biuro@makiato.pl</div>
+			<div class="media">
+				<div class="insta">
+					<img src=" <?php echo get_template_directory_uri();?>'./images/icons/insta.png'" alt="insta">
+				</div>
+				<div class="fb">
+					<img src=" <?php echo get_template_directory_uri();?>'./images/icons/FB.png'" alt="facebook">
+				</div>
+			</div>
+		</div>
+	</footer>
 
-<footer>
-    <div class="footer-content">
-        <?php the_field('footer-content', 'option'); ?>
-        <div class="footer-contact">
-            <div class="contact">
-                <a href="phone:+48<?php echo $phone; ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone.svg">
-                    <?php echo $phone; ?>
-                </a>
-            </div>
-            <div class="contact">
-                <a href="mailto:<?php echo $email; ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mail.svg">
-                    <?php echo $email; ?>
-                </a>
-            </div>
-            <div class="social-media">
-                <a href="<?php echo esc_url($instagram); ?>" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg">
-                </a>&nbsp;&nbsp;
-                <a href="<?php echo esc_url($facebook); ?>" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg">
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php wp_footer(); ?>
 
 </body>
 </html>

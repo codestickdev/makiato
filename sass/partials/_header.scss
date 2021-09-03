@@ -1,0 +1,41 @@
+//import variables
+@import '../variables';
+
+//menu
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    position: absolute;
+    @media(max-width: 1999px) {
+        .menuDesktop {
+            display: none;
+        }
+        .menuMobile {
+            ul {
+                display: block;
+            }
+        }
+    }
+    @media(min-width: 1200px) {
+        .menuDesktop {
+            display: block;
+            ul {
+                display: flex;
+                align-items: center;
+                list-style-type: none;
+                li {
+                    margin-right: 10px;
+                    a {
+                        text-decoration: none;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .menuMobile {
+            display: none;
+        }
+    }
+}

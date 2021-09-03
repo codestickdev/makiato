@@ -1,16 +1,40 @@
 <?php
-/*
-* Page/s: PAGE
-*/
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package Makiato
+ */
+
+get_header();
 ?>
 
-<?php get_header() ?>
+	<main id="primary" class="site-main">
 
-  <div class="temporary">
-    <span>Single</span> | Strona wpisu
-    <?php the_post_thumbnail(); ?>
-    <h1><?php the_title(); ?></h1>
-    <h2><?php the_content(); ?></h2>
-  </div>
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-<?php get_footer() ?>
+			get_template_part( 'template-parts/content', get_post_type() );
+
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'makiato' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'makiato' ) . '</span> <span class="nav-title">%title</span>',
+				)
+			);
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
+
+	</main><!-- #main -->
+
+<?php
+get_sidebar();
+get_footer();

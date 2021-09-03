@@ -1,0 +1,66 @@
+//import variables
+@import '../variables';
+
+//footer
+footer {
+    background-color: $color-1;
+    padding: 46px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .text {
+        color: $white;
+        text-align: center;
+        h1 {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 55px;
+            width: 647px;
+        }
+    }
+    .socialMedia {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        div {
+            margin-right: 52px;
+            color: $white;
+            cursor: pointer;
+            &:nth-last-of-type(1){
+                margin-right: 0;
+            }
+        }
+        .media {
+            display: flex;
+            div {
+                margin-right: 18px;
+                &:nth-last-of-type(1){
+                    margin-right: 0;
+                }
+            }
+        }  
+    }
+}
+
+@media(max-width: 845px) {
+    footer {
+        padding: 45px 50px;
+        .text {
+            p {
+                width: auto !important;
+            }
+        }
+    }
+}
+
+@media(max-width: 483px) {
+    footer {
+        .socialMedia {
+            div {
+                margin-right: 25px;
+            }
+        }
+    }
+}

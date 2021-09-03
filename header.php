@@ -1,73 +1,53 @@
-<!DOCTYPE html>
-<html class="no-js" <?php language_attributes() ?>>
-	<head>
-		<meta charset="<?php bloginfo('charset') ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<?php wp_head() ?>
-	</head>
-	<body <?php body_class() ?>>
-		<?php wp_body_open() ?>
-		<header>
-			<a href="/">
-				<?php
-					$image = get_field('logo-header', 'option');
-					$size = 'medium'; // (thumbnail, medium, large, full or custom size)
-					if( $image ) {
-						echo wp_get_attachment_image( $image, $size );
-					}
-				?>
-			</a>
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Makiato
+ */
 
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<?php wp_head(); ?>
+</head>
 
-
-
-			<nav role="navigation">
-				<div id="menuToggle" onclick="showMenu()">
-					<input type="checkbox" />
-
-					<span></span>
-					<span></span>
-					<span></span>
-
-					<ul id="menu">
-						<div class="tit"></div>
-						<?php
-							wp_nav_menu(
-							array(
-								'theme_location' => 'top-menu',
-								'container'     => '',
-								'items_wrap'    => '%3$s',
-								'before'        => '<div class="top-menu">',
-								'after'         => '</div>',
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+	<header>
+		<div class="menu container">
+			<nav class="menuDesktop">
+				<ul>
+					<?php wp_nav_menu ( 
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id' => 'primary-menu1',
+							'menu_class' => 'menuDesktop__items'
 							)
-						);?>
-					</ul>
-					<script>
-						function showMenu() {
-							var x = document.getElementById("menu");
-							if (x.classList.contains("show")) {
-								x.classList.remove("show");
-							} else {
-								x.classList.add("show");
-							}
-						}
-					</script>
-				</div>
+						)
+					?>
+				</ul>
 			</nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</header>
+			<nav class="menuMobile">
+				<ul>
+					<?php wp_nav_menu ( 
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id' => 'primary-menu1',
+							'menu_class' => 'menuDesktop__items'
+							)
+						)
+					?>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- #masthead -->
