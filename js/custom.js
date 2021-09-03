@@ -1,9 +1,8 @@
 /* Mobile menu */
 
 $(document).ready(function() {
-    $('.menu').on('click', function()
+    $('.menu__icon').on('click', function()
     {
         $('.menuMoible').toggleClass('menuMoible--active');
-        $('.logo').toggleClass('logo--active');
     });
 })

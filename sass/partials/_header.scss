@@ -2,40 +2,93 @@
 @import '../variables';
 
 //menu
-.menu {
+header {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-top: 30px;
-    position: absolute;
-    @media(max-width: 1999px) {
-        .menuDesktop {
-            display: none;
-        }
-        .menuMobile {
-            ul {
-                display: block;
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+        position: absolute;
+        @media(max-width: 1999px) {
+            .menuDesktop {
+                display: none;
             }
-        }
-    }
-    @media(min-width: 1200px) {
-        .menuDesktop {
-            display: block;
-            ul {
+            .menuMobile {
+                z-index: 99999;
+                display: none;
+                position: fixed;
+                top: -100%;
+                // top: 30%;
+                // left: 50%;
+                // transform: translate(-50%, -20%);
+                height: 65vh;
+                width: 90vw;
+                background-color: $white;
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                list-style-type: none;
-                li {
-                    margin-right: 10px;
-                    a {
-                        text-decoration: none;
-                        color: $white;
+                flex-direction: column;
+                transition: all ease .5s;
+                margin: 0;
+                &__items {
+                    list-style-type: none;
+                    text-align: center;
+                    margin: 0;
+                }
+                &--active {
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%, -20%);
+                    li {
+                        margin-bottom: 30px;
+                        a {
+                            color: $color-5;
+                            font-size: $font-desctiption;
+                            line-height: $line-height-normal;
+                        }
                     }
                 }
             }
+            .menu__icon {
+                position: fixed;
+                top: 24px;
+                right: -0;
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                z-index: 9999;
+                background-color: $color-2;
+                cursor: pointer;
+            }
         }
-        .menuMobile {
-            display: none;
+        @media(min-width: 1200px) {
+            .menuDesktop {
+                display: block;
+                z-index: 99999;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    list-style-type: none;
+                    li {
+                        margin-right: 35px;
+                        a {
+                            text-decoration: none;
+                            color: $white;
+                            font-size: 18px;
+                            font-weight: $font-weight-light;
+                            line-height: $line-height-normal;
+                        }
+                    }
+                }
+            }
+            .menuMobile {
+                display: none;
+            }
+            .menu__icon {
+                display: none;
+            }
         }
     }
 }

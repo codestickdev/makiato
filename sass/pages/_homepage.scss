@@ -14,40 +14,67 @@
         justify-content: center;
         h1 {
             color: $white;
-            margin-top: 70px;
+            margin-top: 110px;
         }
     }
-    .border__position {
-        position: absolute;
-        border: 1px solid #F4FEFF;
-        border-radius: 6rem 6rem 0 0;
-        width: 70rem;
-        height: 40rem;
-        top: 3rem;
-        background-color: red !important;
-    }
-    .text__position {
-        position: absolute;
-        border: 1px solid #F4FEFF;
-        border-radius: 0 0 55rem 55rem;
-        width: 70rem;
-        height: 40rem;
-        margin-top: 0rem;
-        top: 32rem;
-        left: 11rem;
-        background-color: $color-2;
-        // border-radius: 50%;
-        // position: relative;
-        .first__text {
-            h1 {
-                margin-bottom: 30px;
+    .custom-block {
+        .text__position {
+            position: absolute;
+            border: 1px solid #F4FEFF;
+            border-radius: 0 0 55rem 55rem;
+            // width: 64rem;
+            width: calc(100% - 31%);
+            height: 35rem;
+            margin-top: 0rem;
+            top: 33rem;
+            left: 15%;
+            background-color: $color-2;
+            // border-radius: 50%;
+            // position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            .first__text {
+                h1 {
+                    margin-bottom: 30px;
+                    font-size: $font-extra-heading;
+                    font-weight: $font-weight-medium2;
+                    line-height: $line-height-big;
+                    color: $color-1;
+                }
+                p {
+                    margin-bottom: 50px;
+                    font-size: $font-desctiption;
+                    font-weight: $font-weight-light;
+                    line-height: $line-height-normal;
+                    color: $color-1;
+                }
             }
-            p {
-                margin-bottom: 50px;
+            .sec__text {
+                p {
+                    font-size: $font-desctiption;
+                    font-weight: $font-weight-light;
+                    line-height: $line-height-normal;
+                    width: 506px;
+                    text-align: center;
+                    color: $color-1;
+                }
+            }
+            .img {
+                margin-top: 50px;
             }
         }
-        .sec__text {
-
+        .border__positon {
+            position: absolute;
+            border: 1px solid #F4FEFF;
+            border-radius: 6rem 6rem 4rem 4rem;
+            // width: 64rem;
+            width: calc(100% - 31%);
+            height: 32rem;
+            top: 5rem;
+            left: 15%;
         }
     }
 }
@@ -74,6 +101,9 @@
                 h1 {
                     margin-bottom: 16px;
                     width: 852px;
+                    font-size: $font-heading;
+                    font-weight: $font-weight-medium;
+                    line-height: $line-height-heading;
                 }
             }
             .input {
@@ -118,9 +148,15 @@
         h1 {
             margin-bottom: 40px;
             color: $color-1;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
         p {
             color: $color-5;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
+            line-height: $line-height-normal;
         }
     }
     @media(max-width: 1024px) {
@@ -149,9 +185,15 @@
         h1 {
             margin-bottom: 40px;
             color: $color-2;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
         p {
             color: $white;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
+            line-height: $line-height-normal;
         }
     }
 }
@@ -184,6 +226,14 @@
             flex-direction: column;
             h1 {
                 margin-bottom: 31px;
+                font-size: $font-heading;
+                font-weight: $font-weight-medium;
+                line-height: $line-height-heading;
+            }
+            p {
+                font-size: $font-desctiption;
+                font-weight: $font-weight-light;
+                line-height: $line-height-normal;
             }
         }
         .rightSide {
@@ -373,11 +423,16 @@
     align-items: center;
     flex-direction: column;
     padding: 0 174px;
+    max-width: 1440px;
+    margin: 0 auto;
     .title {
         margin-top: 122px;
         margin-bottom: 80px;
         h1 {
             white-space: nowrap;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
     }
     .content {
@@ -446,11 +501,17 @@
         h1 {
             margin-bottom: 31px;
             color: $color-1;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
         p {
             padding-bottom: 72px;
             color: $color-5;
             width: 765px;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
+            line-height: $line-height-normal;
         }
     }
     .slider {
@@ -462,9 +523,15 @@
     .under__slider {
         h1 {
             margin-top: 66px;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
         p {
             padding-bottom: 56px;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
+            line-height: $line-height-normal;
         }
     }
     .input {
@@ -503,6 +570,9 @@
         h1 {
             color: $color-1;
             margin-bottom: 72px;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
     }
     .content {
@@ -514,6 +584,9 @@
             text-align: center;
             p {
                 color: $color-1;
+                font-size: $font-desctiption;
+                font-weight: $font-weight-light;
+                line-height: $line-height-normal;
             }
             &:nth-of-type(2) {
                 margin: 0 66px;
@@ -563,9 +636,15 @@
         text-align: center;
         h1 {
             margin-bottom: 17px;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-heading;
         }
         p {
             width: 803px;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
+            line-height: $line-height-normal;
         }
     }
     @media(max-width: 845px) {

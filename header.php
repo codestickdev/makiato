@@ -23,31 +23,32 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 	<header>
-		<div class="menu container">
+		<div class="menu container test">
 			<nav class="menuDesktop">
-				<ul>
-					<?php wp_nav_menu ( 
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id' => 'primary-menu1',
-							'menu_class' => 'menuDesktop__items'
-							)
+				<?php wp_nav_menu ( 
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id' => 'primary-menu1',
+						'menu_class' => 'menuDesktop__items'
 						)
-					?>
-				</ul>
+					)
+				?>
 			</nav>
 			<nav class="menuMobile">
-				<ul>
-					<?php wp_nav_menu ( 
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id' => 'primary-menu1',
-							'menu_class' => 'menuDesktop__items'
-							)
+				<?php wp_nav_menu ( 
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id' => 'primary-menu1',
+						'menu_class' => 'menuMobile__items'
 						)
-					?>
-				</ul>
+					)
+				?>
 			</nav>
+			<div class="menu__icon">
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+			</div>
 		</div>
 	</header>
 	<!-- #masthead -->

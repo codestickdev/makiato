@@ -10,16 +10,21 @@
     <div class="logo">
         <h1>Makiato</h1>
     </div>
-    <div class="border__posiiton">
-        fdsafsd
-    </div>
-    <div class="text__position">
-        <div class="first__text">
-            <h1>Bar kawowy na wesele</h1>
-            <p>Serwujemy zachwyt po mistrzowsku</p>
+    <div class="custom-block">
+        <div class="border__positon">
+            <div></div>
         </div>
-        <div class="sec__text">
-            <p>Co powiecie na stylowy mikrokosmos, w którym Wasi Goście odkryją		nieziemski smak kawy i głęboki aromat z nutką pobudzającej energii?	</p>
+        <div class="text__position">
+            <div class="first__text">
+                <h1>bar kawowy na wesele</h1>
+                <p>Serwujemy zachwyt po mistrzowsku</p>
+            </div>
+            <div class="sec__text">
+                <p>Co powiecie na stylowy mikrokosmos, w którym Wasi Goście odkryją		nieziemski smak kawy i głęboki aromat z nutką pobudzającej energii?	</p>
+            </div>
+            <div class="img">
+                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/arrow.svg'" alt="arrow">
+            </div>
         </div>
     </div>
 </section>

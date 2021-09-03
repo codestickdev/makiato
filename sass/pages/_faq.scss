@@ -1,0 +1,113 @@
+//import variables
+@import '../variables';
+
+//aboutUs
+
+.sectionContent {
+    .sectionBg {
+        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png');
+        height: 494px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .faq {
+        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/faq.png') !important;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: $color-bg;
+        padding: 71px 172px 115px 172px;
+        .text__box {
+            h1 {
+                margin-bottom: 46px;
+                font-size: $font-extra-heading;
+                font-weight: $font-weight-medium2;
+                line-height: $line-height-big;
+                color: $color-1;
+            }
+            p {
+                width: 814px;
+            }
+        }
+    }
+}
+
+.block-faq {
+  padding: 0 10%;
+margin-top: 61px;
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+    padding: 20px;
+    height: 61px;
+    // color: variables.$color-text;
+    // background: variables.$color-white;
+    cursor: pointer;
+    width: 100%;
+    border: .025rem solid rgba(64, 67, 65, 0.1);
+    box-sizing: border-box;
+    box-shadow: -.1rem 0 1.3rem rgba(0, 0, 0, 0.03);
+    text-align: left;
+    outline: none;
+    font-size: 1.7rem;
+    transition: 0.4s;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+
+  .question:first-of-type {
+    border: .025rem solid rgba(64, 67, 65, 0.1);
+    box-sizing: border-box;
+    box-shadow: -.1rem 0 1.3rem rgba(0, 0, 0, 0.03);
+  }
+
+  .question:after {
+    content: '\276F';
+    transform: rotate(90deg);
+    color: .025rem solid #ececec;
+    float: right;
+  }
+
+  .active:after {
+    content: "\276F";
+  }
+
+  .active, .question:hover {
+    // color: variables.$color-black;
+  }
+
+  .answer {
+    background-color: rgba(#fff, .5);
+    // color: variables.$color-text;
+    line-height: 2.315rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-size: 1.7rem;
+    border-top: .025rem solid rgba(64, 67, 65, 0.1);
+    border-bottom: .025rem solid rgba(64, 67, 65, 0.1);
+    border-left: .025rem solid #e5e5e5;
+    border-right: .025rem solid #e5e5e5;
+    box-sizing: border-box;
+    box-shadow: -.1rem 0 1.3rem rgba(0, 0, 0, 0.03);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px;
+
+    p {
+      padding: 4rem 2rem 3rem 2rem;
+      opacity: 0.5;
+    }
+  }
+
+  .answer:last-of-type {
+    border-bottom: .025rem solid #ececec;
+  }
+}
