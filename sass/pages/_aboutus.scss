@@ -30,5 +30,144 @@
                 width: 814px;
             }
         }
+        .vice__master {
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            margin-top: 115px;
+            .leftSide {
+                width: 548px;
+                height: 572px;
+                padding: 71px 45px 0 45px;
+                text-align: left;
+                background-color: $white;
+                h2 {
+                    margin-bottom: 38px;
+                    font-size: $font-samll-heading;
+                    font-weight: $font-weight-medium;
+                    line-height: $line-height-heading2;
+                    color: $color-1;
+                }
+                p {
+                    color: $color-5;
+                    font-size: $font-desctiption;
+                    font-weight: $font-weight-medium;
+                    line-height: $line-height-normal;
+                }
+            }
+            .rightSide {
+                width: 548px;
+                height: 572px;
+                background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/about-us2.png');
+                background-repeat: no-repeat;
+                background-position: 100%;
+                margin-right: -8px;
+            }
+        }
+        .master-cv {
+            display: flex;
+            margin-bottom: 81px;
+            .leftSide {
+                height: 365px;
+                width: 548px;
+                background-color: $color-2;
+                color: $color-1;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                padding: 61px 27px 91px 27px;
+                h2 {
+                    margin-bottom: 38px;
+                    font-size: $font-samll-heading;
+                    font-weight: $font-weight-medium;
+                    line-height: $line-height-heading2;
+                }
+                ul {
+                    text-align: left;
+                    padding-left: 15px;
+                    li {
+                        font-size: $font-desctiption;
+                        font-weight: $font-weight-medium;
+                        line-height: $line-height-normal;
+                    }
+                }
+            }
+            .rightSide {
+                height: 365px;
+                width: 548px;
+                background-color: $color-1;
+                color: $white;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                padding: 61px 27px 91px 27px;
+                h2 {
+                    margin-bottom: 38px;
+                }
+                ul {
+                    text-align: left;
+                    padding-left: 15px;
+                    li {
+                        font-size: $font-desctiption;
+                        font-weight: $font-weight-medium;
+                        line-height: $line-height-normal;
+                    }
+                }
+            }
+        }
+        .inspiration {
+            margin-bottom: 85px;
+            color: $color-1;
+            h1 {
+                font-size: $font-heading;
+                line-height: $line-height-heading;
+                font-weight: $font-weight-medium;
+                margin-bottom: 39px;
+            }
+            p {
+                font-size: $font-desctiption;
+                font-weight: $font-weight-medium;
+                line-height: $line-height-normal;
+                width: 652px;
+            }
+        }
+        .aboutUs__info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1440px;
+            align-items: center;
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: $white;
+                padding: 37px 19px 43px 19px;
+                width: 363px;
+                height: 169px;
+                margin: 1px;
+                .title {
+                    margin-bottom: 6px;
+                    p {
+                        font-size: $font-desctiption;
+                        font-weight: $font-weight-medium;
+                        line-height: $line-height-normal;
+                        color: $color-1;
+                    }
+                }
+                .description {
+                    p {
+                        font-size: $font-desctiption;
+                        font-weight: $font-weight-medium;
+                        line-height: $line-height-normal;
+                        color: $color-5;
+                        width: 310px;
+                    }
+                }
+            }
+        }
     }
 }
