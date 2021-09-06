@@ -25,9 +25,15 @@
                 font-weight: $font-weight-medium2;
                 line-height: $line-height-big;
                 color: $color-1;
+                letter-spacing: $heading-spacing;
             }
             p {
                 width: 814px;
+                font-size: $font-desctiption;
+                font-weight: $font-weight-light;
+                line-height: $line-height-normal;
+                color: $color-text2;
+                letter-spacing: $normal-spacing;
             }
         }
         .vice__master {
@@ -46,6 +52,7 @@
                     font-size: $font-samll-heading;
                     font-weight: $font-weight-medium;
                     line-height: $line-height-heading2;
+                    letter-spacing: $heading-spacing;
                     color: $color-1;
                 }
                 p {
@@ -53,6 +60,7 @@
                     font-size: $font-desctiption;
                     font-weight: $font-weight-medium;
                     line-height: $line-height-normal;
+                    letter-spacing: $normal-spacing;
                 }
             }
             .rightSide {
@@ -82,6 +90,7 @@
                     font-size: $font-samll-heading;
                     font-weight: $font-weight-medium;
                     line-height: $line-height-heading2;
+                    letter-spacing: $heading-spacing;
                 }
                 ul {
                     text-align: left;
@@ -90,6 +99,7 @@
                         font-size: $font-desctiption;
                         font-weight: $font-weight-medium;
                         line-height: $line-height-normal;
+                        letter-spacing: $normal-spacing;
                     }
                 }
             }
@@ -113,6 +123,7 @@
                         font-size: $font-desctiption;
                         font-weight: $font-weight-medium;
                         line-height: $line-height-normal;
+                        letter-spacing: $normal-spacing;
                     }
                 }
             }
@@ -124,12 +135,14 @@
                 font-size: $font-heading;
                 line-height: $line-height-heading;
                 font-weight: $font-weight-medium;
+                letter-spacing: $heading-spacing;
                 margin-bottom: 39px;
             }
             p {
                 font-size: $font-desctiption;
                 font-weight: $font-weight-medium;
                 line-height: $line-height-normal;
+                letter-spacing: $normal-spacing;
                 width: 652px;
             }
         }
@@ -157,6 +170,7 @@
                         font-weight: $font-weight-medium;
                         line-height: $line-height-normal;
                         color: $color-1;
+                        letter-spacing: $normal-spacing;
                     }
                 }
                 .description {
@@ -165,6 +179,7 @@
                         font-weight: $font-weight-medium;
                         line-height: $line-height-normal;
                         color: $color-5;
+                        letter-spacing: $normal-spacing;
                         width: 310px;
                     }
                 }

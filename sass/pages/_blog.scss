@@ -1,8 +1,7 @@
 //import variables
 @import '../variables';
 
-//aboutUs
-
+//blog
 .sectionContent {
     .sectionBg {
         background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png');
@@ -31,6 +30,204 @@
             }
             p {
                 width: 814px;
+            }
+        }
+    }
+}
+
+//blogInfo section
+
+.blogInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    margin-bottom: 76px;
+    margin-top: 71px;
+    text-align: center;
+    p {
+        width: 814px;
+        letter-spacing: $big-spacing;
+        font-weight: $font-weight-medium2;
+        line-height: $line-height-heading3;
+        font-size: $line-height-small;
+        color: $color-text;
+        padding: 64px 0;
+    }
+}
+
+
+//posts from blog
+.posts {
+    display: flex;
+    flex-direction: column;
+    .content__post {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .box {
+            width: 538px;
+            margin-bottom: 47px;
+            a {
+                text-decoration: none;
+                .img {
+                    position: relative;
+                    img {
+                        width: 538px;
+                        height: 359px;
+                        margin-bottom: -3px;
+                    }
+                    .data {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 66px;
+                        width: 70px;
+                        background-color: $white;
+                        color: $color-text2;
+                        font-size: 15px;
+                        line-height: $line-height-small-p;
+                        font-weight: $font-weight-light;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                .title {
+                    background-color: $white;
+                    padding: 19px 20px;
+                    text-align: left;
+                    p {
+                        font-size: $font-desctiption;
+                        font-weight: $font-weight-light;
+                        letter-spacing: $normal-spacing;
+                        line-height: $line-height-normal;
+                        color: $color-text;
+                    }
+                }
+            }
+            &:nth-of-type(1), &:nth-of-type(3) {
+                margin-right: 20px;
+            }
+        }
+    }
+    .pagination {
+        margin-top: 17px;
+    }
+}
+
+
+
+//single post page
+.singlePost {
+    .singlePostBg {
+        background-color: $color-1 !important;
+        height: 494px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        text-align: center;
+        h2 {
+            width: 720px;
+            font-size: $font-heading;
+            line-height: $line-height-heading;
+            font-weight: $font-weight-medium2;
+            letter-spacing: $big-spacing;
+        }
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: $color-bg;
+        padding: 71px 172px 115px 172px;
+    }
+    .singlePost__info {
+        article {
+            margin-bottom: 79px;
+        }
+        .title {
+            h2 {
+                width: 721px;
+                margin-bottom: 86px;
+                color: $color-1;
+                letter-spacing: $big-spacing;
+                line-height: $line-height-heading2;
+                font-weight: $font-weight-medium2;
+                font-size: $font-samll-heading;
+            }
+        }
+        .text {
+            p {
+                width: 721px;
+                font-size: $font-desctiption;
+                line-height: $line-height-normal;
+                color: $color-text;
+                font-weight: $font-weight-light;
+                letter-spacing: $normal-spacing;
+                text-align: left;
+            }
+        }
+    }
+    .singlePost__gallery {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 129px;
+        margin-bottom: 98px;
+        .left {
+            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/single-post-img1.png');
+            height: 494px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 20px;
+        }
+        .left, .right {
+            height: 494px;
+            width: 538px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .right {
+            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/single-post-img2.png');
+        }
+    }
+}
+
+.blogPostImg {
+    background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/blog-post-bg2.png');
+    height: 494px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blogPost {
+    background-color: $color-2;
+    margin-bottom: 33px;
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 67px 172px 55px 172px;
+        .posts {
+            .content__post {
+                .box {
+                    margin-bottom: 0;
+                }
+            }
+            h2 {
+                margin-bottom: 51px;
+                letter-spacing: $big-spacing;
+                font-weight: $font-weight-medium2;
+                line-height: $line-height-heading;
+                color: $color-1;
+                font-size: $font-heading;
             }
         }
     }

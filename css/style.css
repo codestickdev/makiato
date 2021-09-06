@@ -200,7 +200,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin-bottom: 16px;
   width: 852px;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
 }
 
@@ -241,15 +241,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin-bottom: 40px;
   color: #174045;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 .allInclusive .box p {
-  color: #7D7878;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  color: #4F4B4B;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 1024px) {
@@ -284,15 +286,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin-bottom: 40px;
   color: #F3D4BD;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 .ownBar .box p {
-  color: #fff;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  color: #fff;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 845px) {
@@ -327,15 +331,19 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .chess .box .leftSide h1 {
   margin-bottom: 31px;
-  font-size: 29px;
-  font-weight: 500;
-  line-height: 41px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.04em;
+  color: #174045;
 }
 
 .chess .box .leftSide p {
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  color: #4F4B4B;
+  letter-spacing: 0.02em;
 }
 
 .chess .box .rightSide {
@@ -421,6 +429,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .caffee .box {
   text-align: center;
   color: #F3D4BD;
+  letter-spacing: 0.04em;
+  line-height: 41px;
+  font-size: 21px;
+  font-weight: 600;
   width: 896px;
 }
 
@@ -519,7 +531,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .howWorks .title h1 {
   white-space: nowrap;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
 }
 
@@ -544,6 +556,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .howWorks .content .box .img span {
   margin-right: 29px;
+}
+
+.howWorks .content .box__description {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #4F4B4B;
+  letter-spacing: 0.02em;
 }
 
 .howWorks .content .box:nth-of-type(1), .howWorks .content .box:nth-of-type(2), .howWorks .content .box:nth-of-type(3) {
@@ -594,7 +614,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin-bottom: 31px;
   color: #174045;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
 }
 
@@ -615,8 +635,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .knowUs .under__slider h1 {
   margin-top: 66px;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
+  color: #174045;
+  letter-spacing: 0.04em;
 }
 
 .knowUs .under__slider p {
@@ -624,6 +646,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  color: #4F4B4B;
+  letter-spacing: 0.02em;
 }
 
 .knowUs .input {
@@ -663,8 +687,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   color: #174045;
   margin-bottom: 72px;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 .testimoniale .content {
@@ -683,6 +708,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0.02em;
 }
 
 .testimoniale .content .box:nth-of-type(2) {
@@ -732,8 +758,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .ourShowcase .text h1 {
   margin-bottom: 17px;
   font-size: 29px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 .ourShowcase .text p {
@@ -741,6 +768,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  color: #174045;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 845px) {
@@ -775,10 +804,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 56px;
   color: #174045;
+  letter-spacing: 0.05em;
 }
 
 .sectionContent .content .text__box p {
   width: 814px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #4F4B4B;
+  letter-spacing: 0.02em;
 }
 
 .sectionContent .content .vice__master {
@@ -801,6 +836,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 21px;
   font-weight: 500;
   line-height: 30px;
+  letter-spacing: 0.05em;
   color: #174045;
 }
 
@@ -809,6 +845,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0.02em;
 }
 
 .sectionContent .content .vice__master .rightSide {
@@ -842,6 +879,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 21px;
   font-weight: 500;
   line-height: 30px;
+  letter-spacing: 0.05em;
 }
 
 .sectionContent .content .master-cv .leftSide ul {
@@ -853,6 +891,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0.02em;
 }
 
 .sectionContent .content .master-cv .rightSide {
@@ -880,6 +919,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0.02em;
 }
 
 .sectionContent .content .inspiration {
@@ -891,6 +931,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 29px;
   line-height: 41px;
   font-weight: 500;
+  letter-spacing: 0.05em;
   margin-bottom: 39px;
 }
 
@@ -898,6 +939,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0.02em;
   width: 652px;
 }
 
@@ -931,6 +973,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 500;
   line-height: 24px;
   color: #174045;
+  letter-spacing: 0.02em;
 }
 
 .sectionContent .content .aboutUs__info .box .description p {
@@ -938,6 +981,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 500;
   line-height: 24px;
   color: #7D7878;
+  letter-spacing: 0.02em;
   width: 310px;
 }
 
@@ -1045,6 +1089,207 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .sectionContent .content .text__box p {
   width: 814px;
+}
+
+.blogInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 76px;
+  margin-top: 71px;
+  text-align: center;
+}
+
+.blogInfo p {
+  width: 814px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  line-height: 36px;
+  font-size: 17px;
+  color: #353434;
+  padding: 64px 0;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.posts .content__post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.posts .content__post .box {
+  width: 538px;
+  margin-bottom: 47px;
+}
+
+.posts .content__post .box a {
+  text-decoration: none;
+}
+
+.posts .content__post .box a .img {
+  position: relative;
+}
+
+.posts .content__post .box a .img img {
+  width: 538px;
+  height: 359px;
+  margin-bottom: -3px;
+}
+
+.posts .content__post .box a .img .data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 66px;
+  width: 70px;
+  background-color: #fff;
+  color: #4F4B4B;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posts .content__post .box a .title {
+  background-color: #fff;
+  padding: 19px 20px;
+  text-align: left;
+}
+
+.posts .content__post .box a .title p {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 24px;
+  color: #353434;
+}
+
+.posts .content__post .box:nth-of-type(1), .posts .content__post .box:nth-of-type(3) {
+  margin-right: 20px;
+}
+
+.posts .pagination {
+  margin-top: 17px;
+}
+
+.singlePost .singlePostBg {
+  background-color: #174045 !important;
+  height: 494px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.singlePost .singlePostBg h2 {
+  width: 720px;
+  font-size: 29px;
+  line-height: 41px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.singlePost .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #E5E5E5;
+  padding: 71px 172px 115px 172px;
+}
+
+.singlePost .singlePost__info article {
+  margin-bottom: 79px;
+}
+
+.singlePost .singlePost__info .title h2 {
+  width: 721px;
+  margin-bottom: 86px;
+  color: #174045;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.singlePost .singlePost__info .text p {
+  width: 721px;
+  font-size: 17px;
+  line-height: 24px;
+  color: #353434;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.singlePost .singlePost__gallery {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 129px;
+  margin-bottom: 98px;
+}
+
+.singlePost .singlePost__gallery .left {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/single-post-img1.png");
+  height: 494px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 20px;
+}
+
+.singlePost .singlePost__gallery .left, .singlePost .singlePost__gallery .right {
+  height: 494px;
+  width: 538px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.singlePost .singlePost__gallery .right {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/single-post-img2.png");
+}
+
+.blogPostImg {
+  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/blog-post-bg2.png");
+  height: 494px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blogPost {
+  background-color: #F3D4BD;
+  margin-bottom: 33px;
+}
+
+.blogPost .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 67px 172px 55px 172px;
+}
+
+.blogPost .content .posts .content__post .box {
+  margin-bottom: 0;
+}
+
+.blogPost .content .posts h2 {
+  margin-bottom: 51px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  line-height: 41px;
+  color: #174045;
+  font-size: 29px;
 }
 
 .sectionContent .sectionBg {
@@ -1361,6 +1606,133 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   width: 814px;
 }
 
+.sectionContent .content .offerContent {
+  margin-top: 76px;
+  margin-bottom: 133px;
+}
+
+.sectionContent .content .offerContent .options {
+  display: flex;
+}
+
+.sectionContent .content .offerContent .options .basic, .sectionContent .content .offerContent .options .extra {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #D9D9D9;
+  cursor: pointer;
+}
+
+.sectionContent .content .offerContent .options .basic p, .sectionContent .content .offerContent .options .extra p {
+  color: #353434;
+  line-height: 24px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.sectionContent .content .offerContent .options .basic {
+  margin-right: 19px;
+  margin-left: 10px;
+}
+
+.sectionContent .content .offerContent__box {
+  background-color: #fff;
+  width: 1096px;
+  height: 867px;
+  padding: 62px 126px 99px 126px;
+}
+
+.sectionContent .content .offerContent__box ul {
+  list-style-type: none;
+}
+
+.sectionContent .content .offerContent__box ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  border-bottom: 1px solid #D9D9D9;
+  color: #353434;
+  line-height: 24px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.sectionContent .content .offerContent__box p {
+  padding-top: 45px;
+  color: #353434;
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.sectionContent .content .offerContent .basic__offer {
+  display: block;
+}
+
+.sectionContent .content .offerContent .basic__offer--active {
+  display: none;
+}
+
+.sectionContent .content .offerContent .extra__offer {
+  display: none;
+}
+
+.sectionContent .content .offerContent .extra__offer--active {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .sectionContent .content .offerContent .options .basic, .sectionContent .content .offerContent .options .extra {
+    padding: 15px;
+  }
+  .sectionContent .content .offerContent__box {
+    width: 900px;
+  }
+}
+
+@media (max-width: 970px) {
+  .sectionContent .content .offerContent__box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 761px) {
+  .sectionContent .content .offerContent__box {
+    padding: 62px 50px 99px 50px;
+    height: auto;
+  }
+  .sectionContent .content .offerContent__box ul li {
+    padding: 29px 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 515px) {
+  .sectionContent .content .offerContent .options {
+    justify-content: space-between;
+  }
+  .sectionContent .content .offerContent .options .basic, .sectionContent .content .offerContent .options .extra {
+    padding: 10px;
+  }
+  .sectionContent .content .offerContent .options .basic {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .sectionContent .content .offerContent__box {
+    padding: 62px 50px 99px 50px;
+  }
+  .sectionContent .content .offerContent__box ul li {
+    padding: 29px 0;
+    height: auto;
+  }
+}
+
 /* Import Partials
 --------------------------------------------- */
 header {
@@ -1476,8 +1848,9 @@ header .menu {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 24px;
+    letter-spacing: 0.02em;
   }
   header .menu .menuMobile {
     display: none;
@@ -1497,17 +1870,24 @@ footer {
 }
 
 footer .text {
-  color: #fff;
   text-align: center;
 }
 
 footer .text h1 {
   margin-bottom: 15px;
+  color: #F3D4BD;
+  font-weight: 600;
+  line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 footer .text p {
   margin-bottom: 55px;
   width: 647px;
+  color: #fff;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  line-height: 24px;
 }
 
 footer .socialMedia {
@@ -1520,6 +1900,9 @@ footer .socialMedia div {
   margin-right: 52px;
   color: #fff;
   cursor: pointer;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  line-height: 24px;
 }
 
 footer .socialMedia div:nth-last-of-type(1) {
@@ -1528,6 +1911,7 @@ footer .socialMedia div:nth-last-of-type(1) {
 
 footer .socialMedia .media {
   display: flex;
+  align-items: center;
 }
 
 footer .socialMedia .media div {

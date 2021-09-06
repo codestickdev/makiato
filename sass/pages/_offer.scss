@@ -33,5 +33,149 @@
                 width: 814px;
             }
         }
+        .offerContent {
+            margin-top: 76px;
+            margin-bottom: 133px;
+            .options {
+                display: flex;
+                .basic, .extra {
+                    padding: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $white;
+                    border-bottom: 1px solid $color-border;
+                    cursor: pointer;
+                }
+                .basic p, .extra p {
+                    color: $color-text;
+                    line-height: $line-height-normal;
+                    font-size: $font-desctiption;
+                    font-weight: $font-weight-light;
+                    letter-spacing: $normal-spacing;
+                }
+                .basic {
+                    margin-right: 19px;
+                    margin-left: 10px;
+                }
+            }
+            &__box {
+                background-color: $white;
+                width: 1096px;
+                height: 867px;
+                padding: 62px 126px 99px 126px;
+                ul {
+                    list-style-type: none;
+                    li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 58px;
+                        border-bottom: 1px solid $color-border;
+                        color: $color-text;
+                        line-height: $line-height-normal;
+                        font-size: $font-desctiption;
+                        font-weight: $font-weight-light;
+                        letter-spacing: $normal-spacing;
+                    }
+                }
+                p {
+                    padding-top: 45px;
+                    color: $color-text;
+                    line-height: $line-height-small-p;
+                    font-size: $font-small;
+                    font-weight: $font-weight-light;
+                    letter-spacing: $normal-spacing;
+                }
+            }
+            .basic__offer {
+                display: block;
+                &--active {
+                    display: none;
+                }
+            }
+            .extra__offer {
+                display: none;
+                &--active {
+                    display: block;
+                }
+            }
+        }
     }
+}
+
+@media(max-width: 1200px) {
+    .sectionContent {
+        .content {
+            .offerContent {
+                .options {
+                    .basic, .extra {
+                        padding: 15px;
+                    }
+                }
+                &__box {
+                    width: 900px;
+                }
+            } 
+        }
+    }  
+}
+
+@media(max-width: 970px) {
+    .sectionContent {
+        .content {
+            .offerContent {
+                &__box {
+                    width: 100%;
+                }
+            } 
+        }
+    }  
+}
+
+@media(max-width: 761px) {
+    .sectionContent {
+        .content {
+            .offerContent {
+                &__box {
+                    padding: 62px 50px 99px 50px;
+                    height: auto;
+                    ul {
+                        li {
+                            padding: 29px 0;
+                            height: auto;
+                        }
+                    }
+                }
+            } 
+        }
+    }  
+}
+
+@media (max-width: 515px) {
+    .sectionContent {
+        .content {
+            .offerContent {
+                .options {
+                    justify-content: space-between;
+                    .basic, .extra {
+                        padding: 10px;
+                    }
+                    .basic {
+                        margin-right: 0;
+                        margin-left: 0;
+                    }
+                }
+                &__box {
+                    padding: 62px 50px 99px 50px;
+                    ul {
+                        li {
+                            padding: 29px 0;
+                            height: auto;
+                        }
+                    }
+                }
+            } 
+        }
+    }  
 }

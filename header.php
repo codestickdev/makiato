@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 	<header>
-		<div class="menu container test">
+		<div class="menu container">
 			<nav class="menuDesktop">
 				<?php wp_nav_menu ( 
 					array(

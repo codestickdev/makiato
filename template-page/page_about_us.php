@@ -124,7 +124,7 @@
                     <p>piękno</p>
                 </div>
                 <div class="description">
-                    <p>Weselna kawa nie może obyć wzorków z mleka!</p>
+                    <p>Weselna kawa nie może obyć wzorków z mleka!</p>
                 </div>
             </div>
         </div>

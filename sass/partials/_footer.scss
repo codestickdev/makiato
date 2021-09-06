@@ -10,14 +10,21 @@ footer {
     align-items: center;
     flex-direction: column;
     .text {
-        color: $white;
         text-align: center;
         h1 {
             margin-bottom: 15px;
+            color: $color-2;
+            font-weight: $font-weight-medium2;
+            line-height: $line-height-heading;
+            letter-spacing: $big-spacing;
         }
         p {
             margin-bottom: 55px;
             width: 647px;
+            color: $white;
+            letter-spacing: $normal-spacing;
+            font-size: $font-desctiption;
+            line-height: $line-height-normal;
         }
     }
     .socialMedia {
@@ -28,12 +35,16 @@ footer {
             margin-right: 52px;
             color: $white;
             cursor: pointer;
+            letter-spacing: $normal-spacing;
+            font-size: $font-desctiption;
+            line-height: $line-height-normal;
             &:nth-last-of-type(1){
                 margin-right: 0;
             }
         }
         .media {
             display: flex;
+            align-items: center;
             div {
                 margin-right: 18px;
                 &:nth-last-of-type(1){
