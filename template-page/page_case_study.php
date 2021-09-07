@@ -7,12 +7,43 @@
 <?php get_header() ?>
 
 <section class="sectionContent">
-    <div class="sectionBg caseStudy"></div>
+    <div class="sectionBg caseStudy">
+    <div class="logo">
+        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    </div>
+    </div>
     <div class="content">
         <div class="text__box">
             <h1>weselne case study</h1>
             <p>Zobacz jak spełniamy kawowe życzenia w najpiękniejszym dniu w życiu! Prezentujemy Państwu kilka wybranych realizacji z naszego porfolio.</p>
         </div>
+        <div class="casePosts">
+				<div class="casePosts__content">
+					<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+						$args = array( 'post_type' => 'case-study-post', 'order' => 'ASC' ,'posts_per_page' => 4, 'paged' => $paged );
+						$wp_query = new WP_Query($args);
+						while ( have_posts() ) : the_post(); ?>
+						<div class="box">
+							<a href="<?php the_permalink() ?>">
+								<div class="img">
+									<?php the_post_thumbnail(); ?>
+                                    <div class="title">
+									    <p><?php the_title() ?></p>
+								    </div>
+								</div>
+                                <div class="box__content">
+                                    <div class="name">
+
+                                    </div>
+                                    <div class="data">
+                                        
+                                    </div>
+                                </div>
+							</a>
+						</div>
+					<?php endwhile; ?>
+				</div>
+			</div>
         <div class="contact">
             <div class="title">
                 <h2>ZAMÓW BAR KAWOWY NA WESELE!</h2>

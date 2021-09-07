@@ -4,128 +4,201 @@
 //aboutUs
 
 .sectionContent {
-    .sectionBg {
-        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png');
-        height: 494px;
-        background-repeat: no-repeat;
-        background-size: cover;
+  .sectionBg {
+    background-image: url('/wp-content/themes/makiato/images/about-us.png');
+    height: 494px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .gallery {
+    background-image: url('/wp-content/themes/makiato/images/gallery.png') !important;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: $color-bg;
+    padding: 71px 172px 115px 172px;
+
+    .text__box {
+      h1 {
+        margin-bottom: 46px;
+        font-size: $font-extra-heading;
+        font-weight: $font-weight-medium2;
+        line-height: $line-height-big;
+        color: $color-1;
+      }
+
+      p {
+        width: 814px;
+      }
     }
-    .gallery {
-        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/gallery.png') !important;
-    }
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        background-color: $color-bg;
-        padding: 71px 172px 115px 172px;
-        .text__box {
-            h1 {
-                margin-bottom: 46px;
-                font-size: $font-extra-heading;
-                font-weight: $font-weight-medium2;
-                line-height: $line-height-big;
-                color: $color-1;
-            }
-            p {
-                width: 814px;
-            }
-        }
-    }
+  }
 }
 
-.block-gallery {
-    margin: auto;
-    margin-top: 84px;
+@media(max-width: 549px) {
+  .block-gallery {
     .images {
-      display: grid;
-      grid-template-columns: auto;
-      gap: 2rem;
-      width: auto;
-      margin: auto;
-      padding: 0 10%;
-  
-      @media all and (min-width: 1150px) {
-        grid-template-columns: 32.8rem 32.8rem;
-        width: max-content;
-        padding: 0;
-      }
-  
+      padding: 0;
+
       .image {
-        // height: 35.9rem;
-  
-        img {
-          height: 359px;
-          width: 538px;
-          object-fit: cover;
-        }
-      }
-  
-      .lightbox {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 1em;
-        background: rgba(0, 0, 0, 0.95);
-      }
-  
-      .lightbox:target {
-        display: block;
-      }
-  
-      .lightbox span {
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-    }
-  
-    .pagination {
-      margin: auto;
-      text-align: center;
-      margin: 2.5rem 0 0 0;
-      line-height: 4.4rem;
-  
-      span {
-        padding: 0 .9rem .5rem .9rem;
-        // border-bottom: 1px solid $color-3;
-        cursor: context-menu;
-      }
-  
-      a {
-        // color: $color-1;
-        text-decoration: none;
-        padding: .9rem;
-  
-        &:hover {
-          border-radius: 3rem;
-        //   background-color: $color-3;
+        a {
+          img {
+            width: 100%;
+          }
         }
       }
     }
   }
-  
+}
 
-  .btnCenter {
+.block-gallery {
+  max-width: 100%;
+  margin-top: 84px;
+
+  .responsive {
+    display: flex !important;
+    flex-direction: column !important;
+
+    &__box {
+      display: flex !important;
+      flex-wrap: wrap;
+
+      .img {
+        background-image: url('/wp-content/themes/makiato/images/single-post-img1.png');
+        height: 359px;
+        width: calc(100% / 2 - 30px);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          margin-bottom: 20px;
+        }
+
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+          margin-right: 20px;
+        }
+
+        &:nth-of-type(even) {
+          background-image: url('/wp-content/themes/makiato/images/chess-img4.png');
+        }
+      }
+    }
+  }
+
+  .slider {
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 56px;
+
+      .preArrow {
+        margin-right: 58px;
+        position: relative;
+
+        button {
+          background: none;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+          z-index: 99;
+        }
+
+        &:hover {
+          &::before {
+            content: '';
+            background-color: $color-2;
+            padding: 16px;
+            border-radius: 50%;
+            position: absolute;
+            top: -6px;
+            left: -11px;
+            z-index: 1;
+          }
+        }
+      }
+
+      .sliderDots {
+        .slick-dots {
+          display: flex;
+          justify-content: center;
+          list-style-type: none;
+
+          li {
+            margin-right: 21px;
+
+            button {
+              background: none;
+              border: none;
+              height: 23px;
+              width: 9px;
+              font-size: $font-desctiption;
+              line-height: $line-height-normal;
+              font-weight: $font-weight-light;
+              letter-spacing: $normal-spacing;
+              color: $color-1;
+              cursor: pointer;
+              outline: none;
+            }
+          }
+
+          .slick-active {
+            border-bottom: 2px solid $color-2;
+          }
+        }
+      }
+
+      .nextArrow {
+        margin-left: 58px;
+        position: relative;
+
+        button {
+          background: none;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+          z-index: 99;
+          background-color: transparent;
+          transition: ease .8s;
+        }
+
+        &:hover {
+          &::before {
+            content: '';
+            background-color: $color-2;
+            padding: 16px;
+            border-radius: 50%;
+            position: absolute;
+            top: -6px;
+            right: -11px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .button {
     text-align: center;
     padding: 2rem 0 0rem 0; // wg projektu: 9.6rem 0 6rem 0
     display: flex;
     align-items: center;
     justify-content: center;
-    a {
-      button {}
-      text-decoration: none;
-    }
-    .btn {
+
+    button {
+      line-height: $line-height-small-p;
+      letter-spacing: $normal-spacing;
+      font-size: $font-desctiption;
+      font-weight: $font-weight-light;
       cursor: pointer;
       width: 227px;
       height: 67px;
@@ -133,7 +206,6 @@
       border: none;
       font-size: 1.7rem;
       text-decoration: none;
-      font-family: 'archia';display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
@@ -144,33 +216,142 @@
       font-size: 17px;
       line-height: 17px;
       font-weight: 400;
-  
-      &__light {
-        @extend .btn;
-        // color: $color-text;
-        // background: $color-white;
-  
-        &:hover {
-          // background: $color-border;
+    }
+  }
+
+  @media(min-width: 769px) {
+    .sliderMobile {
+      display: none !important;
+    }
+
+    .responsiveMobile {
+      display: none;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .desktopSlider {
+      display: none;
+    }
+
+    .responsive {
+      display: none !important;
+    }
+
+    .sliderMobile {
+      .responsiveMobile {
+        display: block;
+
+        &__box {
+          .img {
+            background-image: url('/wp-content/themes/makiato/images/single-post-img1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 359px;
+            width: 100%;
+          }
+
+          &:nth-of-type(even) {
+            .img {
+              background-image: url('/wp-content/themes/makiato/images/chess-img4.png');
+            }
+          }
         }
+
       }
-  
-      &__dark {
-        @extend .btn;
-        // color: $color-white;
-        // background: $color-3;
-  
-        &:hover {
-          // background: darken($color-3, 90%);
+
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 56px;
+
+        .preArrowMobile {
+          margin-right: 58px;
+          position: relative;
+
+          button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 99;
+          }
+
+          &:hover {
+            &::before {
+              content: '';
+              background-color: $color-2;
+              padding: 16px;
+              border-radius: 50%;
+              position: absolute;
+              top: -6px;
+              left: -11px;
+              z-index: 1;
+            }
+          }
         }
-      }
-  
-      &__acf {
-        @extend .btn;
-  
-        span {
-          padding-left: 1rem;
+
+        .sliderDotsMobile {
+          .slick-dots {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+
+            li {
+              margin-right: 21px;
+
+              button {
+                background: none;
+                border: none;
+                height: 23px;
+                width: 9px;
+                font-size: $font-desctiption;
+                line-height: $line-height-normal;
+                font-weight: $font-weight-light;
+                letter-spacing: $normal-spacing;
+                color: $color-1;
+                cursor: pointer;
+                outline: none;
+              }
+            }
+
+            .slick-active {
+              border-bottom: 2px solid $color-2;
+            }
+          }
+        }
+
+        .nextArrowMobile {
+          margin-left: 58px;
+          position: relative;
+
+          button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 99;
+            background-color: transparent;
+            transition: ease .8s;
+          }
+
+          &:hover {
+            &::before {
+              content: '';
+              background-color: $color-2;
+              padding: 16px;
+              border-radius: 50%;
+              position: absolute;
+              top: -6px;
+              right: -11px;
+              z-index: 1;
+            }
+          }
         }
       }
     }
   }
+}

@@ -8,7 +8,7 @@
 
 <section class="header_img">
     <div class="logo">
-        <h1>Makiato</h1>
+        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
     </div>
     <div class="custom-block">
         <div class="border__positon">
@@ -23,7 +23,7 @@
                 <p>Co powiecie na stylowy mikrokosmos, w którym Wasi Goście odkryją		nieziemski smak kawy i głęboki aromat z nutką pobudzającej energii?	</p>
             </div>
             <div class="img">
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/arrow.svg'" alt="arrow">
+                <img src="/wp-content/themes/makiato/images/icons/arrow.svg'" alt="arrow">
             </div>
         </div>
     </div>
@@ -143,7 +143,7 @@
         <div class="box">
             <div class="img">
                 <span>1</span>
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/how-works1.png'" alt="how-works1">
+                <img src="/wp-content/themes/makiato/images/icons/how-works1.png'" alt="how-works1">
             </div>
             <div class="box__description">
                 Odpowiedz na pytania
@@ -155,7 +155,7 @@
         <div class="box">
             <div class="img">
                 <span>2</span>
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/how-works2.png'" alt="how-works2">
+                <img src="/wp-content/themes/makiato/images/icons/how-works2.png'" alt="how-works2">
             </div>
             <div class="box__description">
                 Odpowiedz na pytania
@@ -167,7 +167,7 @@
         <div class="box">
             <div class="img">
                 <span>3</span>
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/how-works3.png'" alt="how-works1">
+                <img src="/wp-content/themes/makiato/images/icons/how-works3.png'" alt="how-works1">
             </div>
             <div class="box__description">
                 Odpowiedz na pytania
@@ -179,7 +179,7 @@
         <div class="box">
             <div class="img">
                 <span>4</span>
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/how-works4.png'" alt="how-works1">
+                <img src="/wp-content/themes/makiato/images/icons/how-works4.png'" alt="how-works1">
             </div>
             <div class="box__description">
                 Odpowiedz na pytania
@@ -191,7 +191,7 @@
         <div class="box">
             <div class="img">
                 <span>5</span>
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/how-works5.png'" alt="how-works1">
+                <img src="/wp-content/themes/makiato/images/icons/how-works5.png'" alt="how-works1">
             </div>
             <div class="box__description">
                 Odpowiedz na pytania
@@ -203,7 +203,7 @@
         <div class="box">
             <div class="img">
                 <span>6</span>
-                <img src=" <?php echo get_template_directory_uri();?>'./images/icons/how-works6.png'" alt="how-works1">
+                <img src="/wp-content/themes/makiato/images/icons/how-works6.png'" alt="how-works1">
             </div>
             <div class="box__description">
                 Odpowiedz na pytania
@@ -225,7 +225,7 @@
         <p>Odkryjcie nasze talenty, możliwości i pomysł na kawowe wesele, które na zawsze pozostanie w pamięci Waszych Gości</p>
     </div>
     <div class="slider">
-        <img src=" <?php echo get_template_directory_uri();?>'./images/slider1.png'" alt="slider1">
+        <img src="/wp-content/themes/makiato/images/slider1.png'" alt="slider1">
     </div>
     <div class="text under__slider">
         <h1>profesjonalizm w każdej kropli</h1>

@@ -7,76 +7,106 @@
 <?php get_header() ?>
 
 <section class="sectionContent">
-    <div class="sectionBg gallery"></div>
+    <div class="sectionBg gallery">
+    <div class="logo">
+        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    </div>
+    </div>
     <div class="content">
     <div class="text__box">
         <h1>galeria</h1>
         <p>Zapraszamy na fotograficzny spacer po wspomnieniach z naszego weselnego Portfolio. Pamiętajcie, że oko obiektywu nie rejestruje doskonałego smaku, aromatycznego zapachu i wyjątkowej atmosfery, która unosi się w powietrzu… </p>
     </div>
     <div class="block-gallery">
-    <div class="images">
-        <?php
-        //Setup variables
-        $gallery = get_field('block-gallery');
-        $images = [];
-
-        $items_per_page = 4;
-        $total_items = count($gallery);
-        $total_pages = ceil($total_items / $items_per_page);
-
-            if (get_query_var('paged')) {
-            $current_page = get_query_var('paged');
-            } elseif (get_query_var('page')) {
-            $current_page = get_query_var('page');
-            } else {
-            $current_page = 1;
-            }
-
-        $starting_point = ($current_page - 1) * $items_per_page;
-
-        // Get elements for current page
-        if ($gallery) {
-            $images = array_slice($gallery, $starting_point, $items_per_page);
-        }
-
-        if (!empty($images)) {
-            foreach( $images as $image_id ) : ?>
-            <div class="image">
-                <a href="#<?php echo $image_id; ?>">
-                <img src="<?php echo wp_get_attachment_image_url( $image_id, $size ); ?>">
-                </a>
-                <a href="#image" class="lightbox" id="<?php echo $image_id; ?>">
-                <span style="background-image: url('<?php echo wp_get_attachment_image_url( $image_id, $size ); ?>"></span>
-                </a>
+        <div class="images">
+            <div class="slider desktopSlider">
+                <div class="responsive">
+                    <div class="responsive__box">
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsive__box">
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsive__box">
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsive__box">
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsive__box">
+                        <div class="img"></div>
+                        <div class="img"></div>
+                        <div class="img"></div>
+                    </div>
+                </div>
+                <div class="pagination">
+                        <div class="preArrow">
+                            <button class="slick-prev">
+                                <img src="<?php echo get_template_directory_uri() . '/images/icons/left-arrow.svg'?>" alt="left-arrow">
+                            </button>
+                        </div>
+                        <div class="sliderDots"></div>
+                        <div class="nextArrow">
+                            <button class="slick-next">
+                                <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                            </button>
+                        </div>
+                </div>
             </div>
-            <?php
-            endforeach;
-        }
-        ?>
-    </div>
+            <div class="slider sliderMobile">
+                <div class="images responsiveMobile">
+                    <div class="responsiveMobile__box">
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsiveMobile__box">
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsiveMobile__box">
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsiveMobile__box">
+                        <div class="img"></div>
+                    </div>
+                    <div class="responsiveMobile__box">
+                        <div class="img"></div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class="preArrowMobile">
+                        <button class="slick-prev">
+                            <img src="<?php echo get_template_directory_uri() . '/images/icons/left-arrow.svg'?>" alt="left-arrow">
+                        </button>
+                    </div>
+                    <div class="sliderDotsMobile"></div>
+                    <div class="nextArrowMobile">
+                        <button class="slick-next">
+                            <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <div class="pagination">
-    <?php
-        // Pagination
-        $big = 999999999;
-        echo paginate_links([
-            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-            'format' => '?paged=%#%',
-            'current' => $current_page,
-            'total' => $total_pages,
-            'before_page_number' => '<span class="screen-reader-text">' . __('Page ', 'makiato') . ' </span>',
-        ]);
-    ?>
-    </div>
 
-    <div class="btnCenter">
-        <a href="#">
-        <button class="btn__dark">
-            <?php echo _e('Zobacz ofertę >', 'makiato'); ?>
-        </button>
-        </a>
+
+        <div class="button">
+            <button class="btn">
+                <?php echo _e('Zobacz ofertę >', 'makiato'); ?>
+            </button>
+        </div>
     </div>
-</div>
 </section>
 
 <?php get_footer() ?>

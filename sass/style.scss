@@ -50,6 +50,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 
+/* Font
+--------------------------------------------- */
+@import "partials/font";
+
 /* Import Normalize
 --------------------------------------------- */
 //normaliza
@@ -102,19 +106,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 //variables
 @import "./variables";
-
-
-@font-face {
-	font-family: "Montserrat";
-	src: url("/fonts/Montserrat-Black.ttf") format("ttf"),
-		 url("/fonts/Montserrat-Bold.ttf") format("ttf"),
-		 url("/fonts/Montserrat-Regular.ttf") format("ttf"),
-}
-
-* {
-	font-family: 'Archivo', sans-serif;
-}
-
-button {
-	white-space: nowrap;
-}

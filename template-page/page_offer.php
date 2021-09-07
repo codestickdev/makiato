@@ -7,7 +7,11 @@
 <?php get_header() ?>
 
 <section class="sectionContent">
-    <div class="sectionBg offer"></div>
+    <div class="sectionBg offer">
+    <div class="logo">
+        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    </div>
+    </div>
     <div class="content">
         <div class="text__box">
             <h1>oferta</h1>
@@ -18,7 +22,7 @@
                 <div class="basic">
                     <p>oferta podstawowa</p>
                 </div>
-                <div class="extra">
+                <div class="extra active">
                     <p>usługi dodatkowe</p>
                 </div>
             </div>
@@ -59,7 +63,7 @@
         </div>
         <div class="contact">
             <div class="title">
-                <h2>ZAMÓW BAR KAWOWY NA WESELE!</h2>
+                <h2>zamów bar kawowy na wesele!</h2>
             </div>
             <div class="description">
                 <p>Przyrządzimy dla Was aromatyczną ofertę, która oczaruje Was i Waszych Gości!</p>

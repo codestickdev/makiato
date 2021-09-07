@@ -7,7 +7,11 @@
 <?php get_header() ?>
 
 <section class="sectionContent">
-    <div class="sectionBg contactBg"></div>
+    <div class="sectionBg contactBg">
+    <div class="logo">
+        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    </div>
+    </div>
     <div class="content">
         <div class="text__box">
             <h1>odezwij się</h1>

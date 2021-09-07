@@ -48,6 +48,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/* Font
+--------------------------------------------- */
+* {
+  font-family: 'sofia-pro', sans-serif;
+}
+
 /* Import Normalize
 --------------------------------------------- */
 * {
@@ -100,11 +106,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Import Pages
 --------------------------------------------- */
 .header_img {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/header-img.png");
+  background-image: url("/wp-content/themes/makiato/images/header-img.png");
   height: 655px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  margin-bottom: -12px;
 }
 
 .header_img .logo {
@@ -113,8 +120,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   justify-content: center;
 }
 
-.header_img .logo h1 {
-  color: #fff;
+.header_img .logo img {
   margin-top: 110px;
 }
 
@@ -141,6 +147,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 56px;
   color: #174045;
+  letter-spacing: 0.05em;
 }
 
 .header_img .custom-block .text__position .first__text p {
@@ -174,6 +181,29 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   left: 15%;
 }
 
+@media (max-width: 720px) {
+  .header_img .custom-block .border__positon {
+    width: calc(100% - 10%);
+    height: 33rem;
+    top: 5rem;
+    left: 5%;
+  }
+  .header_img .custom-block .text__position {
+    width: calc(100% - 10%);
+    height: 31rem;
+    margin-top: 0rem;
+    top: 21rem;
+    left: 5%;
+  }
+  .header_img .custom-block .text__position .first__text h1 {
+    font-size: 29px;
+  }
+  .header_img .custom-block .text__position .sec__text p {
+    width: auto;
+    padding: 0 25px;
+  }
+}
+
 .down_header {
   background-color: #174045;
   height: 921px;
@@ -202,6 +232,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 29px;
   font-weight: 600;
   line-height: 41px;
+  letter-spacing: 0.05em;
+}
+
+.down_header .customHeaderPadding .box .text p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
 }
 
 .down_header .customHeaderPadding .box .input {
@@ -213,6 +251,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   border: none;
   padding: 25px 38px;
   border-radius: 180px;
+  white-space: nowrap;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 @media (max-width: 845px) {
@@ -221,6 +264,30 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .down_header .customHeaderPadding .box .text h1 {
     width: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .down_header {
+    height: 700px;
+  }
+  .down_header .customHeaderPadding .box .text h1 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 549px) {
+  .down_header {
+    height: 850px;
+  }
+  .down_header .customHeaderPadding {
+    padding: 0 30px !important;
+  }
+}
+
+@media (max-width: 389px) {
+  .down_header {
+    height: 840px;
   }
 }
 
@@ -266,6 +333,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
+@media (max-width: 549px) {
+  .allInclusive {
+    padding: 126px 30px;
+  }
+}
+
 .ownBar {
   background-color: #174045;
   padding: 96px 0 374px 0;
@@ -308,6 +381,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
+@media (max-width: 549px) {
+  .ownBar {
+    padding: 96px 30px 374px 30px;
+  }
+}
+
 .chess {
   background-color: #E5E5E5;
   display: flex;
@@ -347,11 +426,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .chess .box .rightSide {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img1.png");
+  background-image: url("/wp-content/themes/makiato/images/chess-img1.png");
   width: 548px;
   height: 548px;
   background-repeat: no-repeat;
-  background-position: 100%;
+  background-position: center;
   margin-right: -8px;
 }
 
@@ -360,11 +439,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .chess .box:nth-of-type(2) .rightSide {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img2.png");
+  background-image: url("/wp-content/themes/makiato/images/chess-img2.png");
 }
 
 .chess .box:nth-of-type(3) .rightSide {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img3.png");
+  background-image: url("/wp-content/themes/makiato/images/chess-img3.png");
 }
 
 .chess .chess__special {
@@ -405,10 +484,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 549px) {
+  .chess {
+    padding: 0 30px;
+    height: 2870px;
+  }
   .chess .box .leftSide {
     width: 100%;
-    height: 450px;
+    height: auto;
   }
   .chess .box .rightSide {
     width: 100%;
@@ -417,23 +500,27 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .caffee {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/caffee.png");
+  background-image: url("/wp-content/themes/makiato/images/caffee.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 345px 0 397px 0;
   display: flex;
   justify-content: center;
+  margin: -12px 0;
 }
 
 .caffee .box {
   text-align: center;
+  width: 896px;
+}
+
+.caffee .box h1 {
   color: #F3D4BD;
   letter-spacing: 0.04em;
   line-height: 41px;
-  font-size: 21px;
+  font-size: 29px;
   font-weight: 600;
-  width: 896px;
 }
 
 @media (max-width: 845px) {
@@ -442,6 +529,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .caffee .box {
     width: auto !important;
+  }
+}
+
+@media (max-width: 549px) {
+  .caffee {
+    padding: 345px 30px 397px 30px;
   }
 }
 
@@ -455,7 +548,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .sec__chess .box:nth-of-type(1) .rightSide {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img4.png");
+  background-image: url("/wp-content/themes/makiato/images//chess-img4.png");
 }
 
 .sec__chess .chess__special {
@@ -463,7 +556,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .sec__chess .chess__special .rightSide {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img5.png");
+  background-image: url("/wp-content/themes/makiato/images/chess-img5.png");
 }
 
 .sec__chess .box:nth-of-type(3) {
@@ -471,7 +564,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .sec__chess .box:nth-of-type(3) .rightSide {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/chess-img6.png");
+  background-image: url("/wp-content/themes/makiato/images/chess-img6.png");
 }
 
 @media (max-width: 1124px) {
@@ -502,10 +595,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 549px) {
+  .sec__chess {
+    padding: 0 30px 90px 30px;
+  }
   .sec__chess .box .leftSide {
     width: 100%;
-    height: 450px;
+    height: auto;
   }
   .sec__chess .box .rightSide {
     width: 100%;
@@ -533,6 +629,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 29px;
   font-weight: 600;
   line-height: 41px;
+  color: #174045;
+  letter-spacing: 0.04em;
 }
 
 .howWorks .content {
@@ -586,6 +684,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   border: none;
   padding: 25px 38px;
   border-radius: 180px;
+  white-space: nowrap;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 @media (max-width: 1047px) {
@@ -616,15 +719,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 29px;
   font-weight: 600;
   line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 .knowUs .text p {
   padding-bottom: 72px;
-  color: #7D7878;
+  color: #4F4B4B;
   width: 765px;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0.04em;
 }
 
 .knowUs .slider img {
@@ -659,6 +764,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   border: none;
   padding: 25px 38px;
   border-radius: 180px;
+  white-space: nowrap;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  font-weight: 400;
+  color: #004F2E;
 }
 
 @media (max-width: 750px) {
@@ -667,6 +778,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .knowUs .text p {
     width: auto;
+  }
+}
+
+@media (max-width: 549px) {
+  .knowUs {
+    padding: 123px 30px 0 30px;
   }
 }
 
@@ -704,7 +821,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .testimoniale .content .box p {
-  color: #174045;
+  color: #004F2E;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
@@ -724,6 +841,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .testimoniale .content .box:nth-of-type(2) {
     margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 549px) {
+  .testimoniale {
+    padding: 69px 30px 88px 30px;
   }
 }
 
@@ -751,7 +874,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .ourShowcase .text {
-  color: #174045;
   text-align: center;
 }
 
@@ -761,6 +883,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 41px;
   letter-spacing: 0.04em;
+  color: #174045;
 }
 
 .ourShowcase .text p {
@@ -768,8 +891,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
-  color: #174045;
   letter-spacing: 0.02em;
+  color: #004F2E;
 }
 
 @media (max-width: 845px) {
@@ -781,11 +904,29 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
+@media (max-width: 549px) {
+  .ourShowcase {
+    padding: 63px 30px;
+  }
+}
+
 .sectionContent .sectionBg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  margin-bottom: -12px;
+}
+
+.sectionContent .sectionBg .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionContent .sectionBg .logo img {
+  margin-top: 90px;
 }
 
 .sectionContent .content {
@@ -851,9 +992,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .sectionContent .content .vice__master .rightSide {
   width: 548px;
   height: 572px;
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us2.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us2.png");
   background-repeat: no-repeat;
-  background-position: 100%;
+  background-position: center;
   margin-right: -8px;
 }
 
@@ -892,6 +1033,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.02em;
+  color: #004F2E;
 }
 
 .sectionContent .content .master-cv .rightSide {
@@ -980,9 +1122,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
-  color: #7D7878;
+  color: #4F4B4B;
   letter-spacing: 0.02em;
   width: 310px;
+}
+
+.sectionContent .content .aboutUsForm h2 {
+  font-size: 29px;
+  line-height: 41px;
+  letter-spacing: 0.04em;
 }
 
 @media (max-width: 1124px) {
@@ -1036,37 +1184,56 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 549px) {
+  .sectionContent .content {
+    padding: 71px 30px 115px 30px !important;
+  }
   .sectionContent .content .vice__master .leftSide {
     width: 100%;
-    height: 470px;
+    height: auto;
+    padding: 71px 30px;
   }
   .sectionContent .content .vice__master .rightSide {
     width: 100%;
     height: 470px;
   }
-  .sectionContent .content .master-cv {
-    padding: 0 50px;
-  }
   .sectionContent .content .master-cv .leftSide {
-    width: 400px;
-    height: 365px;
+    width: 100%;
+    height: 400px;
   }
   .sectionContent .content .master-cv .rightSide {
-    width: 400px;
-    height: 365px;
+    width: 100%;
+    height: 400px;
+  }
+  .sectionContent .content .aboutUs__info .box {
+    padding: 37px 0 43px 0;
+    width: 100%;
+  }
+  .sectionContent .content .aboutUs__info .box .description p {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sectionContent .content .vice__master .leftSide {
+    width: 100%;
+  }
+  .sectionContent .content .vice__master .rightSide {
+    width: 100%;
+    height: 470px;
   }
 }
 
 .sectionContent .sectionBg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sectionContent .blog {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/blog.png") !important;
+  background-image: url("/wp-content/themes/makiato/images/blog.png") !important;
 }
 
 .sectionContent .content {
@@ -1107,8 +1274,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 36px;
   font-size: 17px;
-  color: #353434;
+  color: #4F4B4B;
   padding: 64px 0;
+}
+
+@media (max-width: 768px) {
+  .blogInfo p {
+    padding: 65px 30px;
+  }
 }
 
 .posts {
@@ -1123,7 +1296,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .posts .content__post .box {
-  width: 538px;
+  width: calc(100% / 2 - 30px);
+  max-width: 538px;
   margin-bottom: 47px;
 }
 
@@ -1136,7 +1310,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .posts .content__post .box a .img img {
-  width: 538px;
+  width: 100%;
   height: 359px;
   margin-bottom: -3px;
 }
@@ -1177,6 +1351,21 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .posts .pagination {
   margin-top: 17px;
+}
+
+@media (max-width: 1250px) {
+  .posts .content__post .box a .img img {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .posts .content__post {
+    flex-direction: column;
+  }
+  .posts .content__post .box {
+    width: 100%;
+  }
 }
 
 .singlePost .singlePostBg {
@@ -1234,35 +1423,30 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .singlePost .singlePost__gallery {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   margin-top: 129px;
   margin-bottom: 98px;
 }
 
 .singlePost .singlePost__gallery .left {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/single-post-img1.png");
-  height: 494px;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin-right: 20px;
 }
 
-.singlePost .singlePost__gallery .left, .singlePost .singlePost__gallery .right {
-  height: 494px;
-  width: 538px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.singlePost .singlePost__gallery .right {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/single-post-img2.png");
+.singlePost .singlePost__gallery .left img, .singlePost .singlePost__gallery .right img {
+  height: auto;
+  max-height: 494px;
+  width: calc(100% - 30px);
+  max-width: 538px;
+  min-height: 365px;
+  min-width: 350px;
 }
 
 .blogPostImg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/blog-post-bg2.png");
+  background-image: url("/wp-content/themes/makiato/images/blog-post-bg2.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  margin: -12px 0;
 }
 
 .blogPost {
@@ -1292,15 +1476,54 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 29px;
 }
 
+@media (max-width: 768px) {
+  .singlePost .singlePostBg {
+    padding: 0 30px;
+  }
+  .singlePost .content {
+    padding: 0 30px;
+  }
+  .singlePost .singlePost__info .title h2 {
+    width: auto;
+    margin-top: 86px;
+  }
+  .singlePost .singlePost__info article {
+    margin-top: 61px;
+  }
+  .singlePost .singlePost__info article img {
+    width: 100%;
+    height: auto;
+  }
+  .singlePost .singlePost__info .text p {
+    width: auto;
+    margin-bottom: 96px;
+  }
+  .singlePost .singlePost__gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .singlePost .singlePost__gallery .left {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .blogPost .content {
+    padding: 67px 30px 55px 30px;
+  }
+  .blogPost .content .posts .content__post .box:nth-of-type(1) {
+    margin-bottom: 20px;
+  }
+}
+
 .sectionContent .sectionBg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sectionContent .caseStudy {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/case-study.png") !important;
+  background-image: url("/wp-content/themes/makiato/images/case-study.png") !important;
 }
 
 .sectionContent .content {
@@ -1325,15 +1548,54 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   width: 814px;
 }
 
+.sectionContent .content .casePosts {
+  margin-top: 74px;
+}
+
+.sectionContent .content .casePosts__content .box {
+  margin-bottom: 61px;
+}
+
+.sectionContent .content .casePosts__content .box a .img {
+  position: relative;
+  margin-bottom: 21px;
+}
+
+.sectionContent .content .casePosts__content .box a .img img {
+  width: 100%;
+  height: auto;
+}
+
+.sectionContent .content .casePosts__content .box a .img .title {
+  position: absolute;
+  bottom: 61px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.sectionContent .content .casePosts__content .box a .img .title p {
+  color: #F3D4BD;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  line-height: 49px;
+  font-size: 35px;
+}
+
+.sectionContent .content .casePosts__content .box__content {
+  width: 100%;
+  background-color: #fff;
+  padding: 69px 0 57px 84px;
+}
+
 .sectionContent .sectionBg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sectionContent .faq {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/faq.png") !important;
+  background-image: url("/wp-content/themes/makiato/images/faq.png") !important;
 }
 
 .sectionContent .content {
@@ -1377,11 +1639,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   box-shadow: -0.1rem 0 1.3rem rgba(0, 0, 0, 0.03);
   text-align: left;
   outline: none;
-  font-size: 1.7rem;
+  font-size: 17px;
   transition: 0.4s;
   font-size: 17px;
   font-weight: 400;
   line-height: 23px;
+  color: #353434;
+  letter-spacing: 0.02em;
 }
 
 .block-faq .question:first-of-type {
@@ -1417,6 +1681,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 400;
   line-height: 23px;
+  color: #353434;
 }
 
 .block-faq .answer p {
@@ -1428,15 +1693,24 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   border-bottom: .025rem solid #ececec;
 }
 
+@media (max-width: 549px) {
+  .block-faq {
+    padding: 0;
+  }
+  .block-faq .question {
+    height: auto;
+  }
+}
+
 .sectionContent .sectionBg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sectionContent .gallery {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/gallery.png") !important;
+  background-image: url("/wp-content/themes/makiato/images/gallery.png") !important;
 }
 
 .sectionContent .content {
@@ -1461,81 +1735,138 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   width: 814px;
 }
 
-.block-gallery {
-  margin: auto;
-  margin-top: 84px;
-}
-
-.block-gallery .images {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 2rem;
-  width: auto;
-  margin: auto;
-  padding: 0 10%;
-}
-
-@media all and (min-width: 1150px) {
+@media (max-width: 549px) {
   .block-gallery .images {
-    grid-template-columns: 32.8rem 32.8rem;
-    width: max-content;
     padding: 0;
+  }
+  .block-gallery .images .image a img {
+    width: 100%;
   }
 }
 
-.block-gallery .images .image img {
+.block-gallery {
+  max-width: 100%;
+  margin-top: 84px;
+}
+
+.block-gallery .responsive {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.block-gallery .responsive__box {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.block-gallery .responsive__box .img {
+  background-image: url("/wp-content/themes/makiato/images/single-post-img1.png");
   height: 359px;
-  width: 538px;
-  object-fit: cover;
-}
-
-.block-gallery .images .lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.95);
-}
-
-.block-gallery .images .lightbox:target {
-  display: block;
-}
-
-.block-gallery .images .lightbox span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-position: center;
+  width: calc(100% / 2 - 30px);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
-.block-gallery .pagination {
-  margin: auto;
-  text-align: center;
-  margin: 2.5rem 0 0 0;
-  line-height: 4.4rem;
+.block-gallery .responsive__box .img:nth-of-type(1), .block-gallery .responsive__box .img:nth-of-type(2) {
+  margin-bottom: 20px;
 }
 
-.block-gallery .pagination span {
-  padding: 0 .9rem .5rem .9rem;
-  cursor: context-menu;
+.block-gallery .responsive__box .img:nth-of-type(1), .block-gallery .responsive__box .img:nth-of-type(3) {
+  margin-right: 20px;
 }
 
-.block-gallery .pagination a {
-  text-decoration: none;
-  padding: .9rem;
+.block-gallery .responsive__box .img:nth-of-type(even) {
+  background-image: url("/wp-content/themes/makiato/images/chess-img4.png");
 }
 
-.block-gallery .pagination a:hover {
-  border-radius: 3rem;
+.block-gallery .slider .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 56px;
 }
 
-.btnCenter {
+.block-gallery .slider .pagination .preArrow {
+  margin-right: 58px;
+  position: relative;
+}
+
+.block-gallery .slider .pagination .preArrow button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+}
+
+.block-gallery .slider .pagination .preArrow:hover::before {
+  content: '';
+  background-color: #F3D4BD;
+  padding: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: -11px;
+  z-index: 1;
+}
+
+.block-gallery .slider .pagination .sliderDots .slick-dots {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.block-gallery .slider .pagination .sliderDots .slick-dots li {
+  margin-right: 21px;
+}
+
+.block-gallery .slider .pagination .sliderDots .slick-dots li button {
+  background: none;
+  border: none;
+  height: 23px;
+  width: 9px;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #174045;
+  cursor: pointer;
+  outline: none;
+}
+
+.block-gallery .slider .pagination .sliderDots .slick-dots .slick-active {
+  border-bottom: 2px solid #F3D4BD;
+}
+
+.block-gallery .slider .pagination .nextArrow {
+  margin-left: 58px;
+  position: relative;
+}
+
+.block-gallery .slider .pagination .nextArrow button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+  background-color: transparent;
+  transition: ease .8s;
+}
+
+.block-gallery .slider .pagination .nextArrow:hover::before {
+  content: '';
+  background-color: #F3D4BD;
+  padding: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  right: -11px;
+  z-index: 1;
+}
+
+.block-gallery .button {
   text-align: center;
   padding: 2rem 0 0rem 0;
   display: flex;
@@ -1543,11 +1874,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   justify-content: center;
 }
 
-.btnCenter a {
-  text-decoration: none;
-}
-
-.btnCenter .btn, .btnCenter .btn__light, .btnCenter .btn__dark, .btnCenter .btn__acf {
+.block-gallery .button button {
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  font-weight: 400;
   cursor: pointer;
   width: 227px;
   height: 67px;
@@ -1555,8 +1886,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   border: none;
   font-size: 1.7rem;
   text-decoration: none;
-  font-family: 'archia';
-  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -1569,19 +1898,122 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 400;
 }
 
-.btnCenter .btn__acf span {
-  padding-left: 1rem;
+@media (min-width: 769px) {
+  .block-gallery .sliderMobile {
+    display: none !important;
+  }
+  .block-gallery .responsiveMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .block-gallery .desktopSlider {
+    display: none;
+  }
+  .block-gallery .responsive {
+    display: none !important;
+  }
+  .block-gallery .sliderMobile .responsiveMobile {
+    display: block;
+  }
+  .block-gallery .sliderMobile .responsiveMobile__box .img {
+    background-image: url("/wp-content/themes/makiato/images/single-post-img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 359px;
+    width: 100%;
+  }
+  .block-gallery .sliderMobile .responsiveMobile__box:nth-of-type(even) .img {
+    background-image: url("/wp-content/themes/makiato/images/chess-img4.png");
+  }
+  .block-gallery .sliderMobile .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+  }
+  .block-gallery .sliderMobile .pagination .preArrowMobile {
+    margin-right: 58px;
+    position: relative;
+  }
+  .block-gallery .sliderMobile .pagination .preArrowMobile button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+  }
+  .block-gallery .sliderMobile .pagination .preArrowMobile:hover::before {
+    content: '';
+    background-color: #F3D4BD;
+    padding: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: -11px;
+    z-index: 1;
+  }
+  .block-gallery .sliderMobile .pagination .sliderDotsMobile .slick-dots {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  .block-gallery .sliderMobile .pagination .sliderDotsMobile .slick-dots li {
+    margin-right: 21px;
+  }
+  .block-gallery .sliderMobile .pagination .sliderDotsMobile .slick-dots li button {
+    background: none;
+    border: none;
+    height: 23px;
+    width: 9px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #174045;
+    cursor: pointer;
+    outline: none;
+  }
+  .block-gallery .sliderMobile .pagination .sliderDotsMobile .slick-dots .slick-active {
+    border-bottom: 2px solid #F3D4BD;
+  }
+  .block-gallery .sliderMobile .pagination .nextArrowMobile {
+    margin-left: 58px;
+    position: relative;
+  }
+  .block-gallery .sliderMobile .pagination .nextArrowMobile button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    background-color: transparent;
+    transition: ease .8s;
+  }
+  .block-gallery .sliderMobile .pagination .nextArrowMobile:hover::before {
+    content: '';
+    background-color: #F3D4BD;
+    padding: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    right: -11px;
+    z-index: 1;
+  }
 }
 
 .sectionContent .sectionBg {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png");
+  background-image: url("/wp-content/themes/makiato/images/about-us.png");
   height: 494px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sectionContent .offer {
-  background-image: url("http://localhost/Makiato/wp-content/uploads/2021/09/offer.png") !important;
+  background-image: url("/wp-content/themes/makiato/images/offer.png") !important;
 }
 
 .sectionContent .content {
@@ -1623,6 +2055,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   background-color: #fff;
   border-bottom: 1px solid #D9D9D9;
   cursor: pointer;
+  transition: ease .3s;
 }
 
 .sectionContent .content .offerContent .options .basic p, .sectionContent .content .offerContent .options .extra p {
@@ -1636,6 +2069,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .sectionContent .content .offerContent .options .basic {
   margin-right: 19px;
   margin-left: 10px;
+}
+
+.sectionContent .content .offerContent .options .active {
+  opacity: .6;
+}
+
+.sectionContent .content .offerContent .options .active p {
+  color: #4F4B4B;
 }
 
 .sectionContent .content .offerContent__box {
@@ -1721,7 +2162,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     padding: 10px;
   }
   .sectionContent .content .offerContent .options .basic {
-    margin-right: 0;
+    margin-right: 1px;
     margin-left: 0;
   }
   .sectionContent .content .offerContent__box {
@@ -1794,23 +2235,28 @@ header .menu {
   }
   header .menu .menuMobile__items li a {
     text-decoration: none;
-    color: #7D7878;
+    color: #4F4B4B;
     font-size: 17px;
     line-height: 24px;
     font-weight: 500;
+    outline: none;
+  }
+  header .menu .menuMobile__items li a:hover {
+    color: #27C55D;
   }
   header .menu .menuMobile--active {
     bottom: -12%;
+    top: 30%;
   }
   header .menu .menuMobile--active li a {
-    color: #7D7878;
+    color: #4F4B4B;
     font-size: 17px;
     line-height: 24px;
   }
   header .menu .menu__icon {
     position: fixed;
-    top: 60px;
-    right: 60px;
+    top: 25px;
+    right: 30px;
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -1932,18 +2378,47 @@ footer .socialMedia .media div:nth-last-of-type(1) {
 }
 
 @media (max-width: 483px) {
+  footer {
+    padding: 45px 30px;
+  }
   footer .socialMedia div {
     margin-right: 25px;
   }
 }
 
+@media (max-width: 409px) {
+  footer .socialMedia .media {
+    margin-top: 20px;
+  }
+}
+
+.contact .title {
+  display: flex;
+  justify-content: center;
+}
+
 .contact .title h2 {
-  font-size: 29px;
-  line-height: 41px;
+  font-size: 45px;
+  line-height: 56px;
   font-weight: 600;
   color: #174045;
-  width: 680px;
-  letter-spacing: 0.04em;
+  width: 517px;
+  letter-spacing: 0.05em;
+}
+
+.contact .description {
+  display: flex;
+  justify-content: center;
+}
+
+.contact .description p {
+  margin-top: 49px;
+  width: 641px;
+  color: #4F4B4B;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 17px;
 }
 
 .contact .contactForm {
@@ -1954,13 +2429,14 @@ footer .socialMedia .media div:nth-last-of-type(1) {
   width: 724px;
   height: 62px;
   padding: 20px;
-  color: #174045;
+  color: #353434;
   border: none;
   background-color: #fff;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 10px;
+  outline: none;
 }
 
 .contact .contactForm__box textarea {
@@ -1974,6 +2450,8 @@ footer .socialMedia .media div:nth-last-of-type(1) {
   height: 67px;
   border-radius: 180px;
   margin-bottom: 0;
+  color: #174045;
+  cursor: pointer;
 }
 
 @media (max-width: 948px) {
@@ -1981,6 +2459,9 @@ footer .socialMedia .media div:nth-last-of-type(1) {
     padding: 0 50px;
   }
   .contact .title h2 {
+    width: auto !important;
+  }
+  .contact .description p {
     width: auto !important;
   }
 }
@@ -2005,18 +2486,15 @@ footer .socialMedia .media div:nth-last-of-type(1) {
   }
 }
 
+@media (max-width: 549px) {
+  .contact {
+    padding: 0;
+  }
+  .contact .contactForm__box input, .contact .contactForm__box textarea {
+    width: 100%;
+  }
+}
+
 /* Import Partials
 --------------------------------------------- */
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat-Black.ttf") format("ttf"), url("/fonts/Montserrat-Bold.ttf") format("ttf"), url("/fonts/Montserrat-Regular.ttf") format("ttf");
-}
-
-* {
-  font-family: 'Archivo', sans-serif;
-}
-
-button {
-  white-space: nowrap;
-}
 /*# sourceMappingURL=style.css.map */

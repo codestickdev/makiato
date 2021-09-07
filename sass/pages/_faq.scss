@@ -5,13 +5,13 @@
 
 .sectionContent {
     .sectionBg {
-        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png');
+        background-image: url('/wp-content/themes/makiato/images/about-us.png');
         height: 494px;
         background-repeat: no-repeat;
         background-size: cover;
     }
     .faq {
-        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/faq.png') !important;
+        background-image: url('/wp-content/themes/makiato/images/faq.png') !important;
     }
     .content {
         display: flex;
@@ -55,11 +55,13 @@ margin-top: 61px;
     box-shadow: -.1rem 0 1.3rem rgba(0, 0, 0, 0.03);
     text-align: left;
     outline: none;
-    font-size: 1.7rem;
+    font-size: 17px;
     transition: 0.4s;
     font-size: 17px;
     font-weight: 400;
     line-height: 23px;
+    color :#353434;
+    letter-spacing: $normal-spacing;
   }
 
   .question:first-of-type {
@@ -100,7 +102,7 @@ margin-top: 61px;
     font-size: 17px;
     font-weight: 400;
     line-height: 23px;
-
+    color: $color-text;
     p {
       padding: 4rem 2rem 3rem 2rem;
       opacity: 0.5;
@@ -109,5 +111,14 @@ margin-top: 61px;
 
   .answer:last-of-type {
     border-bottom: .025rem solid #ececec;
+  }
+}
+
+@media(max-width: 549px) {
+  .block-faq {
+    padding: 0;
+    .question {
+      height: auto;
+    }
   }
 }

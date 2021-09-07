@@ -2,13 +2,28 @@
 
 .contact {
     .title {
+        display: flex;
+        justify-content: center;
         h2 {
-            font-size: $font-heading;
-            line-height: $line-height-heading;
+            font-size: $font-extra-heading;
+            line-height: $line-height-big;
             font-weight: $font-weight-medium2;
             color: $color-1;
-            width: 680px;
-            letter-spacing: $big-spacing;
+            width: 517px;
+            letter-spacing: $heading-spacing;
+        }
+    }
+    .description {
+        display: flex;
+        justify-content: center;
+        p {
+            margin-top: 49px;
+            width: 641px;
+            color: $color-text2;
+            line-height: $line-height-normal;
+            font-weight: $font-weight-light;
+            letter-spacing: $normal-spacing;
+            font-size: $font-desctiption;
         }
     }
     .contactForm {
@@ -18,13 +33,14 @@
                 width: 724px;
                 height: 62px;
                 padding: 20px;
-                color: $color-1;
+                color: $color-text;
                 border: none;
                 background-color: $white;
                 font-size: $font-desctiption;
                 font-weight: $font-weight-light;
                 line-height: $line-height-normal;
                 margin-bottom: 10px;
+                outline: none;
             }
             textarea {
                 height: 289px;
@@ -37,6 +53,8 @@
                     height: 67px;
                     border-radius: 180px;
                     margin-bottom: 0;
+                    color: $color-1;
+                    cursor: pointer;
                 }
             }
         }
@@ -49,6 +67,11 @@
         padding: 0 50px;
         .title {
             h2 {
+                width: auto !important;
+            }
+        }
+        .description {
+            p {
                 width: auto !important;
             }
         }
@@ -81,6 +104,19 @@
                 textarea {
                     width: 450px;
                     height: 260px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 549px) {
+    .contact {
+        padding: 0;
+        .contactForm {
+            &__box {
+                input,textarea {
+                    width: 100%;
                 }
             }
         }

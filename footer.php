@@ -20,10 +20,10 @@
 			<div class="email">biuro@makiato.pl</div>
 			<div class="media">
 				<div class="insta">
-					<img src=" <?php echo get_template_directory_uri();?>'./images/icons/insta.png'" alt="insta">
+					<img src="/wp-content/themes/makiato/images/icons/insta.png'" alt="insta">
 				</div>
 				<div class="fb">
-					<img src=" <?php echo get_template_directory_uri();?>'./images/icons/FB.png'" alt="facebook">
+					<img src="/wp-content/themes/makiato/images/icons/FB.png'" alt="facebook">
 				</div>
 			</div>
 		</div>

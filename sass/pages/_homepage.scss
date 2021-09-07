@@ -3,17 +3,17 @@
 
 //header
 .header_img {
-    background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/header-img.png');
+    background-image: url('/wp-content/themes/makiato/images/header-img.png');
     height: 655px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-bottom: -12px;
     .logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        h1 {
-            color: $white;
+        img {
             margin-top: 110px;
         }
     }
@@ -43,6 +43,7 @@
                     font-weight: $font-weight-medium2;
                     line-height: $line-height-big;
                     color: $color-1;
+                    letter-spacing: $heading-spacing;
                 }
                 p {
                     margin-bottom: 50px;
@@ -79,6 +80,38 @@
     }
 }
 
+
+@media(max-width: 720px) {
+    .header_img {
+        .custom-block {
+            .border__positon {
+                width: calc(100% - 10%);
+                height: 33rem;
+                top: 5rem;
+                left: 5%;
+            }
+            .text__position {
+                width: calc(100% - 10%);
+                height: 31rem;
+                margin-top: 0rem;
+                top: 21rem;
+                left: 5%;
+                .first__text {
+                    h1 {
+                        font-size: $font-heading;
+                    }
+                }
+                .sec__text {
+                    p {
+                        width: auto;
+                        padding: 0 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 //section after header
 .down_header {
     background-color: $color-1;
@@ -103,6 +136,13 @@
                     font-size: $font-heading;
                     font-weight: $font-weight-medium2;
                     line-height: $line-height-heading;
+                    letter-spacing: $heading-spacing;
+                }
+                p {
+                    font-size: $font-desctiption;
+                    font-weight: $font-weight-light;
+                    line-height: $line-height-normal;
+                    letter-spacing: $normal-spacing;
                 }
             }
             .input {
@@ -112,6 +152,11 @@
                     border: none;
                     padding: 25px 38px;
                     border-radius: 180px;
+                    white-space: nowrap;
+                    line-height: $line-height-small-p;
+                    letter-spacing: $normal-spacing;
+                    font-size: $font-desctiption;
+                    font-weight: $font-weight-light;
                 }
             }
         }
@@ -130,6 +175,37 @@
                 }
             }
         }
+    }
+}
+
+@media(max-width: 720px) {
+    .down_header {
+        height: 700px;
+        .customHeaderPadding {
+            .box {
+                .text {
+                    h1 {
+                        font-size: $font-heading;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 549px) {
+    .down_header {
+        // height: 760px;
+        height: 850px;
+        .customHeaderPadding {
+            padding: 0 30px !important;
+        }
+    }
+}
+
+@media(max-width: 389px) {
+    .down_header {
+        height: 840px;
     }
 }
 
@@ -166,6 +242,9 @@
 
     @media(max-width: 720px) {
         padding: 126px 100px;
+    }
+    @media(max-width: 549px) {
+        padding: 126px 30px;
     }
 }
 
@@ -210,6 +289,12 @@
     }
 }
 
+@media(max-width: 549px) {
+    .ownBar {
+        padding: 96px 30px 374px 30px;
+    }
+}
+
 
 //chess section
 .chess {
@@ -244,11 +329,11 @@
             }
         }
         .rightSide {
-            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img1.png');
+            background-image: url('/wp-content/themes/makiato/images/chess-img1.png');
             width: 548px;
             height: 548px;
             background-repeat: no-repeat;
-            background-position: 100%;
+            background-position: center;
             margin-right: -8px;
         }
         &:nth-of-type(1) {
@@ -256,12 +341,12 @@
         }
         &:nth-of-type(2) {
             .rightSide {
-                background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img2.png');
+                background-image: url('/wp-content/themes/makiato/images/chess-img2.png');
             }
         }
         &:nth-of-type(3) {    
             .rightSide {
-                background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img3.png');
+                background-image: url('/wp-content/themes/makiato/images/chess-img3.png');
             }
         }
     }
@@ -306,12 +391,14 @@
     }
 }
 
-@media(max-width: 520px) {
+@media(max-width: 549px) {
     .chess {
+        padding: 0 30px;
+        height: 2870px;
         .box {
             .leftSide {
                 width: 100%;
-                height: 450px;
+                height: auto;
             }
             .rightSide {
                 width: 100%;
@@ -324,21 +411,24 @@
 //cafee section
 
 .caffee {
-    background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/caffee.png');
+    background-image: url('/wp-content/themes/makiato/images/caffee.png');
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 345px 0 397px 0;
     display: flex;
     justify-content: center;
+    margin: -12px 0;
     .box {
         text-align: center;
-        color: $color-2;
-        letter-spacing: $big-spacing;
-        line-height: $line-height-heading;
-        font-size: $font-samll-heading;
-        font-weight: $font-weight-medium2;
         width: 896px;
+        h1 {
+            color: $color-2;
+            letter-spacing: $big-spacing;
+            line-height: $line-height-heading;
+            font-size: $font-heading;
+            font-weight: $font-weight-medium2;
+        }
     }
 }
 
@@ -351,6 +441,12 @@
     }
 }
 
+@media(max-width: 549px) {
+    .caffee {
+        padding: 345px 30px 397px 30px;
+    }
+}
+
 
 //sec__chess section
 
@@ -360,19 +456,19 @@
     .box:nth-of-type(1) {
         flex-direction: row-reverse;
         .rightSide {
-            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img4.png');
+            background-image: url('/wp-content/themes/makiato/images//chess-img4.png');
         }
     }
     .chess__special {
         flex-direction: row;
         .rightSide {
-            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img5.png');
+            background-image: url('/wp-content/themes/makiato/images/chess-img5.png');
         }
     }
     .box:nth-of-type(3) {
         flex-direction: row-reverse;
         .rightSide {
-            background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/chess-img6.png');
+            background-image: url('/wp-content/themes/makiato/images/chess-img6.png');
         }
     }
 }
@@ -411,12 +507,13 @@
     }
 }
 
-@media(max-width: 520px) {
+@media(max-width: 549px) {
     .sec__chess {
+        padding: 0 30px 90px 30px;
         .box {
             .leftSide {
                 width: 100%;
-                height: 450px;
+                height: auto;
             }
             .rightSide {
                 width: 100%;
@@ -444,6 +541,8 @@
             font-size: $font-heading;
             font-weight: $font-weight-medium2;
             line-height: $line-height-heading;
+            color: $color-1;
+            letter-spacing: $big-spacing;
         }
     }
     .content {
@@ -490,6 +589,11 @@
             border: none;
             padding: 25px 38px;
             border-radius: 180px;
+            white-space: nowrap;
+            line-height: $line-height-small-p;
+            letter-spacing: $normal-spacing;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
         }
     }
     @media (max-width: 1047px) {
@@ -519,14 +623,16 @@
             font-size: $font-heading;
             font-weight: $font-weight-medium2;
             line-height: $line-height-heading;
+            letter-spacing: $big-spacing;
         }
         p {
             padding-bottom: 72px;
-            color: $color-5;
+            color: $color-text2;
             width: 765px;
             font-size: $font-desctiption;
             font-weight: $font-weight-light;
             line-height: $line-height-normal;
+            letter-spacing: $big-spacing;
         }
     }
     .slider {
@@ -560,6 +666,12 @@
             border: none;
             padding: 25px 38px;
             border-radius: 180px;
+            white-space: nowrap;
+            line-height: $line-height-small-p;
+            letter-spacing: $normal-spacing;
+            font-size: $font-desctiption;
+            font-weight: $font-weight-light;
+            color: $color-heading;
         }
     }
 }
@@ -572,6 +684,12 @@
                 width: auto;
             }
         }
+    }
+}
+
+@media(max-width: 549px) {
+    .knowUs {
+        padding: 123px 30px 0 30px;
     }
 }
 
@@ -603,7 +721,7 @@
             width: 304px;
             text-align: center;
             p {
-                color: $color-1;
+                color: $color-heading;
                 font-size: $font-desctiption;
                 font-weight: $font-weight-light;
                 line-height: $line-height-normal;
@@ -624,6 +742,12 @@
                 }
             }
         }
+    }
+}
+
+@media(max-width: 549px) {
+    .testimoniale {
+        padding: 69px 30px 88px 30px;
     }
 }
 
@@ -653,7 +777,6 @@
     justify-content: center;
     flex-direction: column;
     .text {
-        color: $color-1;
         text-align: center;
         h1 {
             margin-bottom: 17px;
@@ -661,14 +784,15 @@
             font-weight: $font-weight-medium2;
             line-height: $line-height-heading;
             letter-spacing: $big-spacing;
+            color: $color-1;
         }
         p {
             width: 803px;
             font-size: $font-desctiption;
             font-weight: $font-weight-light;
             line-height: $line-height-normal;
-            color: $color-1;
             letter-spacing: $normal-spacing;
+            color: $color-heading;
         }
     }
     @media(max-width: 845px) {
@@ -676,5 +800,8 @@
         p {
             width: auto !important;
         }
+    }
+    @media(max-width: 549px) {
+        padding: 63px 30px;
     }
 }

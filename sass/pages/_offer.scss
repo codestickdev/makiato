@@ -5,13 +5,13 @@
 
 .sectionContent {
     .sectionBg {
-        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/about-us.png');
+        background-image: url('/wp-content/themes/makiato/images/about-us.png');
         height: 494px;
         background-repeat: no-repeat;
         background-size: cover;
     }
     .offer {
-        background-image: url('http://localhost/Makiato/wp-content/uploads/2021/09/offer.png') !important;
+        background-image: url('/wp-content/themes/makiato/images/offer.png') !important;
     }
     .content {
         display: flex;
@@ -46,6 +46,7 @@
                     background-color: $white;
                     border-bottom: 1px solid $color-border;
                     cursor: pointer;
+                    transition: ease .3s;
                 }
                 .basic p, .extra p {
                     color: $color-text;
@@ -57,6 +58,12 @@
                 .basic {
                     margin-right: 19px;
                     margin-left: 10px;
+                }
+                .active {
+                    opacity: .6;
+                    p {
+                        color: $color-text2;
+                    }
                 }
             }
             &__box {
@@ -162,7 +169,7 @@
                         padding: 10px;
                     }
                     .basic {
-                        margin-right: 0;
+                        margin-right: 1px;
                         margin-left: 0;
                     }
                 }

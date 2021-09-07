@@ -68,9 +68,20 @@ footer {
 
 @media(max-width: 483px) {
     footer {
+        padding: 45px 30px;
         .socialMedia {
             div {
                 margin-right: 25px;
+            }
+        }
+    }
+}
+
+@media(max-width: 409px) {
+    footer {
+        .socialMedia {
+            .media {
+                margin-top: 20px;
             }
         }
     }

@@ -12,7 +12,8 @@ get_header();
 
 	<section class="singlePost">
     	<div class="singlePostBg">
-			<h2>Mollis aliquam pellentesque maecenas viverra tincidunt scelerisque orci aliquam, suspendisse. </h2>
+			<h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero autem et doloremque deserunt, molestias pariatur repellat nam! Fugit incidunt illo totam, quia temporibus vitae nostrum esse nemo quaerat tempore alias.
+            </h2>
 		</div>
 		<div class="content">
 			<div class="singlePost__info">
@@ -47,12 +48,8 @@ get_header();
 				</div>
 			</div>
 			<div class="singlePost__gallery">
-				<div class="left">
-					<img src="<?php echo get_template_directory_uri() . '/images/single-post-img1.png'?>" alt="img-post-1">
-				</div>
-				<div class="right">
-					<img src="<?php echo get_template_directory_uri() . '/images/single-post-img2.png'?>" alt="img-post-2">
-				</div>
+				<div class="left"></div>
+				<div class="right"></div>
 			</div>
 			<div class="singlePost__info">
 				<div class="text">

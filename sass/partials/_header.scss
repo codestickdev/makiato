@@ -20,7 +20,7 @@ header {
                 display: none;
                 position: fixed;
                 bottom: -100%;
-                // top: 30%;
+                // top: -100%;
                 left: 50%;
                 transform: translate(-50%, -20%);
                 height: 80vh;
@@ -55,18 +55,23 @@ header {
                         border-bottom: 1px solid $color-border;
                         a {
                             text-decoration: none;
-                            color: $color-5;
+                            color: $color-text2;
                             font-size: $font-desctiption;
                             line-height: $line-height-normal;
                             font-weight: $font-weight-medium;
+                            outline: none;
+                            &:hover {
+                                color: $color-3;
+                            }
                         }
                     }
                 }
                 &--active {
                     bottom: -12%;
+                    top: 30%;
                     li {
                         a {
-                            color: $color-5;
+                            color: $color-text2;
                             font-size: $font-desctiption;
                             line-height: $line-height-normal;
                         }
@@ -75,8 +80,8 @@ header {
             }
             .menu__icon {
                 position: fixed;
-                top: 60px;
-                right: 60px;
+                top: 25px;
+                right: 30px;
                 height: 35px;
                 width: 35px;
                 border-radius: 50%;
