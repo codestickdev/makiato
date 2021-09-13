@@ -29,7 +29,7 @@
 								<div class="img">
 									<?php the_post_thumbnail(); ?>
                                     <div class="title">
-									    <p><?php the_title() ?></p>
+									    <p><?php the_field('caseStudy__msName'); ?> <span>i</span> <?php the_field('caseStudy__mrName'); ?></p>
 								    </div>
 								</div>
                                 <div class="box__content">

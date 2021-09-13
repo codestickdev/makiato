@@ -297,13 +297,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   text-align: center;
 }
 
-.down_header .customHeaderPadding .box .text h1 {
+.down_header .customHeaderPadding .box .text h1 p {
   margin-bottom: 16px;
   width: 852px;
   font-size: 29px;
   font-weight: 600;
   line-height: 41px;
   letter-spacing: 0.05em;
+}
+
+.down_header .customHeaderPadding .box .text h1 p strong {
+  font-weight: 600;
+  color: #F3D4BD;
 }
 
 .down_header .customHeaderPadding .box .text p {
@@ -364,7 +369,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   .down_header .customHeaderPadding .box .text {
     margin-bottom: 70px;
   }
-  .down_header .customHeaderPadding .box .text h1 {
+  .down_header .customHeaderPadding .box .text h1 p {
     font-size: 24px;
     line-height: 32px;
     width: auto;
@@ -399,7 +404,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   .down_header .customHeaderPadding .box .text {
     margin-bottom: 50px;
   }
-  .down_header .customHeaderPadding .box .text h1 {
+  .down_header .customHeaderPadding .box .text h1 p {
     font-size: 21px;
     width: auto;
     line-height: 26px;
@@ -2188,6 +2193,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .sectionContent .caseStudy {
+  background-image: url("/wp-content/themes/makiato/images/case-study.png");
+}
+
+.sectionContent .singleCaseBg {
   background-image: url("/wp-content/themes/makiato/images/case-study-bg.png");
 }
 
@@ -2213,9 +2222,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .sectionContent .content .casePosts__content .box .img .title {
   position: absolute;
-  bottom: 61px;
+  bottom: 14%;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 100%;
 }
 
 .sectionContent .content .casePosts__content .box .img .title p {
@@ -2224,6 +2234,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 49px;
   font-size: 35px;
+}
+
+.sectionContent .content .casePosts__content .box .img .title p span {
+  position: relative;
+  color: #2C2528;
+  z-index: 99;
+  margin: 0 40px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sectionContent .content .casePosts__content .box .img .title p span::before {
+  content: url("/wp-content/themes/makiato/images/icons/heart.svg");
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  transform: translate(-49%, -50%);
+  z-index: -1;
+}
+
+.sectionContent .content .casePosts__content .box .img .title p span::after {
+  content: url("/wp-content/themes/makiato/images/icons/smallHeart.svg");
+  position: absolute;
+  top: -25px;
+  left: -40px;
+  z-index: -1;
 }
 
 .sectionContent .content .casePosts__content .box__content {
@@ -2434,9 +2472,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .sectionContent .content .singleCase__info .box .img .title {
   position: absolute;
-  bottom: 61px;
+  bottom: 14%;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 100%;
 }
 
 .sectionContent .content .singleCase__info .box .img .title p {
@@ -2445,6 +2484,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 49px;
   font-size: 35px;
+}
+
+.sectionContent .content .singleCase__info .box .img .title p span {
+  position: relative;
+  color: #2C2528;
+  z-index: 99;
+  margin: 0 40px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sectionContent .content .singleCase__info .box .img .title p span::before {
+  content: url("/wp-content/themes/makiato/images/icons/heart.svg");
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  transform: translate(-49%, -50%);
+  z-index: -1;
+}
+
+.sectionContent .content .singleCase__info .box .img .title p span::after {
+  content: url("/wp-content/themes/makiato/images/icons/smallHeart.svg");
+  position: absolute;
+  top: -25px;
+  left: -40px;
+  z-index: -1;
 }
 
 .sectionContent .content .singleCase__info .box__content {
@@ -2551,6 +2618,24 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   .sectionContent .content .casePosts__content .box .img .title p, .sectionContent .content .singleCase__info__content .box .img .title p {
     font-size: 21px;
     line-height: 26px;
+  }
+  .sectionContent .content .casePosts__content .box .img .title p span, .sectionContent .content .singleCase__info__content .box .img .title p span {
+    line-height: 24px;
+    font-size: 19px;
+    margin: 0 30px;
+  }
+  .sectionContent .content .casePosts__content .box .img .title p span:before, .sectionContent .content .singleCase__info__content .box .img .title p span:before {
+    content: "";
+    display: block;
+    height: 125px;
+    width: 48px;
+    background-size: 47px 114px;
+    background-image: url("/wp-content/themes/makiato/images/icons/heart.svg");
+    background-repeat: no-repeat;
+  }
+  .sectionContent .content .casePosts__content .box .img .title p span::after, .sectionContent .content .singleCase__info__content .box .img .title p span::after {
+    top: -18px;
+    left: -37px;
   }
   .sectionContent .content .casePosts__content .box__content, .sectionContent .content .singleCase__info__content .box__content {
     display: flex;

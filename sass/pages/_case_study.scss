@@ -5,9 +5,11 @@
 
 .sectionContent {
     .caseStudy {
+        background-image: url('/wp-content/themes/makiato/images/case-study.png');
+    }
+    .singleCaseBg {
         background-image: url('/wp-content/themes/makiato/images/case-study-bg.png');
     }
-
     .content {
 
         //case study page
@@ -31,9 +33,10 @@
 
                         .title {
                             position: absolute;
-                            bottom: 61px;
+                            bottom: 14%;
                             left: 50%;
                             transform: translate(-50%, 0);
+                            width: 100%;
 
                             p {
                                 color: $color-2;
@@ -41,6 +44,31 @@
                                 font-weight: $font-weight-medium2;
                                 line-height: $line-height-heading4;
                                 font-size: $font-case-box;
+                                span {
+                                    position: relative;
+                                    color: $color-heading-case;
+                                    z-index: 99;
+                                    margin: 0 40px;
+                                    letter-spacing: $normal-spacing;
+                                    line-height: $line-height-heading5;
+                                    font-size: $font-mobile-header;
+                                    font-weight: 800;
+                                    &::before {
+                                        content: url('/wp-content/themes/makiato/images/icons/heart.svg');
+                                        position: absolute;
+                                        top: 23px;
+                                        left: 50%;
+                                        transform: translate(-49%, -50%);
+                                        z-index: -1;
+                                    }
+                                    &::after {
+                                        content: url('/wp-content/themes/makiato/images/icons/smallHeart.svg');
+                                        position: absolute;
+                                        top: -25px;
+                                        left: -40px;
+                                        z-index: -1;
+                                    }
+                                }
                             }
                         }
                     }
@@ -266,12 +294,12 @@
                         width: 100%;
                         height: auto;
                     }
-
                     .title {
                         position: absolute;
-                        bottom: 61px;
+                        bottom: 14%;
                         left: 50%;
                         transform: translate(-50%, 0);
+                        width: 100%;
 
                         p {
                             color: $color-2;
@@ -279,6 +307,31 @@
                             font-weight: $font-weight-medium2;
                             line-height: $line-height-heading4;
                             font-size: $font-case-box;
+                            span {
+                                position: relative;
+                                color: $color-heading-case;
+                                z-index: 99;
+                                margin: 0 40px;
+                                letter-spacing: $normal-spacing;
+                                line-height: $line-height-heading5;
+                                font-size: $font-mobile-header;
+                                font-weight: 800;
+                                &::before {
+                                    content: url('/wp-content/themes/makiato/images/icons/heart.svg');
+                                    position: absolute;
+                                    top: 23px;
+                                    left: 50%;
+                                    transform: translate(-49%, -50%);
+                                    z-index: -1;
+                                }
+                                &::after {
+                                    content: url('/wp-content/themes/makiato/images/icons/smallHeart.svg');
+                                    position: absolute;
+                                    top: -25px;
+                                    left: -40px;
+                                    z-index: -1;
+                                }
+                            }
                         }
                     }
                 }
@@ -429,6 +482,24 @@
                                 p {
                                     font-size: $font-samll-heading;
                                     line-height: $line-height-case;
+                                    span {
+                                        line-height: 24px;
+                                        font-size: 19px;
+                                        margin: 0 30px;
+                                        &:before {
+                                            content: "";
+                                            display: block;
+                                            height: 125px;
+                                            width: 48px;
+                                            background-size: 47px 114px;
+                                            background-image: url("/wp-content/themes/makiato/images/icons/heart.svg");
+                                            background-repeat: no-repeat;
+                                        }
+                                        &::after {
+                                            top: -18px;
+                                            left: -37px;
+                                        }
+                                    }
                                 }
                             }
                         }

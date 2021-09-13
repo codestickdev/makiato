@@ -234,12 +234,18 @@
                 text-align: center;
 
                 h1 {
-                    margin-bottom: 16px;
-                    width: 852px;
-                    font-size: $font-heading;
-                    font-weight: $font-weight-medium2;
-                    line-height: $line-height-heading;
-                    letter-spacing: $heading-spacing;
+                    p {
+                        margin-bottom: 16px;
+                        width: 852px;
+                        font-size: $font-heading;
+                        font-weight: $font-weight-medium2;
+                        line-height: $line-height-heading;
+                        letter-spacing: $heading-spacing;
+                        strong {
+                            font-weight: $font-weight-medium2;
+                            color: $color-2;
+                        }
+                    }
                 }
 
                 p {
@@ -303,10 +309,12 @@
                     margin-bottom: 70px;
 
                     h1 {
-                        font-size: $font-mobile-header;
-                        line-height: $line-height-heading5;
-                        width: auto;
-                        max-width: 800px;
+                        p {
+                            font-size: $font-mobile-header;
+                            line-height: $line-height-heading5;
+                            width: auto;
+                            max-width: 800px;
+                        }
                     }
 
                     p {
@@ -347,10 +355,12 @@
                     margin-bottom: 50px;
 
                     h1 {
-                        font-size: $font-samll-heading;
-                        width: auto;
-                        line-height: $line-height-case;
-                        margin-bottom: 25px;
+                        p {
+                            font-size: $font-samll-heading;
+                            width: auto;
+                            line-height: $line-height-case;
+                            margin-bottom: 25px;
+                        }
                     }
 
                     p {

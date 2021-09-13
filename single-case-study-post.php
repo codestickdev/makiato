@@ -10,7 +10,7 @@
 get_header();
 ?>
 <section class="sectionContent caseContent">
-    <div class="sectionBg caseStudy">
+    <div class="sectionBg caseStudy singleCaseBg">
         <div class="logo">
         <a href="/">
             <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
@@ -27,15 +27,12 @@ get_header();
                 <div class="singleCase__info">
                     <div class="singleCase__info__content">
                         <div class="box">
-                            <div class="img">
-                            <?php
-                                while ( have_posts() ) :
-                                    the_post();
-                                    get_template_part( 'template-parts/content', get_post_type() );
-
-                                endwhile;
-                                ?>
+                        <div class="img">
+                            <?php the_post_thumbnail(); ?>
+                            <div class="title">
+                                <p><?php the_field('caseStudy__msName'); ?> <span>i</span> <?php the_field('caseStudy__mrName'); ?></p>
                             </div>
+                        </div>
                             <div class="box__content">
                                 <div class="data">
                                     <div>

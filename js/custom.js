@@ -6,7 +6,20 @@ $(document).ready(function() {
         $('.menuMobile').toggleClass('menuMobile--active');
         $('body').toggleClass('menuScroll');
     });
-})
+});
+
+
+/* menu touch */
+
+// $(document).ready(function() {
+//     $(document).mouseup(function(e){
+//         var modal = $(".menuMobile--active");
+//         if (!modal.is(e.target) && modal.has(e.target).length === 0){
+//             modal.parent().removeClass('menuMobile--active');
+//             $(modal).removeClass('menuMobile--active');
+//         }
+//     });
+// });
 
 /* Change offer */
 
@@ -38,36 +51,7 @@ $(document).ready(function(){
     }
 });
 
-
-
-//Newsletter
-$(document).ready(function() {
-
-    var newsletter_btn = $("#newsletter_btn");
-    var ajaxurl = 'http://customwebsite.local/wp-admin/admin-ajax.php';
-
-    $("#newsletter").submit(function(event) {
-        event.preventDefault();    
-    
-        $.ajax({
-            url: ajaxurl,
-            type: 'POST',
-            data: {
-                'action':'get_newsletter_email',
-                'userMail': newsletter_btn.val()
-            },
-            success: function(data) {
-                console.log(data);
-            },  
-            error: function(error){
-                console.log(error);
-            }
-        });
-    });
-});
-
-
-//Contact form
+/* Contact form */
 $(document).ready(function() {
 
     var ajaxurl = '/wp-admin/admin-ajax.php';
@@ -105,4 +89,4 @@ function insertAlert(message, type){
     $('.contactForm .formAlert').on('click', function(){
         $(this).slideUp();
     });
-}
+};
