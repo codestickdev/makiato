@@ -33,55 +33,94 @@ footer {
         flex-wrap: wrap;
         div {
             margin-right: 52px;
-            color: $white;
-            cursor: pointer;
-            letter-spacing: $normal-spacing;
-            font-size: $font-desctiption;
-            line-height: $line-height-normal;
             &:nth-last-of-type(1){
                 margin-right: 0;
+            }
+            a {
+                color: $white;
+                cursor: pointer;
+                letter-spacing: $normal-spacing;
+                font-size: $font-desctiption;
+                line-height: $line-height-normal;
+                text-decoration: none;
+                transition: ease .3s;
+                outline: none;
+                &:hover {
+                    opacity: .8;
+                    transition: ease .3s;
+                }
+                img {
+                    margin-right: 10px;
+                    margin-bottom: -5px;
+                }
             }
         }
         .media {
             display: flex;
             align-items: center;
             div {
+                transition: ease .3s;
+                &:hover {
+                    opacity: .8;
+                    transition: ease .3s;
+                }
                 margin-right: 18px;
                 &:nth-last-of-type(1){
                     margin-right: 0;
                 }
             }
+            .insta, .fb {
+                cursor: pointer;
+                outline: none;
+            }
         }  
     }
 }
 
-@media(max-width: 845px) {
+@media(max-width: 768px) {
     footer {
-        padding: 45px 50px;
+        padding: 40px 20px;
+        .text {
+            h1 {
+                line-height: $line-height-normal;
+                font-size: $font-samll-heading;
+            }
+            p {
+                font-size: $font-mobile-p;
+                line-height: $line-height-normal;
+                width: auto;
+            }
+        }
+        .socialMedia {
+            .tel, .email {
+                font-size: $font-mobile-p;
+                line-height: $line-height-normal;
+                img {
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 476px) {
+    footer {
         .text {
             p {
-                width: auto !important;
+                margin-bottom: 25px;
             }
         }
-    }
-}
-
-@media(max-width: 483px) {
-    footer {
-        padding: 45px 30px;
         .socialMedia {
+            flex-direction: column;
             div {
-                margin-right: 25px;
+                margin-right: 0;
+                margin-bottom: 5px;
             }
-        }
-    }
-}
-
-@media(max-width: 409px) {
-    footer {
-        .socialMedia {
+            .tel, .email {
+                margin-right: 0;
+            }
             .media {
-                margin-top: 20px;
+                margin-top: 10px;
             }
         }
     }

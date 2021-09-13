@@ -6,10 +6,12 @@
 
 <?php get_header() ?>
 
-<section class="sectionContent">
+<section class="sectionContent customGallery">
     <div class="sectionBg gallery">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
     </div>
     </div>
     <div class="content">
@@ -21,35 +23,18 @@
         <div class="images">
             <div class="slider desktopSlider">
                 <div class="responsive">
-                    <div class="responsive__box">
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsive__box">
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsive__box">
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsive__box">
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsive__box">
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                    </div>
+                    <?php 
+                        $images = get_field('block-gallery');
+                        if( $images ): ?>
+                            <!-- <div class="responsive__box"> -->
+                                <?php foreach( $images as $image ): ?>
+                                    <div class="responsive__box">
+                                        <div class="img" style="background-image: url('<?php echo $image; ?>')"></div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <!-- </div> -->
+                        <?php endif; 
+                    ?>
                 </div>
                 <div class="pagination">
                         <div class="preArrow">
@@ -67,21 +52,16 @@
             </div>
             <div class="slider sliderMobile">
                 <div class="images responsiveMobile">
-                    <div class="responsiveMobile__box">
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsiveMobile__box">
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsiveMobile__box">
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsiveMobile__box">
-                        <div class="img"></div>
-                    </div>
-                    <div class="responsiveMobile__box">
-                        <div class="img"></div>
-                    </div>
+                        <?php 
+                        $images = get_field('block-gallery');
+                        if( $images ): ?>
+                                <?php foreach( $images as $image ): ?>
+                                    <div class="responsiveMobile__box">
+                                        <div class="img" style="background-image: url('<?php echo $image; ?>')"></div>
+                                    </div>
+                                <?php endforeach; ?>
+                        <?php endif; 
+                    ?>
                 </div>
                 <div class="pagination">
                     <div class="preArrowMobile">
@@ -96,15 +76,12 @@
                         </button>
                     </div>
                 </div>
-            </div>
         </div>
-
-
-
-        <div class="button">
-            <button class="btn">
-                <?php echo _e('Zobacz ofertę >', 'makiato'); ?>
-            </button>
+        <div class="input">
+            <a href="<?php the_field('gallery__button')['url']; ?>">
+                Zobacz ofertę
+                <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+            </a>
         </div>
     </div>
 </section>

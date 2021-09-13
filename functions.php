@@ -196,3 +196,135 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//pagination blog/case-study
+
+function pagination() {
+ 
+	$prevArrow =  "<img src='/wp-content/themes/makiato/images/icons/left-arrow.svg'>";
+	$nextArrow =  "<img src='/wp-content/themes/makiato/images/icons/right-arrow.svg'>";
+
+    if( is_singular() )
+        return;
+ 
+    global $wp_query;
+ 
+    /** Stop execution if there's only 1 page */
+    if( $wp_query->max_num_pages <= 1 )
+        return;
+ 
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query->max_num_pages );
+ 
+    /** Add current page to the array */
+    if ( $paged >= 1 )
+        $links[] = $paged;
+ 
+    /** Add the pages around the current page to the array */
+    if ( $paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
+ 
+    if ( ( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
+ 
+    echo '<div class="navigation"><ul>' . "\n";
+ 
+    if ( get_previous_posts_link() )
+        printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link($prevArrow) );
+ 
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="active"' : '';
+ 
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+ 
+        if ( ! in_array( 2, $links ) )
+            echo '<li>…</li>';
+    }
+ 
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+    }
+ 
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) )
+            echo '<li>…</li>' . "\n";
+ 
+        $class = $paged == $max ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+    }
+ 
+    if ( get_next_posts_link() )
+        printf( '<li class="next">%s</li>' . "\n", get_next_posts_link($nextArrow) );
+ 
+    echo '</ul></div>' . "\n";
+ 
+}
+
+
+/* acf sierotki */
+
+function acf_orphans($value, $post_id, $field) {
+	if ( class_exists( 'iworks_orphan' ) ) {
+	  $orphan = new \iworks_orphan();
+	  $value = $orphan->replace( $value );
+	}
+	return $value;
+  }
+  add_filter('acf/format_value/type=textarea', 'acf_orphans', 10, 3);
+  add_filter('acf/format_value/type=wysiwyg', 'acf_orphans', 10, 3);
+
+/* GLobal header and footer */
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Opcje',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
+
+
+/*
+ *	Contact form
+ */
+
+add_action('wp_ajax_contact_form', 'contact_form');
+
+function contact_form() {
+	if ( isset($_POST) ) { 
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$content = $_POST['content'];
+	}
+		$to = get_option('admin_email');
+		$subject = 'Makiato Mail';
+		$message = 'Cześć,<br/><br/>Ponizej znajduje sie tresc maila:<br/><br/>';
+		$message .= 'Imie: ' . $name . '<br/>' . 'Email: ' . $email . '<br/>'. 'Treść: ' . $content . '<br/>';
+		$message .= "Dziękujemy!";
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+
+		wp_mail( $to, $subject, $message, $headers);
+		
+	wp_die();
+}

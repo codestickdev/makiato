@@ -16,8 +16,8 @@
             align-items: center;
             justify-content: center;
             img {
-                // margin-top: 110px;
-                margin-top: 90px;
+                margin-top: 92px;
+                cursor: pointer;
             }
         }
     }
@@ -28,7 +28,7 @@
         flex-direction: column;
         text-align: center;
         background-color: $color-bg;
-        padding: 71px 172px 115px 172px;
+        padding: 72px 20px 9px;
         .text__box {
             h1 {
                 margin-bottom: 46px;
@@ -93,7 +93,6 @@
                 color: $color-1;
                 display: flex;
                 align-items: flex-start;
-                justify-content: center;
                 flex-direction: column;
                 padding: 61px 27px 91px 27px;
                 h2 {
@@ -122,11 +121,14 @@
                 color: $white;
                 display: flex;
                 align-items: flex-start;
-                justify-content: center;
                 flex-direction: column;
                 padding: 61px 27px 91px 27px;
                 h2 {
                     margin-bottom: 38px;
+                    font-size: $font-samll-heading;
+                    font-weight: $font-weight-medium;
+                    line-height: $line-height-heading2;
+                    letter-spacing: $heading-spacing;
                 }
                 ul {
                     text-align: left;
@@ -136,6 +138,7 @@
                         font-weight: $font-weight-medium;
                         line-height: $line-height-normal;
                         letter-spacing: $normal-spacing;
+                        color: $white;
                     }
                 }
             }
@@ -207,6 +210,18 @@
     }
 }
 
+@media(max-width: 1199px) {
+    .sectionContent {
+        .sectionBg {
+            .logo {
+                img {
+                    margin-top: 28px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1124px) {
     .sectionContent {
         .content {
@@ -246,7 +261,7 @@
 @media(max-width: 948px) {
     .sectionContent {
         .content {
-            padding: 71px 50px 115px 50px !important;
+            padding: 71px 50px 115px 50px;
             .text__box {
                 p {
                     width: auto !important;
@@ -276,58 +291,106 @@
     }
 }
 
-@media(max-width: 549px) {
+@media(max-width: 768px) {
     .sectionContent {
+        .sectionBg {
+            height: 450px;
+        }
         .content {
-            padding: 71px 30px 115px 30px !important;
+            padding: 30px 20px 40px;
+            .text__box {
+                h1 {
+                    font-size: $font-samll-heading;
+                    line-height: $line-height-case;
+                    margin-bottom: 25px;
+                }
+                p {
+                    font-size: $font-mobile-p;
+                    line-height: $line-height-mobile-p;
+                }
+            }
             .vice__master {
-                .leftSide {
+                 margin-top: 50px;
+                .leftSide, .rightSide {
                     width: 100%;
+                }
+                .leftSide {
+                    padding: 30px 20px 40px;
                     height: auto;
-                    padding: 71px 30px;
+                    h2 {
+                        font-size: $font-samll-heading;
+                        line-height: $line-height-case;
+                        margin-bottom: 25px;
+                    }
+                    p {
+                        font-size: $font-mobile-p;
+                        line-height: $line-height-mobile-p;
+                    }
                 }
                 .rightSide {
-                    width: 100%;
-                    height: 470px;
+                    height: 350px;
+                    background-position: center;
+                    background-size: cover;
                 }
             }
             .master-cv {
-                .leftSide {
+                width: 100%;
+                .leftSide, .rightSide {
+                    padding: 30px 20px 40px;
                     width: 100%;
-                    height: 400px;
-                }
-                .rightSide {
-                    width: 100%;
-                    height: 400px;
-                }
-            }
-            .aboutUs__info {
-                .box {
-                    padding: 37px 0 43px 0;
-                    width: 100%;
-                    .description {
-                        p {
-                            width: 100%;
-                            padding: 0 20px;
+                    height: auto;
+                    h2 {
+                        font-size: $font-samll-heading;
+                        line-height: $line-height-case;
+                        margin-bottom: 25px;
+                    }
+                    ul {
+                        li {
+                            font-size: $font-mobile-p;
+                            line-height: $line-height-mobile-p;
                         }
                     }
                 }
             }
-        }
-    }
-}
-
-
-@media(max-width: 520px) {
-    .sectionContent {
-        .content {
-            .vice__master {
-                .leftSide {
-                    width: 100%;
+            .inspiration {
+                margin-bottom: 50px;
+                h1 {
+                    font-size: $font-samll-heading;
+                    line-height: $line-height-case;
+                    margin-bottom: 25px;
                 }
-                .rightSide {
+                p {
+                    font-size: $font-mobile-p;
+                    line-height: $line-height-mobile-p;
+                }
+            }
+            .aboutUs__info {
+                width: 100%;
+                margin-bottom: 50px;
+                .box {
                     width: 100%;
-                    height: 470px;
+                    padding: 20px;
+                    height: auto;
+                    .title {
+                        p {
+                            font-size: $font-mobile-p;
+                            line-height: $line-height-mobile-p;
+                            width: auto;
+                        }
+                    }
+                    .description {
+                        p {
+                            font-size: $font-mobile-p;
+                            line-height: $line-height-mobile-p;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .aboutUsForm {
+                h2 {
+                    font-size: $font-samll-heading;
+                    line-height: $line-height-case;
                 }
             }
         }

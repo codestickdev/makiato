@@ -9,132 +9,75 @@
 <section class="sectionContent">
     <div class="sectionBg">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
     </div>
     </div>
     <div class="content">
         <div class="text__box">
-            <h1>barista na wesele</h1>
-            <p>Zakochaliśmy się w kawie ze wzajemnością.
-                … a naszym uczuciem dzielimy się z Parami Młodymi, 
-                które pragną by ich przyjęcie weselne było wyjątkowe! </p>
+            <h1><?php the_field('aboutUs__title'); ?></h1>
+            <p><?php the_field('aboutUs__description'); ?></p>
         </div>
         <div class="vice__master">
             <div class="leftSide">
-                <h2>Vice-mistrz świata Coffee in Good Spirits. jedyny taki barista na wesele</h2>
-                <p>… a gdyby tak Wasi Goście mogli napić się kawy przyrządzonej przez wielokrotnego mistrza Polski i vicemistrza świata w prestiżowym konkursie Coffee in Good Spirits? 
-                    Oprócz doskonałego smaku serwuję Gościom pokaz niezwykłych umiejętności, dobry humor oraz mistrzowskie wskazówki!
-                </p>
+                <h2><?php the_field('aboutUs__master__title'); ?></h2>
+                <p><?php the_field('aboutUs__master__description');?></p>
             </div>
-            <div class="rightSide">
-
-            </div>
+            <div class="rightSide" style="background-image: url('<?php the_field('aboutUs__master__img')['url']; ?>')"></div>
         </div>
-        <div class="master-cv">
+        <div class="master-cv">        
             <div class="leftSide">
-                <h2>mistrzowskie cv</h2>
+                <h2><?php the_field('aboutUs__cv__title'); ?></h2>
                 <ul>
-                    <li>Mistrz Polski Brewers Cup 2014</li>
-                    <li>Vice Mistrz Swiata Coffee in Good Spirits, 2013</li>
-                    <li>Mistrz Polski Coffee in Good Spirits, 2013</li>
-                    <li>Vice Mistrz Polski Aeropress, 2013</li>
-                    <li>II Vice Mistrz Polski Cup Tasters, 2013</li>
-                    <li>Mistrz Polski Brewers Cup, 2012</li>
+                    <?php if( have_rows('aboutUs__cv__description') ): ?>
+                        <?php while( have_rows('aboutUs__cv__description') ): the_row(); 
+                            $item = get_sub_field('aboutUs__cv__description__item');
+                        ?>
+                            <li><?php echo $item ?></li>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </div>
             <div class="rightSide">
-                <h2>mistrzowskie cv</h2>
+                <h2><?php the_field('aboutUs__coffeePassion__title'); ?></h2>
                 <ul>
-                    <li>Mistrz Polski Brewers Cup 2014</li>
-                    <li>Vice Mistrz Swiata Coffee in Good Spirits, 2013</li>
-                    <li>Mistrz Polski Coffee in Good Spirits, 2013</li>
-                    <li>Vice Mistrz Polski Aeropress, 2013</li>
-                    <li>II Vice Mistrz Polski Cup Tasters, 2013</li>
-                    <li>Mistrz Polski Brewers Cup, 2012</li>
+                    <?php if( have_rows('aboutUs__coffeePassion__description') ): ?>
+                        <?php while( have_rows('aboutUs__coffeePassion__description') ): the_row(); 
+                            $item = get_sub_field('aboutUs__coffeePassion__description__item');
+                        ?>
+                            <li><?php echo $item ?></li>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
-            </div>
+            </div>            
         </div>
         <div class="inspiration">
-            <h1>czas na łyk inspiracji</h1>
-            <p>Wokół kawy kręci się moje życie, dlatego dbam o to, żeby każda filiżanka kawy na przyjęciu weselnym była perfekcyjnie zaserwowana!</p>
+            <h1><?php the_field('aboutUs__inspiration__title');?></h1>
+            <p><?php the_field('aboutUs__inspiration__description'); ?></p>
         </div>
         <div class="aboutUs__info">
-            <div class="box">
-                <div class="title">
-                    <p>mistrzostwo</p>
-                </div>
-                <div class="description">
-                    <p>Nasz główny barista to Wicemistrz Świata!</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>zaangażowanie</p>
-                </div>
-                <div class="description">
-                    <p>Każde wesele jest dla nas najważniejsze!</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>kompleksowość</p>
-                </div>
-                <div class="description">
-                    <p>Przejmujemy wszystkie obowiązki!</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>wybór stylu</p>
-                </div>
-                <div class="description">
-                    <p>Dobierz bar i dress code baristów do klimatu swojego wesela! </p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>jakość / wyborny smak</p>
-                </div>
-                <div class="description">
-                    <p>Pracujemy z wysokiej jakości ziarnami oraz sprzętem!</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>eko</p>
-                </div>
-                <div class="description">
-                    <p>Dbamy o planetę!</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>w całej Polsce</p>
-                </div>
-                <div class="description">
-                    <p>Nie ma dla nas zakamarków do których nie dotrzemy	</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>elastyczność</p>
-                </div>
-                <div class="description">
-                    <p>Jesteśmy otwarci na wszelkie życzenia Par Młodych! </p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title">
-                    <p>piękno</p>
-                </div>
-                <div class="description">
-                    <p>Weselna kawa nie może obyć wzorków z mleka!</p>
-                </div>
-            </div>
+            
+					<?php if( have_rows('aboutUs__inspiration__box') ): ?>
+						<?php while( have_rows('aboutUs__inspiration__box') ) : the_row();
+							$itemTitle = get_sub_field('aboutUs__inspiration__box__title');
+							$itemDescription = get_sub_field('aboutUs__inspiration__box__description');
+						?>
+                            <div class="box">
+                                <div class="title">
+                                    <p><?php echo $itemTitle ?></p>
+                                </div>
+                                <div class="description">
+                                    <p><?php echo $itemDescription ?></p>
+                                </div>
+                            </div>
+						<?php endwhile; ?>
+					<?php endif; ?>
+
         </div>
         <div class="contact aboutUsForm">
             <div class="title">
-                <h2>porozmawiajmy o aromatycznej kawie na Waszym weselu!</h2>
+                <h2><?php the_field('aboutUs__form__title');?></h2>
             </div>
             <form class="contactForm">
                 <div class="contactForm__box">
@@ -144,10 +87,13 @@
                     <input type="text" name="form_email" placeholder="adam.kowal" required>
                 </div>
                 <div class="contactForm__box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
+                    <textarea name="form_textarea" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
                 </div>
                 <div class="contactForm__box">
-                    <input type="submit" name="form_submit" value="Wyślij wiadomość">
+                    <button name="form_submit">
+                        Wyślij wiadomość
+                        <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                    </button>
                 </div>
             </form>
         </div>

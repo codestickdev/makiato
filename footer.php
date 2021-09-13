@@ -12,18 +12,32 @@
 
 	<footer>
 		<div class="text">
-			<h1>zamów bar kawowy na wesele</h1>
-			<p>przyrządzimy dla Was aromatyczną ofertę, która oczaruje Waszych Gości i zapewni Wam satysfakcję doskonałego wyboru! </p>
+			<h1><?php the_field('footer__title', 'option');?></h1>
+			<p><?php the_field('footer_description', 'option');?></p>
 		</div>
 		<div class="socialMedia">
-			<div class="tel">780 744 123</div>
-			<div class="email">biuro@makiato.pl</div>
+			<div>
+				<a href="tel:#" class="tel">
+					<img src="<?php echo get_template_directory_uri() . '/images/icons/phone.svg'?>" alt="phone">
+					<?php the_field('footer__telNumber', 'option');?>
+				</a>
+			</div>
+			<div>
+				<a href="mailto:xyz" class="email">
+					<img src="<?php echo get_template_directory_uri() . '/images/icons/mail.svg'?>" alt="email">
+					<?php the_field('footer__email', 'option');?>
+				</a>
+			</div>
 			<div class="media">
 				<div class="insta">
-					<img src="/wp-content/themes/makiato/images/icons/insta.png'" alt="insta">
+					<a href="<?php the_field('footer_insta', 'option')['url'];?>">
+						<img src="/wp-content/themes/makiato/images/icons/insta.png'" alt="insta">
+					</a>
 				</div>
 				<div class="fb">
-					<img src="/wp-content/themes/makiato/images/icons/FB.png'" alt="facebook">
+					<a href="<?php the_field('footer_fb', 'option')['url'];?>">
+						<img src="/wp-content/themes/makiato/images/icons/FB.png'" alt="facebook">
+					</a>
 				</div>
 			</div>
 		</div>

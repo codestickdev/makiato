@@ -8,65 +8,62 @@
 
 <section class="sectionContent">
     <div class="sectionBg offer">
-    <div class="logo">
-        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
-    </div>
+        <div class="logo">
+        <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
+        </div>
     </div>
     <div class="content">
-        <div class="text__box">
-            <h1>oferta</h1>
-            <p>Nisi, at urna, elit in mattis viverra fames consectetur lectus. Volutpat nec mauris ultrices vitae senectus platea et lectus erat. Felis ultrices non facilisi enim ultrices cum.</p>
-        </div>
-        <div class="offerContent">
-            <div class="options">
-                <div class="basic">
-                    <p>oferta podstawowa</p>
+            <div class="text__box">
+                <h1><?php the_field('offer__title');?></h1>
+                <p><?php the_field('offer__description');?></p>
+            </div>
+            <div class="offerContent">
+                <div class="options">
+                    <div class="basic">
+                        <p><?php the_field('offer__content__leftButton');?></p>
+                    </div>
+                    <div class="extra active">
+                        <p><?php the_field('offer__content__rightButton');?></p>
+                    </div>
                 </div>
-                <div class="extra active">
-                    <p>usługi dodatkowe</p>
-                </div>
-            </div>
-            <div class="offerContent__box basic__offer">
-                <ul>
-                    <li>obsługa przez 6h</li>
-                    <li>kawa z ziaren 100% arabiki</li>
-                    <li>zapewniamy wszystkie pozostałe składniki (nawet woda jeśli na miejscu woda jest średniej jakości)</li>
-                    <li>brak limitu serwowanych kaw</li>
-                    <li>organizacja stanowiska</li>
-                    <li>3 bary do wyboru — boho, industrial i classic</li>
-                    <li>szerokie menu — od espresso do latte, babyccino dla dzieci oraz herbaty</li>
-                    <li>mleko krowie, roślinne oraz bez laktozy</li>
-                    <li>profesjonalni bariści</li>
-                    <li>dress code baristów adekwatny do stylu wesela</li>
-                    <li>samodzielna komunikacja z managerem sali weselnej, restauracji czy też z wedding plannerem </li>
-                    <li>latte art — dekoracyjne wzory z mleka na kawie</li>
-                </ul>
-                <p>Cena uzależniona jest od  terminu (sezon wysoki i niski) oraz liczby gości</p>
-            </div>
-            <div class="offerContent__box extra__offer">
-                <ul>
-                    <li>obsługa przez 6h2</li>
-                    <li>kawa z ziaren 100% arabiki2</li>
-                    <li>zapewniamy wszystkie pozostałe składniki (nawet woda jeśli na miejscu woda jest średniej jakości)2</li>
-                    <li>brak limitu serwowanych kaw2</li>
-                    <li>organizacja stanowiska2</li>
-                    <li>3 bary do wyboru — boho, industrial i classic2</li>
-                    <li>szerokie menu — od espresso do latte, babyccino dla dzieci oraz herbaty2</li>
-                    <li>mleko krowie, roślinne oraz bez laktozy2</li>
-                    <li>profesjonalni bariści2</li>
-                    <li>dress code baristów adekwatny do stylu wesela2</li>
-                    <li>samodzielna komunikacja z managerem sali weselnej, restauracji czy też z wedding plannerem 2</li>
-                    <li>latte art — dekoracyjne wzory z mleka na kawie2</li>
-                </ul>
-                <p>Cena uzależniona jest od  terminu (sezon wysoki i niski) oraz liczby gości2</p>
-            </div>
+                    <?php if( have_rows('offer__content') ): ?>
+                        <?php while( have_rows('offer__content') ) : the_row();?>
+                        <div class="offerContent__box basic__offer">
+                            <?php if( have_rows('offer_content__firstTable') ): ?>
+                                <?php while( have_rows('offer_content__firstTable') ) : the_row();
+                                        $itemTitle = get_sub_field('offer_content__firstTable__title');
+                                    ?>
+                                        <ul>
+                                            <li><?php echo $itemTitle?></li>
+                                        </ul>
+                                    
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <p><?php the_field('offer__content__price');?></p>
+                        </div>
+                        <div class="offerContent__box extra__offer">
+                            <?php if( have_rows('offer_content__secTable') ): ?>
+                                <?php while( have_rows('offer_content__secTable') ) : the_row();
+                                        $itemTitle = get_sub_field('offer_content__secTable__title');
+                                    ?>
+                                        <ul>
+                                            <li><?php echo $itemTitle?></li>
+                                        </ul>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <p><?php the_field('offer__content__price');?></p>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
         </div>
         <div class="contact">
             <div class="title">
-                <h2>zamów bar kawowy na wesele!</h2>
+                <h2><?php the_field('offer__contact__title');?></h2>
             </div>
             <div class="description">
-                <p>Przyrządzimy dla Was aromatyczną ofertę, która oczaruje Was i Waszych Gości!</p>
+                <p><?php the_field('offer__contact__description');?></p>
             </div>
             <form class="contactForm">
                 <div class="contactForm__box">
@@ -76,10 +73,13 @@
                     <input type="text" name="form_email" placeholder="adam.kowal" required>
                 </div>
                 <div class="contactForm__box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
+                    <textarea name="form_textarea" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
                 </div>
                 <div class="contactForm__box">
-                    <input type="submit" name="form_submit" value="Wyślij wiadomość">
+                    <button name="form_submit">
+                        Wyślij wiadomość
+                        <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                    </button>
                 </div>
             </form>
         </div>

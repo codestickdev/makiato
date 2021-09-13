@@ -86,6 +86,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 //offer
 @import "pages/offer";
 
+//contact
+@import "pages/contact";
+
 
 /* Import Partials
 --------------------------------------------- */
@@ -106,3 +109,23 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 //variables
 @import "./variables";
+
+.menuScroll {
+	overflow-y: hidden
+}
+
+html{
+	scroll-behavior:smooth
+}
+
+.formAlert {
+	border-radius: 5px;
+	padding: 11px 10px 11px 21px;
+	margin-bottom: 30px;
+	&--success {
+		border: 1px solid green;
+	}
+	&--error {
+		border: 1px solid red;
+	}
+}

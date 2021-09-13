@@ -8,7 +8,9 @@
 
 <section class="header_img">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+        <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
     </div>
     <div class="custom-block">
         <div class="border__positon">
@@ -16,14 +18,16 @@
         </div>
         <div class="text__position">
             <div class="first__text">
-                <h1>bar kawowy na wesele</h1>
-                <p>Serwujemy zachwyt po mistrzowsku</p>
+                <h1><?php echo the_field('homePage__headerTitle') ?></h1>
+                <p><?php echo the_field('homePage__headerDescription') ?></p>
             </div>
             <div class="sec__text">
-                <p>Co powiecie na stylowy mikrokosmos, w którym Wasi Goście odkryją		nieziemski smak kawy i głęboki aromat z nutką pobudzającej energii?	</p>
+                <p><?php echo the_field('homePage__headerDescription2') ?></p>
             </div>
-            <div class="img">
-                <img src="/wp-content/themes/makiato/images/icons/arrow.svg'" alt="arrow">
+            <div class="img scroll-Ico">
+                <a href="#scroll">
+                    <img src="/wp-content/themes/makiato/images/icons/arrow.svg'" alt="arrow">
+                </a>
             </div>
         </div>
     </div>
@@ -32,231 +36,181 @@
     <div class="customHeaderPadding">
         <div class="box">
             <div class="text">
-                <h1>
-                    A może chcecie oczarować Rodzinę i Przyjaciół inspirującym pokazem i degustacją urzekających koktajli na bazie kawy i alkoholu?
-                </h1>
-                <p>
-                    Oto usługi kawowe vice-mistrza świata prestiżowego konkursu Coffee in Good Spirits! 
+                <h1><?php the_field('homePage__underHeader__title'); ?></h1>
+                <p id="scroll">
+                    <?php the_field('homePage__underHeader__description'); ?>
                 </p>
             </div>
             <div class="input">
-                <button>
-                    Zobacz ofertę
-                </button>
+                <a href="<?php the_field('homePage__underHeader__button')['url']; ?>">
+                Zobacz ofertę
+                <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                </a>
             </div>
         </div>
     </div>
 </section>
 <section class="allInclusive">
     <div class="box">
-        <h1>obsługa kawowa w wersji all inclusive</h1>
-        <p>Wiecie co to dobra kawa, bo taką pijacie na co dzień w domu! 
-            Nie chcecie na Swoim weselu pić lury z warnika stojącego na smutnym stoliku w kącie sali? 
-            Pragniecie, aby Wasze wesele było absolutnie wyjątkowe, a goście zachwyceni, prawda?
-            Świetnie to rozumiemy, dlatego proponujemy Wam profesjonalną kawową obsługę dopasowaną do Waszego wesela!</p>
+        <h1><?php the_field('homePage__coffeeService__title');?></h1>
+        <p><?php the_field('homePage__coffeeService__description');?></p>
     </div>
 </section>
 <section class="ownBar">
     <div class="box">
-        <h1>Przyjedziemy do was z własnym barem, znakomitą kawą i doświadczonymi baristami!</h1>
-        <p>Kawa może być tak dopieszczona jak tort weselny. Pyszna i pięknie podana jak weselna kolacja, bo przecież oprawa też się liczy. 
-            Stylowy bar, elegancki barista, zgrabne filiżanki i śliczne mleczne wzorki. A przede wszystkim - wyśmienita, aromatyczna kawa!
-            Tak to widzimy i tak to robimy! 
-        </p>
+        <h1><?php the_field('homePage__ownService__title'); ?></h1>
+        <p><?php the_field('homePage__ownService__description'); ?></p>
     </div>
 </section>
 <section class="chess">
-    <div class="box">
-        <div class="leftSide">
-            <h1>Żaden Gość się nie oprze! </h1>
-            <p>Korzystamy ze świeżo palonej 100% Arabiki z segmentu speciality (mniej niż 10% najlepszych kaw świata). Jeśli macie swoje ulubione ziarno to powiedzcie nam o tym Jeśli nie macie preferencji to zdajcie się na nas — gwarantujemy, że będzie to idealna kawa na wesele! 
-                Nasze menu jest dopasowane do gustów różnych kawoszy. Mamy herbaty, serwujemy Bejbiczino dla dzieci (spienione mleko, np. z syropem smakowym), zawsze mamy też mleko bez laktozy i roślinne — słowem, dbamy o każdego gościa!
-                Będzie nie tylko wyśmienicie ale też piękne dzięki wzorkom, które wyczarujemy z mleka 
-            </p>
-        </div>
-        <div class="rightSide"></div>
-    </div>
-    <div class="box chess__special">
-    <div class="leftSide">
-            <h1>Jesteśmy EKO!</h1>
-            <p>Segregujemy odpady, używamy biodegradowalnych środków do czyszczenia sprzętu kawowego a kawę pakujemy w duże paczki albo opakowania wielokrotnego użytku.</p>
-        </div>
-        <div class="rightSide"></div>
-    </div>
-    <div class="box">
-        <div class="leftSide">
-            <h1>serwujemy usługi w całej Polsce!</h1>
-            <p>
-                Dojedziemy w każdy zakątek niezależnie od tego czy przyjęcie będzie na 20 czy 300 gości!
-                Dopasowujemy ilość barów, ekspresów i baristów do wielkości wesela, tak, żeby jak najszybciej rozładowywać kolejkę 
-                Bo kolejka zapewne będzie, baaaardzo szybko po sali roznosi się informacja jak pyszna jest kawa!
-            </p>
-        </div>
-        <div class="rightSide"></div>
-    </div>
+    <?php if( have_rows('homePage__chess') ): ?>
+        <?php while( have_rows('homePage__chess') ) : the_row();
+                $itemTitle = get_sub_field('homePage__chess__title');
+                $itemDescription = get_sub_field('homePage__chess__description');
+                $itemImage = get_sub_field('homePage__chess__img');
+                $itemSpecial = get_sub_field('homePage__chess__special');
+            ?>
+            <div class="box <?php if( $itemSpecial): ?> chess__special <?php endif; ?>">
+                <div class="leftSide">
+                    <h1><?php echo $itemTitle ?></h1>
+                    <p><?php echo $itemDescription ?></p>
+                </div>
+                <div class="rightSide" style="background-image: url('<?php echo $itemImage['url']; ?>')"></div>
+            </div>
+        <?php endwhile; ?>
+    <?php endif; ?>
 </section>
-<section class="caffee">
+<section class="caffee" style="background-image: url('<?php the_field('homePage__wishes__img')['url']; ?>')">
     <div class="box">
         <h1>
-        Spełniamy życzenia zawodowo! Wsłuchamy się w Wasze indywidualne życzenia i zmienimy je w ofertę obsługi kawowej na najwyższym poziomie, a każdą sugestię chętnie dopełnimy autorskimi propozycjami! 
+            <?php the_field('homePage__wishes__title');?>
         </h1>
     </div>
 </section>
 <section class="chess sec__chess">
-    <div class="box">
-        <div class="leftSide">
-            <h1>o nic nie musicie się martwić! </h1>
-            <p>Jesteśmy w 100% samowystarczalni. Całość kontaktów z domem weselnym bierzemy na siebie. 
-                A to czego potrzebujemy na miejscu to 2 metry kwadratowe podłogi i jedno zwykłe gniazdko. 
-                Przyjeżdżamy z wszystkimi potrzebnymi sprzętamii produktami, mamy nawet swoją wodę. Jeśli trzeba przywieziemy własną porcelanę
-            </p>
-        </div>
-        <div class="rightSide"></div>
-    </div>
-    <div class="box chess__special">
-    <div class="leftSide">
-            <h1>3 style do wyboru</h1>
-            <p>Nowoczesny, industrialny, a może BOHO?
-                Nasze bary kawowe na wesele uwodzą stylem, ale przede wszystkim harmonijnie wkomponują się w klimat Waszego przyjęcia. 
-                Efekt WOW dopełni elegancki i dopasowany dress code oraz charyzma naszych baristów! 
-            </p>
-        </div>
-        <div class="rightSide"></div>
-    </div>
-    <div class="box">
-        <div class="leftSide">
-            <h1>Wicemistrze Świata i #AwesomeCoffeeCrew </h1>
-            <p>
-                Nad wszystkim czuwa u nas Marcin Makiato Wójciak — Wicemistrz Świata w prestiżowym konkursie Coffee in Good Spirits! 
-                Nie tylko dobiera odpowiednie ziarno i najwyższej jakości sprzęt, ale upewnia się też, że każdy nasz barista i baristka to prawdziwi wirtuozi, którzy łączą umiejętności na najwyższym poziomie z osobistą charyzmą.
-                A jeśli macie takie życzenie, Makiato może osobiście serwować kawę na Waszym przyjęciu weselnym! 
-            </p>
-        </div>
-        <div class="rightSide"></div>
-    </div>
+    <?php if( have_rows('homePage__secChess') ): ?>
+            <?php while( have_rows('homePage__secChess') ) : the_row();
+                    $itemTitle = get_sub_field('homePage__secChess__title');
+                    $itemDescription = get_sub_field('homePage__secChess__description');
+                    $itemImage = get_sub_field('homePage__secChess__img');
+                    $itemSpecial = get_sub_field('homePage__secChess__special');
+                ?>
+                <div class="box <?php if( $itemSpecial): ?> chess__special <?php endif; ?>">
+                    <div class="leftSide">
+                        <h1><?php echo $itemTitle ?></h1>
+                        <p><?php echo $itemDescription ?></p>
+                    </div>
+                    <div class="rightSide" style="background-image: url('<?php echo $itemImage['url']; ?>')"></div>
+                </div>
+            <?php endwhile; ?>
+    <?php endif; ?>
 </section>
 <section class="howWorks">
     <div class="title">
-        <h1>Jak to działa?</h1>
+        <h1><?php the_field('homePage__howWorks__title'); ?></h1>
     </div>
     <div class="content">
-        <div class="box">
-            <div class="img">
-                <span>1</span>
-                <img src="/wp-content/themes/makiato/images/icons/how-works1.png'" alt="how-works1">
+    <?php if( have_rows('homePage__howWorks____box') ): ?>
+        <?php while( have_rows('homePage__howWorks____box') ) : the_row();
+            $itemNumber = get_sub_field('homePage__howWorks__box__number');
+            $itemImg = get_sub_field('homePage__howWorks__box__img');
+            $itemDescription = get_sub_field('homePage__howWorks__box__description');
+        ?>
+            <div class="box">
+                <div class="img">
+                    <span><?php echo $itemNumber ?></span>
+                    <img src="<?php echo $itemImg; ?>" alt="<?php echo $itemImg['alt'] ?>">
+                </div>
+                <div class="box__description"><?php echo $itemDescription ?></div>
             </div>
-            <div class="box__description">
-                Odpowiedz na pytania
-                Wybierz styl baru
-                Nowoczesny, industrialny, a może Boho?
-                Nasze bary kawowe na wesele uwodzą stylem
-            </div>
-        </div>
-        <div class="box">
-            <div class="img">
-                <span>2</span>
-                <img src="/wp-content/themes/makiato/images/icons/how-works2.png'" alt="how-works2">
-            </div>
-            <div class="box__description">
-                Odpowiedz na pytania
-                Wybierz styl baru
-                Nowoczesny, industrialny, a może Boho?
-                Nasze bary kawowe na wesele uwodzą stylem
-            </div>
-        </div>
-        <div class="box">
-            <div class="img">
-                <span>3</span>
-                <img src="/wp-content/themes/makiato/images/icons/how-works3.png'" alt="how-works1">
-            </div>
-            <div class="box__description">
-                Odpowiedz na pytania
-                Wybierz styl baru
-                Nowoczesny, industrialny, a może Boho?
-                Nasze bary kawowe na wesele uwodzą stylem
-            </div>
-        </div>
-        <div class="box">
-            <div class="img">
-                <span>4</span>
-                <img src="/wp-content/themes/makiato/images/icons/how-works4.png'" alt="how-works1">
-            </div>
-            <div class="box__description">
-                Odpowiedz na pytania
-                Wybierz styl baru
-                Nowoczesny, industrialny, a może Boho?
-                Nasze bary kawowe na wesele uwodzą stylem
-            </div>
-        </div>
-        <div class="box">
-            <div class="img">
-                <span>5</span>
-                <img src="/wp-content/themes/makiato/images/icons/how-works5.png'" alt="how-works1">
-            </div>
-            <div class="box__description">
-                Odpowiedz na pytania
-                Wybierz styl baru
-                Nowoczesny, industrialny, a może Boho?
-                Nasze bary kawowe na wesele uwodzą stylem
-            </div>
-        </div>
-        <div class="box">
-            <div class="img">
-                <span>6</span>
-                <img src="/wp-content/themes/makiato/images/icons/how-works6.png'" alt="how-works1">
-            </div>
-            <div class="box__description">
-                Odpowiedz na pytania
-                Wybierz styl baru
-                Nowoczesny, industrialny, a może Boho?
-                Nasze bary kawowe na wesele uwodzą stylem
-            </div>
-        </div>
+        <?php endwhile; ?>
+    <?php endif; ?>
     </div>
     <div class="input">
-        <button>
+        <a href="<?php the_field('homePage__howWorks__button')['url']; ?>">
             Zobacz ofertę
-        </button>
+            <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+        </a>
     </div>
 </section>
 <section class="knowUs">
     <div class="text">
-        <h1>poznajmy się</h1>
-        <p>Odkryjcie nasze talenty, możliwości i pomysł na kawowe wesele, które na zawsze pozostanie w pamięci Waszych Gości</p>
+        <h1><?php the_field('homePage__knowUs__title') ?></h1>
+        <p><?php the_field('homePage__knowUs__description') ?></p>
     </div>
     <div class="slider">
-        <img src="/wp-content/themes/makiato/images/slider1.png'" alt="slider1">
+        <img src="<?php the_field('homePage__knowUs__img')['url']; ?>" alt="<?php the_field('homePage__knowUs__img')['alt'] ?>">
     </div>
     <div class="text under__slider">
-        <h1>profesjonalizm w każdej kropli</h1>
-        <p>Nasz bar kawowy na wesele to znacznie więcej niż zwykły serwis kawowy, ponieważ serujemy w nim mistrzowskie umiejętności, aby celebrować ulotne chwile niezwykłym smakiem i wyjątkową atmosferą!
-        </p>
+        <h1><?php the_field('homePage__knowUs__secTitle') ?></h1>
+        <p><?php the_field('homePage__knowUs__secDescription') ?></p>
     </div>
     <div class="input">
-        <button>Poznajmy się bliżej</button>
+        <a href="<?php the_field('homePage__knowUs__button')['url']; ?>">
+            Poznajmy się bliżej
+            <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+        </a>
     </div>
 </section>
 <section class="testimoniale">
     <div class="title">
-        <h1>testimoniale</h1>
+        <h1><?php the_field('homePage__testimonials__title');?></h1>
     </div>
     <div class="content">
-        <div class="box">
-            <p>Aliquet etiam augue scelerisque id fermentum. Morbi ipsum ut est lectus turpis. Tortor lectus urna nunc lacus egestas scelerisque.</p>
+        <div class="testimonialeSlider">
+            <?php if( have_rows('homePage__testimonials__slider') ): ?>
+                <?php while( have_rows('homePage__testimonials__slider') ): the_row(); ?>
+                <?php
+                    $item = get_sub_field('homePage__testimonials__sliderItem');
+                ?>
+                    <div class="box">
+                        <p><?php echo $item?></p>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
-        <div class="box">
-            <p>Aliquet etiam augue scelerisque id fermentum. Morbi ipsum ut est lectus turpis. Tortor lectus urna nunc lacus egestas scelerisque.</p>
+        <div class="pagination">
+            <div class="testimonatsPrev">
+                <button class="slick-prev">
+                    <img src="<?php echo get_template_directory_uri() . '/images/icons/left-arrow.svg'?>" alt="left-arrow">
+                </button>
+            </div>
+            <div class="testimonatsNext">
+                <button class="slick-next">
+                    <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                </button>
+            </div>
         </div>
-        <div class="box">
-            <p>Aliquet etiam augue scelerisque id fermentum. Morbi ipsum ut est lectus turpis. Tortor lectus urna nunc lacus egestas scelerisque.</p>
+        <div class="testimonialeMobileSlider">
+            <?php if( have_rows('homePage__testimonials__slider') ): ?>
+                <?php while( have_rows('homePage__testimonials__slider') ): the_row(); ?>
+                <?php
+                    $item = get_sub_field('homePage__testimonials__sliderItem');
+                ?>
+                    <div class="box">
+                        <p><?php echo $item?></p>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+        <div class="paginationMobile">
+            <div class="testimonatsMobilePrev">
+                <button class="slick-prev">
+                    <img src="<?php echo get_template_directory_uri() . '/images/icons/left-arrow.svg'?>" alt="left-arrow">
+                </button>
+            </div>
+            <div class="testimonatsMobileNext">
+                <button class="slick-next">
+                    <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                </button>
+            </div>
         </div>
     </div>
 </section>
 <section class="ourShowcase">
     <div class="text">
-        <h1>naszą wizytówką są rekomendacje młodych par!</h1>
-        <p>Jesteśmy dumni, że możemy być częścią weselnych wspomnień, dlatego z przyjemnością prezentujemy rekomendacje naszych usług.
-        Mamy nadzieję, że już wkrótce pochwalimy się także i Waszą opinią! </p>
+        <h1> <?php the_field('homePage__ourShowcase__title') ?></h1>
+        <p> <?php the_field('homePage__ourShowcase__description') ?></p>
     </div>
 </section>
 <?php get_footer() ?>

@@ -1,42 +1,11 @@
 //import variables
 @import '../variables';
 
-//aboutUs
+//gallery
 
 .sectionContent {
-  .sectionBg {
-    background-image: url('/wp-content/themes/makiato/images/about-us.png');
-    height: 494px;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   .gallery {
-    background-image: url('/wp-content/themes/makiato/images/gallery.png') !important;
-  }
-
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: $color-bg;
-    padding: 71px 172px 115px 172px;
-
-    .text__box {
-      h1 {
-        margin-bottom: 46px;
-        font-size: $font-extra-heading;
-        font-weight: $font-weight-medium2;
-        line-height: $line-height-big;
-        color: $color-1;
-      }
-
-      p {
-        width: 814px;
-      }
-    }
+    background-image: url('/wp-content/themes/makiato/images/gallery.png');
   }
 }
 
@@ -56,24 +25,31 @@
   }
 }
 
+.customGallery {
+  .content {
+    @media(min-width: 1200px) {
+      padding: 82px 172px 0;
+    }
+  }
+}
+
 .block-gallery {
   max-width: 100%;
   margin-top: 84px;
-
   .responsive {
     display: flex !important;
     flex-direction: column !important;
-
     &__box {
       display: flex !important;
       flex-wrap: wrap;
-
+      justify-content: center;
       .img {
-        background-image: url('/wp-content/themes/makiato/images/single-post-img1.png');
         height: 359px;
-        width: calc(100% / 2 - 30px);
+        // width: calc(100% / 2 - 30px);
+        width: 600px !important;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
 
         &:nth-of-type(1),
         &:nth-of-type(2) {
@@ -83,10 +59,6 @@
         &:nth-of-type(1),
         &:nth-of-type(3) {
           margin-right: 20px;
-        }
-
-        &:nth-of-type(even) {
-          background-image: url('/wp-content/themes/makiato/images/chess-img4.png');
         }
       }
     }
@@ -187,38 +159,6 @@
     }
   }
 
-  .button {
-    text-align: center;
-    padding: 2rem 0 0rem 0; // wg projektu: 9.6rem 0 6rem 0
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    button {
-      line-height: $line-height-small-p;
-      letter-spacing: $normal-spacing;
-      font-size: $font-desctiption;
-      font-weight: $font-weight-light;
-      cursor: pointer;
-      width: 227px;
-      height: 67px;
-      border-radius: 180px;
-      border: none;
-      font-size: 1.7rem;
-      text-decoration: none;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 25px 38px;
-      font-size: 17px;
-      background-color: $color-2;
-      color: $color-1;
-      font-size: 17px;
-      line-height: 17px;
-      font-weight: 400;
-    }
-  }
-
   @media(min-width: 769px) {
     .sliderMobile {
       display: none !important;
@@ -244,17 +184,10 @@
 
         &__box {
           .img {
-            background-image: url('/wp-content/themes/makiato/images/single-post-img1.png');
             background-repeat: no-repeat;
             background-size: cover;
             height: 359px;
             width: 100%;
-          }
-
-          &:nth-of-type(even) {
-            .img {
-              background-image: url('/wp-content/themes/makiato/images/chess-img4.png');
-            }
           }
         }
 
@@ -354,4 +287,59 @@
       }
     }
   }
+  .input {
+    margin-bottom: 61px;
+    margin-top: 107px;
+    display: flex;
+    justify-content: center;
+      a {
+          background-color: $color-2;
+          color: $color-1;
+          border: none;
+          padding: 25px 38px;
+          border-radius: 180px;
+          white-space: nowrap;
+          line-height: $line-height-small-p;
+          letter-spacing: $normal-spacing;
+          font-weight: $font-weight-light;
+          text-decoration: none;
+          position: relative;
+          display: block;
+          font-size: $font-desctiption;
+          outline: none;
+          transition: ease .3s;
+          width: 215px;
+          img {
+            position: absolute;
+            right: 28px;
+            top: 28px;
+            transition: ease .3s;
+        }
+          &:hover {
+            opacity: .8;
+            transition: ease .3s;
+            img {
+                transition: ease .3s;
+                transform: translateX(5px);
+            }
+        }
+      }
+  }
+  @media(max-width: 768px) {
+    .input {
+      margin-bottom: 40px;
+      margin-top: 80px;
+      a {
+          padding: 15px 30px;
+          font-size: $font-mobile-p;
+          width: 170px;
+          img {
+            right: 21px;
+            top: 19px;
+            height: 14px;
+        }
+      }
+  }
+  }
 }
+

@@ -9,22 +9,23 @@
 <section class="sectionContent">
     <div class="sectionBg caseStudy">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
     </div>
     </div>
     <div class="content">
         <div class="text__box">
-            <h1>weselne case study</h1>
-            <p>Zobacz jak spełniamy kawowe życzenia w najpiękniejszym dniu w życiu! Prezentujemy Państwu kilka wybranych realizacji z naszego porfolio.</p>
+            <h1><?php the_field('caseStudy__title'); ?></h1>
+            <p><?php the_field('caseStudy__description'); ?></p>
         </div>
         <div class="casePosts">
 				<div class="casePosts__content">
 					<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-						$args = array( 'post_type' => 'case-study-post', 'order' => 'ASC' ,'posts_per_page' => 4, 'paged' => $paged );
+						$args = array( 'post_type' => 'case-study-post', 'order' => 'ASC' ,'posts_per_page' => 3, 'paged' => $paged );
 						$wp_query = new WP_Query($args);
 						while ( have_posts() ) : the_post(); ?>
 						<div class="box">
-							<a href="<?php the_permalink() ?>">
 								<div class="img">
 									<?php the_post_thumbnail(); ?>
                                     <div class="title">
@@ -32,24 +33,51 @@
 								    </div>
 								</div>
                                 <div class="box__content">
-                                    <div class="name">
-
-                                    </div>
                                     <div class="data">
-                                        
+                                        <div>
+                                            <div class="name">Miejsce</div>
+                                            <div class="field"><?php the_field('caseStudy__place'); ?></div>
+                                        </div>
+                                        <div>
+                                            <div class="name">Termin</div>
+                                            <div class="field"><?php the_field('caseStudy__data'); ?></div>
+                                        </div>
+                                        <div>
+                                            <div class="name">Imiona Pary Młodej</div>
+                                            <div class="field"><?php the_field('caseStudy__names'); ?></div>
+                                        </div>
+                                        <div>
+                                            <div class="name">Liczba Gości</div>
+                                            <div class="field"><?php the_field('caseStudy__guests'); ?></div>
+                                        </div>
+                                        <div>
+                                            <div class="name">Usługi</div>
+                                            <div class="field"><?php the_field('caseStudy__offer'); ?></div>
+                                        </div>
+                                        <div>
+                                            <div class="name">Życzenia dodatkowe</div>
+                                            <div class="field"><?php the_field('caseStudy__extra'); ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <a href="<?php the_permalink() ?>">
+                                            Zobacz case study
+                                        </a>
                                     </div>
                                 </div>
-							</a>
 						</div>
 					<?php endwhile; ?>
 				</div>
+                <div class="pagination casePagination">
+                    <?php pagination(); ?>
+                </div>
 			</div>
         <div class="contact">
             <div class="title">
-                <h2>ZAMÓW BAR KAWOWY NA WESELE!</h2>
+                <h2><?php the_field('caseStudy__formTitle'); ?></h2>
             </div>
             <div class="description">
-                <p>Przyrządzimy dla Was aromatyczną ofertę, która oczaruje Was i Waszych Gości!</p>
+                <p><?php the_field('caseStudy__formDescription'); ?></p>
             </div>
             <form class="contactForm">
                 <div class="contactForm__box">
@@ -59,10 +87,13 @@
                     <input type="text" name="form_email" placeholder="adam.kowal" required>
                 </div>
                 <div class="contactForm__box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
+                    <textarea name="form_textarea" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
                 </div>
                 <div class="contactForm__box">
-                    <input type="submit" name="form_submit" value="Wyślij wiadomość">
+                    <button name="form_submit">
+                        Wyślij wiadomość
+                        <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                    </button>
                 </div>
             </form>
         </div>

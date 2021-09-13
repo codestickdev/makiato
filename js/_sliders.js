@@ -19,6 +19,7 @@ $(document).ready(function() {
         prevArrow: $('.preArrow'),
         nextArrow: $('.nextArrow'),
       });
+
       $('.responsiveMobile').slick({
         dots: true,
         arrows: true,
@@ -30,4 +31,27 @@ $(document).ready(function() {
         prevArrow: $('.preArrowMobile'),
         nextArrow: $('.nextArrowMobile'),
       });
+
+      $('.testimonialeSlider').slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: $('.testimonatsPrev'),
+        nextArrow: $('.testimonatsNext'),
+      });
+
+      $('.testimonialeMobileSlider').slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.testimonatsMobilePrev'),
+        nextArrow: $('.testimonatsMobileNext'),
+      });
+
 });

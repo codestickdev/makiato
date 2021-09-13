@@ -64,8 +64,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -122,11 +122,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .header_img .logo img {
   margin-top: 110px;
+  cursor: pointer;
 }
 
 .header_img .custom-block .text__position {
   position: absolute;
-  border: 1px solid #F4FEFF;
   border-radius: 0 0 55rem 55rem;
   width: calc(100% - 31%);
   height: 35rem;
@@ -156,6 +156,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 400;
   line-height: 24px;
   color: #174045;
+  letter-spacing: 0.02em;
 }
 
 .header_img .custom-block .text__position .sec__text p {
@@ -169,6 +170,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .header_img .custom-block .text__position .img {
   margin-top: 50px;
+  transition: ease .3s;
+}
+
+.header_img .custom-block .text__position .img:hover {
+  opacity: .8;
+  transition: ease .3s;
 }
 
 .header_img .custom-block .border__positon {
@@ -181,26 +188,90 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   left: 15%;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1199px) {
+  .header_img {
+    background-position: center;
+    height: 620px;
+  }
+  .header_img .logo img {
+    margin-top: 30px;
+  }
   .header_img .custom-block .border__positon {
     width: calc(100% - 10%);
     height: 33rem;
-    top: 5rem;
+    top: 1rem;
     left: 5%;
+    border-radius: 30px 30px 100px 100px;
   }
   .header_img .custom-block .text__position {
     width: calc(100% - 10%);
-    height: 31rem;
     margin-top: 0rem;
-    top: 21rem;
+    top: 26rem;
     left: 5%;
+    height: auto;
+    padding: 84px 100px;
+    border-radius: 40px 40px 400px 400px;
   }
   .header_img .custom-block .text__position .first__text h1 {
-    font-size: 29px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .header_img .custom-block .text__position .first__text p {
+    font-size: 15px;
+    line-height: 21px;
+    max-width: 650px;
   }
   .header_img .custom-block .text__position .sec__text p {
     width: auto;
-    padding: 0 25px;
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header_img {
+    height: 450px;
+  }
+  .header_img .logo img {
+    margin-top: 28px;
+  }
+  .header_img .custom-block .border__positon {
+    width: calc(100% - 10%);
+    height: 33rem;
+    top: 1rem;
+    left: 5%;
+    border-radius: 30px;
+  }
+  .header_img .custom-block .text__position {
+    width: calc(100% - 10%);
+    margin-top: 0rem;
+    top: 18rem;
+    left: 5%;
+    height: auto;
+    padding: 50px 30px 30px;
+    border-radius: 40px;
+  }
+  .header_img .custom-block .text__position .first__text h1 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    line-height: 26px;
+    font-weight: 700;
+  }
+  .header_img .custom-block .text__position .first__text p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 21px;
+  }
+  .header_img .custom-block .text__position .sec__text p {
+    width: auto;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .header_img .custom-block .text__position .img img {
+    height: 45px;
+    outline: none;
+    cursor: pointer;
   }
 }
 
@@ -243,11 +314,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .down_header .customHeaderPadding .box .input {
-  margin-bottom: 63px;
+  margin-bottom: 88px;
+  transition: ease .3s;
 }
 
-.down_header .customHeaderPadding .box .input button {
+.down_header .customHeaderPadding .box .input a {
   background-color: #fff;
+  color: #353434;
   border: none;
   padding: 25px 38px;
   border-radius: 180px;
@@ -256,38 +329,110 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   letter-spacing: 0.02em;
   font-size: 17px;
   font-weight: 400;
+  text-decoration: none;
+  outline: none;
+  width: 215px;
+  position: relative;
+  display: block;
 }
 
-@media (max-width: 845px) {
+.down_header .customHeaderPadding .box .input a img {
+  position: absolute;
+  right: 39px;
+  top: 28px;
+  transition: ease .3s;
+}
+
+.down_header .customHeaderPadding .box .input:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.down_header .customHeaderPadding .box .input:hover img {
+  transition: ease .3s;
+  transform: translateX(5px);
+}
+
+@media (max-width: 1199px) {
+  .down_header {
+    height: auto;
+    padding-top: 300px;
+  }
   .down_header .customHeaderPadding {
-    padding: 0 50px !important;
+    padding: 0 60px;
+  }
+  .down_header .customHeaderPadding .box .text {
+    margin-bottom: 70px;
   }
   .down_header .customHeaderPadding .box .text h1 {
+    font-size: 24px;
+    line-height: 32px;
     width: auto;
+    max-width: 800px;
+  }
+  .down_header .customHeaderPadding .box .text p {
+    font-size: 15px;
+    line-height: 21px;
+    width: auto;
+    max-width: 800px;
+  }
+  .down_header .customHeaderPadding .box .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+    width: 164px;
+  }
+  .down_header .customHeaderPadding .box .input a img {
+    right: 20px;
+    top: 19px;
+    height: 14px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .down_header {
-    height: 700px;
-  }
-  .down_header .customHeaderPadding .box .text h1 {
-    font-size: 29px;
-  }
-}
-
-@media (max-width: 549px) {
-  .down_header {
-    height: 850px;
+    height: auto;
+    padding-top: 200px;
   }
   .down_header .customHeaderPadding {
-    padding: 0 30px !important;
+    padding: 0 20px;
+  }
+  .down_header .customHeaderPadding .box .text {
+    margin-bottom: 50px;
+  }
+  .down_header .customHeaderPadding .box .text h1 {
+    font-size: 21px;
+    width: auto;
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+  .down_header .customHeaderPadding .box .text p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .down_header .customHeaderPadding .box .input {
+    margin-bottom: 50px;
+  }
+  .down_header .customHeaderPadding .box .input a {
+    padding: 15px 30px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 389px) {
+@media (max-width: 401px) {
   .down_header {
-    height: 840px;
+    padding-top: 30vh;
+  }
+}
+
+@media (max-width: 371px) {
+  .down_header {
+    padding-top: 35vh;
+  }
+}
+
+@media (max-width: 332px) {
+  .down_header {
+    padding-top: 40vh;
   }
 }
 
@@ -319,6 +464,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   line-height: 24px;
   color: #4F4B4B;
   letter-spacing: 0.02em;
+  width: 877px;
 }
 
 @media (max-width: 1024px) {
@@ -327,15 +473,35 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1199px) {
   .allInclusive {
-    padding: 126px 100px;
+    padding: 100px 60px;
+  }
+  .allInclusive .box h1 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .allInclusive .box p {
+    font-size: 15px;
+    line-height: 21px;
+    width: auto;
+    max-width: 800px;
   }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .allInclusive {
-    padding: 126px 30px;
+    padding: 40px 20px;
+  }
+  .allInclusive .box h1 {
+    line-height: 32px;
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+  .allInclusive .box p {
+    font-size: 14px;
+    line-height: 21px;
+    width: auto;
   }
 }
 
@@ -362,6 +528,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
   line-height: 41px;
   letter-spacing: 0.04em;
+  width: 805px;
 }
 
 .ownBar .box p {
@@ -372,18 +539,39 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   letter-spacing: 0.02em;
 }
 
-@media (max-width: 845px) {
+@media (max-width: 1199px) {
   .ownBar {
-    padding: 96px 50px 374px 50px;
+    padding: 100px 60px 200px;
   }
   .ownBar .box {
-    width: auto !important;
+    width: 100%;
+  }
+  .ownBar .box h1 {
+    font-size: 24px;
+    line-height: 32px;
+    width: auto;
+  }
+  .ownBar .box p {
+    font-size: 15px;
+    line-height: 21px;
+    width: auto;
+    max-width: 800px;
   }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .ownBar {
-    padding: 96px 30px 374px 30px;
+    padding: 40px 20px 200px;
+  }
+  .ownBar .box h1 {
+    line-height: 26px;
+    font-size: 21px;
+    margin-bottom: 25px;
+    width: auto;
+  }
+  .ownBar .box p {
+    font-size: 14px;
+    line-height: 21px;
   }
 }
 
@@ -426,76 +614,90 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .chess .box .rightSide {
-  background-image: url("/wp-content/themes/makiato/images/chess-img1.png");
-  width: 548px;
-  height: 548px;
+  width: 540px;
+  height: 572px;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: -8px;
 }
 
 .chess .box:nth-of-type(1) {
   margin-top: -160px;
 }
 
-.chess .box:nth-of-type(2) .rightSide {
-  background-image: url("/wp-content/themes/makiato/images/chess-img2.png");
-}
-
-.chess .box:nth-of-type(3) .rightSide {
-  background-image: url("/wp-content/themes/makiato/images/chess-img3.png");
+.chess .box:nth-of-type(2) {
+  margin-top: -18px;
 }
 
 .chess .chess__special {
   flex-direction: row-reverse;
 }
 
-@media (max-width: 1124px) {
+@media (max-width: 1199px) {
   .chess {
-    height: 1030px;
+    height: auto;
+    padding: 100px 60px;
   }
   .chess .box .leftSide {
+    padding: 60px 40px;
     width: 450px;
-    height: 450px;
+    height: auto;
+  }
+  .chess .box .leftSide p {
+    font-size: 15px;
+    line-height: 21px;
   }
   .chess .box .rightSide {
     width: 450px;
-    height: 450px;
+    height: 460px;
   }
   .chess .box:nth-of-type(1) {
-    margin-top: -160px;
+    margin-top: -210px;
   }
 }
 
 @media (max-width: 948px) {
   .chess {
-    height: 2370px;
+    height: auto;
   }
   .chess .box {
     flex-direction: column;
   }
   .chess .box .leftSide {
     width: 450px;
-    height: 450px;
-  }
-  .chess .box .rightSide {
-    width: 450px;
-    height: 450px;
+    height: auto;
   }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .chess {
-    padding: 0 30px;
-    height: 2870px;
+    height: auto;
+    padding: 30px 20px 40px 20px;
+  }
+  .chess .box {
+    flex-direction: column;
+    max-width: 450px;
   }
   .chess .box .leftSide {
     width: 100%;
     height: auto;
+    padding: 30px 20px 40px;
+  }
+  .chess .box .leftSide h1 {
+    line-height: 26px;
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+  .chess .box .leftSide p {
+    font-size: 14px;
+    line-height: 21px;
   }
   .chess .box .rightSide {
     width: 100%;
-    height: 450px;
+    height: 350px;
+    background-size: cover;
+  }
+  .chess .box:nth-of-type(1) {
+    margin-top: -160px;
   }
 }
 
@@ -523,18 +725,29 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 600;
 }
 
-@media (max-width: 845px) {
+@media (max-width: 1199px) {
   .caffee {
-    padding: 345px 50px 397px 50px;
+    padding: 160px 60px 200px;
   }
   .caffee .box {
     width: auto !important;
   }
+  .caffee .box h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .caffee {
-    padding: 345px 30px 397px 30px;
+    padding: 100px 20px 200px;
+  }
+  .caffee .box {
+    width: auto;
+  }
+  .caffee .box h1 {
+    line-height: 26px;
+    font-size: 21px;
   }
 }
 
@@ -567,37 +780,49 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   background-image: url("/wp-content/themes/makiato/images/chess-img6.png");
 }
 
-@media (max-width: 1124px) {
+@media (max-width: 1199px) {
+  .sec__chess {
+    height: auto;
+    padding: 100px 60px;
+  }
   .sec__chess .box .leftSide {
+    padding: 60px 40px;
     width: 450px;
-    height: 450px;
+    height: auto;
+  }
+  .sec__chess .box .leftSide p {
+    font-size: 15px;
+    line-height: 21px;
   }
   .sec__chess .box .rightSide {
     width: 450px;
-    height: 450px;
-  }
-  .sec__chess .box:nth-of-type(1) {
-    margin-top: -160px;
+    height: 400px;
   }
 }
 
 @media (max-width: 948px) {
+  .sec__chess {
+    height: auto;
+  }
   .sec__chess .box {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   .sec__chess .box .leftSide {
     width: 450px;
-    height: 450px;
+    height: auto;
   }
-  .sec__chess .box .rightSide {
-    width: 450px;
-    height: 450px;
+  .sec__chess .box:nth-of-type(1) {
+    margin-top: -210px;
+    flex-direction: column;
+  }
+  .sec__chess .box:nth-of-type(3) {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .sec__chess {
-    padding: 0 30px 90px 30px;
+    padding: 0 20px 40px;
   }
   .sec__chess .box .leftSide {
     width: 100%;
@@ -605,7 +830,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .sec__chess .box .rightSide {
     width: 100%;
-    height: 450px;
+    height: 350px;
+    background-position: center;
+    background-size: cover;
+  }
+  .sec__chess .box:nth-of-type(1) {
+    margin-top: -140px;
   }
 }
 
@@ -641,8 +871,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .howWorks .content .box {
-  width: 350px;
+  width: 310px;
   text-align: center;
+  min-height: 160px;
 }
 
 .howWorks .content .box .img {
@@ -654,6 +885,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .howWorks .content .box .img span {
   margin-right: 29px;
+  color: #174045;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  font-size: 24px;
 }
 
 .howWorks .content .box__description {
@@ -675,12 +911,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .howWorks .input {
-  margin-bottom: 61px;
+  margin-bottom: 88px;
   margin-top: 107px;
+  transition: ease .3s;
 }
 
-.howWorks .input button {
+.howWorks .input a {
   background-color: #F3D4BD;
+  color: #174045;
   border: none;
   padding: 25px 38px;
   border-radius: 180px;
@@ -689,6 +927,28 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   letter-spacing: 0.02em;
   font-size: 17px;
   font-weight: 400;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  width: 215px;
+  display: block;
+}
+
+.howWorks .input a img {
+  position: absolute;
+  right: 39px;
+  top: 28px;
+  transition: ease .3s;
+}
+
+.howWorks .input:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.howWorks .input:hover img {
+  transition: ease .3s;
+  transform: translateX(5px);
 }
 
 @media (max-width: 1047px) {
@@ -697,6 +957,99 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .howWorks .input {
     margin-top: 60px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .howWorks {
+    padding: 100px 60px 0;
+  }
+  .howWorks .title {
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+  .howWorks .title h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .howWorks .content {
+    justify-content: center;
+  }
+  .howWorks .content .box {
+    margin-bottom: 0;
+  }
+  .howWorks .content .box__description {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .howWorks .content .box:nth-of-type(1), .howWorks .content .box:nth-of-type(2), .howWorks .content .box:nth-of-type(3) {
+    margin-bottom: 25px;
+  }
+  .howWorks .content .box span {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .howWorks .content .box img {
+    height: 40px;
+  }
+  .howWorks .input {
+    margin-bottom: 88px;
+    margin-top: 40px;
+  }
+  .howWorks .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+    width: 164px;
+  }
+  .howWorks .input a img {
+    right: 20px;
+    top: 19px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .howWorks {
+    padding: 30px 20px 0;
+  }
+  .howWorks .title {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  .howWorks .title h1 {
+    line-height: 26px;
+    font-size: 21px;
+  }
+  .howWorks .content .box {
+    margin-bottom: 25px;
+  }
+  .howWorks .content .box .img span {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .howWorks .content .box .img img {
+    height: 40px;
+  }
+  .howWorks .content .box__description {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .howWorks .content .box:nth-of-type(1), .howWorks .content .box:nth-of-type(2), .howWorks .content .box:nth-of-type(3) {
+    margin-bottom: 25px;
+  }
+  .howWorks .input {
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  .howWorks .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .howWorks .content .box {
+    width: auto;
   }
 }
 
@@ -756,11 +1109,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .knowUs .input {
-  margin-bottom: 66px;
+  margin-bottom: 88px;
+  transition: ease .3s;
 }
 
-.knowUs .input button {
-  background-color: #F3D4BD;
+.knowUs .input a {
+  background-color: #fff;
   border: none;
   padding: 25px 38px;
   border-radius: 180px;
@@ -770,30 +1124,98 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 17px;
   font-weight: 400;
   color: #004F2E;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 260px;
 }
 
-@media (max-width: 750px) {
+.knowUs .input a img {
+  position: absolute;
+  right: 39px;
+  top: 28px;
+  transition: ease .3s;
+}
+
+.knowUs .input:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.knowUs .input:hover img {
+  transition: ease .3s;
+  transform: translateX(5px);
+}
+
+@media (max-width: 1199px) {
   .knowUs {
-    padding: 123px 50px 0 50px;
+    padding: 100px 60px 0;
   }
-  .knowUs .text p {
+  .knowUs .text h1 {
+    font-size: 24px;
+    line-height: 32px;
     width: auto;
   }
+  .knowUs .text p {
+    font-size: 15px;
+    line-height: 21px;
+    max-width: 800px;
+    width: auto;
+  }
+  .knowUs .under__slider h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .knowUs .under__slider p {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .knowUs .input {
+    margin-bottom: 88px;
+  }
+  .knowUs .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+    width: 196px;
+  }
+  .knowUs .input a img {
+    right: 20px;
+    top: 19px;
+    height: 14px;
+  }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .knowUs {
-    padding: 123px 30px 0 30px;
+    padding: 30px 20px 0;
+  }
+  .knowUs .text h1 {
+    line-height: 26px;
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+  .knowUs .text p {
+    font-size: 14px;
+    line-height: 21px;
+    width: auto;
+    padding-bottom: 50px;
+  }
+  .knowUs .under__slider h1 {
+    margin-top: 50px;
+  }
+  .knowUs .input {
+    margin-bottom: 50px;
+  }
+  .knowUs .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+    outline: none;
   }
 }
 
 .testimoniale {
   background-color: #F3D4BD;
   padding: 69px 198px 88px 198px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .testimoniale .title {
@@ -810,57 +1232,118 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .testimoniale .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  position: relative;
 }
 
-.testimoniale .content .box {
+.testimoniale .content .testimonialeSlider .box {
   width: 304px;
   text-align: center;
 }
 
-.testimoniale .content .box p {
+.testimoniale .content .testimonialeSlider .box p {
   color: #004F2E;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.02em;
+  width: 304px;
+  padding: 0 10px;
 }
 
-.testimoniale .content .box:nth-of-type(2) {
-  margin: 0 66px;
+.testimoniale .content .testimonialeMobileSlider, .testimoniale .content .paginationMobile {
+  display: none;
 }
 
-@media (max-width: 1024px) {
+.testimoniale .content .pagination .testimonatsPrev button, .testimoniale .content .pagination .testimonatsNext button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.testimoniale .content .pagination .testimonatsPrev {
+  position: absolute;
+  top: 5%;
+  left: -15px;
+}
+
+.testimoniale .content .pagination .testimonatsNext {
+  position: absolute;
+  top: 5%;
+  right: -15px;
+}
+
+@media (max-width: 1199px) {
+  .testimoniale {
+    padding: 80px 60px;
+  }
+  .testimoniale .title h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .testimoniale .content {
+    width: 100%;
+  }
+  .testimoniale .content .box p {
+    font-size: 15px !important;
+    line-height: 21px !important;
+    width: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimoniale {
+    padding: 30px 20px;
+  }
+  .testimoniale .title h1 {
+    line-height: 26px;
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
   .testimoniale .content {
     flex-direction: column;
+    position: relative;
   }
   .testimoniale .content .box {
-    margin-bottom: 50px;
-  }
-  .testimoniale .content .box:nth-of-type(2) {
-    margin-bottom: 50px;
-  }
-}
-
-@media (max-width: 549px) {
-  .testimoniale {
-    padding: 69px 30px 88px 30px;
-  }
-}
-
-@media (max-width: 520px) {
-  .testimoniale {
-    padding: 69px 50px 88px 50px;
-  }
-  .testimoniale .content .box {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    color: #004F2E;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    width: 100%;
+    text-align: center;
+    padding: 0 35px;
   }
   .testimoniale .content .box:nth-of-type(2) {
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+  }
+  .testimoniale .content .box p {
+    font-size: 14px !important;
+    line-height: 21px !important;
+  }
+  .testimoniale .content .testimonialeSlider, .testimoniale .content .pagination {
+    display: none;
+  }
+  .testimoniale .content .testimonialeMobileSlider, .testimoniale .content .paginationMobile {
+    display: block;
+  }
+  .testimoniale .content .paginationMobile .testimonatsMobilePrev button, .testimoniale .content .paginationMobile .testimonatsMobileNext button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .testimoniale .content .paginationMobile .testimonatsMobilePrev {
+    position: absolute;
+    top: 5%;
+    left: 5px;
+  }
+  .testimoniale .content .paginationMobile .testimonatsMobileNext {
+    position: absolute;
+    top: 5%;
+    right: 5px;
   }
 }
 
@@ -895,18 +1378,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   color: #004F2E;
 }
 
-@media (max-width: 845px) {
+@media (max-width: 1199px) {
   .ourShowcase {
-    padding: 63px 50px;
+    padding: 60px;
   }
-  .ourShowcase p {
-    width: auto !important;
+  .ourShowcase .text h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ourShowcase .text p {
+    width: auto;
+    font-size: 15px;
+    line-height: 21px;
   }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
   .ourShowcase {
-    padding: 63px 30px;
+    padding: 30px 20px;
+  }
+  .ourShowcase .text h1 {
+    line-height: 26px;
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+  .ourShowcase .text p {
+    font-size: 14px;
+    line-height: 21px;
+    width: auto;
   }
 }
 
@@ -926,7 +1425,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .sectionContent .sectionBg .logo img {
-  margin-top: 90px;
+  margin-top: 92px;
+  cursor: pointer;
 }
 
 .sectionContent .content {
@@ -936,7 +1436,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   flex-direction: column;
   text-align: center;
   background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
+  padding: 72px 20px 9px;
 }
 
 .sectionContent .content .text__box h1 {
@@ -1010,7 +1510,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   color: #174045;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
   padding: 61px 27px 91px 27px;
 }
@@ -1043,13 +1542,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   color: #fff;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
   padding: 61px 27px 91px 27px;
 }
 
 .sectionContent .content .master-cv .rightSide h2 {
   margin-bottom: 38px;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0.05em;
 }
 
 .sectionContent .content .master-cv .rightSide ul {
@@ -1062,6 +1564,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.02em;
+  color: #fff;
 }
 
 .sectionContent .content .inspiration {
@@ -1133,6 +1636,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   letter-spacing: 0.04em;
 }
 
+@media (max-width: 1199px) {
+  .sectionContent .sectionBg .logo img {
+    margin-top: 28px;
+  }
+}
+
 @media (max-width: 1124px) {
   .sectionContent .content .vice__master .leftSide {
     width: 450px;
@@ -1160,7 +1669,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @media (max-width: 948px) {
   .sectionContent .content {
-    padding: 71px 50px 115px 50px !important;
+    padding: 71px 50px 115px 50px;
   }
   .sectionContent .content .text__box p {
     width: auto !important;
@@ -1184,78 +1693,106 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-@media (max-width: 549px) {
+@media (max-width: 768px) {
+  .sectionContent .sectionBg {
+    height: 450px;
+  }
   .sectionContent .content {
-    padding: 71px 30px 115px 30px !important;
+    padding: 30px 20px 40px;
+  }
+  .sectionContent .content .text__box h1 {
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+  .sectionContent .content .text__box p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .sectionContent .content .vice__master {
+    margin-top: 50px;
+  }
+  .sectionContent .content .vice__master .leftSide, .sectionContent .content .vice__master .rightSide {
+    width: 100%;
   }
   .sectionContent .content .vice__master .leftSide {
+    padding: 30px 20px 40px;
+    height: auto;
+  }
+  .sectionContent .content .vice__master .leftSide h2 {
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+  .sectionContent .content .vice__master .leftSide p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .sectionContent .content .vice__master .rightSide {
+    height: 350px;
+    background-position: center;
+    background-size: cover;
+  }
+  .sectionContent .content .master-cv {
+    width: 100%;
+  }
+  .sectionContent .content .master-cv .leftSide, .sectionContent .content .master-cv .rightSide {
+    padding: 30px 20px 40px;
     width: 100%;
     height: auto;
-    padding: 71px 30px;
   }
-  .sectionContent .content .vice__master .rightSide {
-    width: 100%;
-    height: 470px;
+  .sectionContent .content .master-cv .leftSide h2, .sectionContent .content .master-cv .rightSide h2 {
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 25px;
   }
-  .sectionContent .content .master-cv .leftSide {
-    width: 100%;
-    height: 400px;
+  .sectionContent .content .master-cv .leftSide ul li, .sectionContent .content .master-cv .rightSide ul li {
+    font-size: 14px;
+    line-height: 21px;
   }
-  .sectionContent .content .master-cv .rightSide {
+  .sectionContent .content .inspiration {
+    margin-bottom: 50px;
+  }
+  .sectionContent .content .inspiration h1 {
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+  .sectionContent .content .inspiration p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .sectionContent .content .aboutUs__info {
     width: 100%;
-    height: 400px;
+    margin-bottom: 50px;
   }
   .sectionContent .content .aboutUs__info .box {
-    padding: 37px 0 43px 0;
     width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  .sectionContent .content .aboutUs__info .box .title p {
+    font-size: 14px;
+    line-height: 21px;
+    width: auto;
   }
   .sectionContent .content .aboutUs__info .box .description p {
-    width: 100%;
-    padding: 0 20px;
+    font-size: 14px;
+    line-height: 21px;
+    width: auto;
   }
-}
-
-@media (max-width: 520px) {
-  .sectionContent .content .vice__master .leftSide {
-    width: 100%;
+  .sectionContent .content .aboutUsForm h2 {
+    font-size: 21px;
+    line-height: 26px;
   }
-  .sectionContent .content .vice__master .rightSide {
-    width: 100%;
-    height: 470px;
-  }
-}
-
-.sectionContent .sectionBg {
-  background-image: url("/wp-content/themes/makiato/images/about-us.png");
-  height: 494px;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .sectionContent .blog {
-  background-image: url("/wp-content/themes/makiato/images/blog.png") !important;
+  background-image: url("/wp-content/themes/makiato/images/blog.png");
 }
 
-.sectionContent .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
-}
-
-.sectionContent .content .text__box h1 {
-  margin-bottom: 46px;
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 56px;
-  color: #174045;
-}
-
-.sectionContent .content .text__box p {
-  width: 814px;
+.sectionContent .blogText p {
+  margin-bottom: 71px;
 }
 
 .blogInfo {
@@ -1279,14 +1816,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 @media (max-width: 768px) {
+  .sectionContent .blogText p {
+    margin-bottom: 0;
+  }
+  .blogInfo {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
   .blogInfo p {
-    padding: 65px 30px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 21px;
+    width: auto;
   }
 }
 
 .posts {
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
+  margin-bottom: 80px;
 }
 
 .posts .content__post {
@@ -1349,28 +1898,130 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin-right: 20px;
 }
 
+.posts .content__post .box--special {
+  width: 100%;
+}
+
+.posts .removeCenter {
+  justify-content: flex-start;
+}
+
 .posts .pagination {
   margin-top: 17px;
+}
+
+.posts .pagination .navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.posts .pagination .navigation ul li {
+  margin-right: 22px;
+  border: 2px solid transparent;
+}
+
+.posts .pagination .navigation ul li a {
+  text-decoration: none;
+  color: #353434;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 17px;
+  outline: none;
+}
+
+.posts .pagination .navigation ul li:nth-last-of-type(2) {
+  margin-right: 0;
+}
+
+.posts .pagination .navigation ul .active {
+  border-bottom: 2px solid #F3D4BD;
+  padding: 0 10px;
+}
+
+.posts .pagination .navigation ul .prev {
+  padding-top: 6px;
+  position: relative;
+  margin-right: 30px;
+}
+
+.posts .pagination .navigation ul .prev a img {
+  position: relative;
+  z-index: 99;
+  outline: none;
+}
+
+.posts .pagination .navigation ul .prev:hover::before {
+  content: '';
+  background-color: #F3D4BD;
+  padding: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -11px;
+  z-index: 1;
+}
+
+.posts .pagination .navigation ul .next {
+  padding-top: 6px;
+  position: relative;
+  margin-left: 30px;
+}
+
+.posts .pagination .navigation ul .next a img {
+  position: relative;
+  z-index: 99;
+}
+
+.posts .pagination .navigation ul .next a:hover::before {
+  content: '';
+  background-color: #F3D4BD;
+  padding: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -13px;
+  z-index: 1;
 }
 
 @media (max-width: 1250px) {
   .posts .content__post .box a .img img {
     height: auto;
+    max-height: 299px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
 @media (max-width: 768px) {
+  .posts {
+    margin-bottom: 25px;
+  }
   .posts .content__post {
     flex-direction: column;
   }
   .posts .content__post .box {
     width: 100%;
   }
+  .posts .content__post .box a .img .data {
+    font-size: 14px;
+    line-height: 21px;
+    width: 66px;
+  }
+  .posts .content__post .box a .title p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .posts .content__post .box:nth-of-type(1), .posts .content__post .box:nth-of-type(3) {
+    margin-right: 0;
+  }
 }
 
 .singlePost .singlePostBg {
-  background-color: #174045 !important;
-  height: 494px !important;
+  background-color: #174045;
+  height: 494px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1393,16 +2044,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   flex-direction: column;
   text-align: center;
   background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
 }
 
 .singlePost .singlePost__info article {
   margin-bottom: 79px;
+  margin-top: 61px;
 }
 
 .singlePost .singlePost__info .title h2 {
   width: 721px;
-  margin-bottom: 86px;
+  margin: 86px 0;
   color: #174045;
   letter-spacing: 0.04em;
   line-height: 30px;
@@ -1418,12 +2069,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 400;
   letter-spacing: 0.02em;
   text-align: left;
+  margin-bottom: 96px;
 }
 
 .singlePost .singlePost__gallery {
   display: flex;
   align-items: center;
-  margin-top: 129px;
   margin-bottom: 98px;
 }
 
@@ -1478,17 +2129,25 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @media (max-width: 768px) {
   .singlePost .singlePostBg {
-    padding: 0 30px;
+    padding: 0 20px;
+    height: 450px;
+  }
+  .singlePost .singlePostBg h2 {
+    font-size: 21px;
+    line-height: 26px;
   }
   .singlePost .content {
-    padding: 0 30px;
+    padding: 0 20px;
   }
   .singlePost .singlePost__info .title h2 {
     width: auto;
-    margin-top: 86px;
+    font-size: 21px;
+    line-height: 26px;
+    margin: 50px 0;
   }
   .singlePost .singlePost__info article {
     margin-top: 61px;
+    margin-bottom: 50px;
   }
   .singlePost .singlePost__info article img {
     width: 100%;
@@ -1496,56 +2155,40 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .singlePost .singlePost__info .text p {
     width: auto;
-    margin-bottom: 96px;
+    margin-bottom: 50px;
+    font-size: 14px;
+    line-height: 21px;
   }
   .singlePost .singlePost__gallery {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0;
+    margin-bottom: 50px;
   }
   .singlePost .singlePost__gallery .left {
     margin-right: 0;
     margin-bottom: 20px;
   }
+  .singlePost .singlePost__gallery .left img, .singlePost .singlePost__gallery .right img {
+    height: 350px;
+  }
+  .blogPostImg {
+    height: 350px;
+  }
   .blogPost .content {
-    padding: 67px 30px 55px 30px;
+    padding: 30px 20px;
   }
   .blogPost .content .posts .content__post .box:nth-of-type(1) {
     margin-bottom: 20px;
   }
-}
-
-.sectionContent .sectionBg {
-  background-image: url("/wp-content/themes/makiato/images/about-us.png");
-  height: 494px;
-  background-repeat: no-repeat;
-  background-size: cover;
+  .blogPost .content .posts h2 {
+    font-size: 21px;
+    line-height: 26px;
+  }
 }
 
 .sectionContent .caseStudy {
-  background-image: url("/wp-content/themes/makiato/images/case-study.png") !important;
-}
-
-.sectionContent .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
-}
-
-.sectionContent .content .text__box h1 {
-  margin-bottom: 46px;
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 56px;
-  color: #174045;
-}
-
-.sectionContent .content .text__box p {
-  width: 814px;
+  background-image: url("/wp-content/themes/makiato/images/case-study-bg.png");
 }
 
 .sectionContent .content .casePosts {
@@ -1556,24 +2199,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin-bottom: 61px;
 }
 
-.sectionContent .content .casePosts__content .box a .img {
+.sectionContent .content .casePosts__content .box .img {
   position: relative;
   margin-bottom: 21px;
 }
 
-.sectionContent .content .casePosts__content .box a .img img {
+.sectionContent .content .casePosts__content .box .img img {
+  max-width: 1095px;
+  object-fit: contain;
   width: 100%;
   height: auto;
 }
 
-.sectionContent .content .casePosts__content .box a .img .title {
+.sectionContent .content .casePosts__content .box .img .title {
   position: absolute;
   bottom: 61px;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
-.sectionContent .content .casePosts__content .box a .img .title p {
+.sectionContent .content .casePosts__content .box .img .title p {
   color: #F3D4BD;
   letter-spacing: 0.04em;
   font-weight: 600;
@@ -1584,51 +2229,426 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .sectionContent .content .casePosts__content .box__content {
   width: 100%;
   background-color: #fff;
-  padding: 69px 0 57px 84px;
+  padding: 0 0 57px 84px;
+  display: flex;
+  text-align: left;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
 }
 
-.sectionContent .sectionBg {
-  background-image: url("/wp-content/themes/makiato/images/about-us.png");
-  height: 494px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.sectionContent .content .casePosts__content .box__content .data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: -46px;
+}
+
+.sectionContent .content .casePosts__content .box__content .data div {
+  display: flex;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  color: #4F4B4B;
+  font-weight: 400;
+}
+
+.sectionContent .content .casePosts__content .box__content .data div .name {
+  width: 170px;
+  min-width: 170px;
+  padding-bottom: 8px;
+  margin-right: 80px;
+}
+
+.sectionContent .content .casePosts__content .box__content .data div .field {
+  padding-bottom: 8px;
+  border-left: 1px solid rgba(79, 75, 75, 0.2);
+  padding-left: 64px;
+  padding-right: 20px;
+}
+
+.sectionContent .content .casePosts__content .box__content .button {
+  margin-top: 40px;
+  margin-right: 49px;
+  display: flex;
+  justify-content: flex-end;
+  width: max-content;
+}
+
+.sectionContent .content .casePosts__content .box__content .button a {
+  text-decoration: none;
+  outline: none;
+  color: #174045;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 400;
+  padding: 25px 65px 25px 38px;
+  white-space: nowrap;
+  background-color: #F3D4BD;
+  border-radius: 180px;
+  transition: ease .3s;
+}
+
+.sectionContent .content .casePosts__content .box__content .button a:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.sectionContent .content .casePosts .pagination {
+  margin-top: 17px;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul li {
+  margin-right: 22px;
+  border: 2px solid transparent;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul li a {
+  text-decoration: none;
+  color: #353434;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 17px;
+  outline: none;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul li:nth-last-of-type(2) {
+  margin-right: 0;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .active {
+  border-bottom: 2px solid #F3D4BD;
+  padding: 0 10px;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .prev {
+  padding-top: 6px;
+  position: relative;
+  margin-right: 30px;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .prev a img {
+  position: relative;
+  z-index: 99;
+  outline: none;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .prev:hover::before {
+  content: '';
+  background-color: #F3D4BD;
+  padding: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -11px;
+  z-index: 1;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .next {
+  position: relative;
+  padding-top: 6px;
+  margin-left: 30px;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .next a img {
+  position: relative;
+  z-index: 99;
+}
+
+.sectionContent .content .casePosts .pagination .navigation ul .next a:hover::before {
+  content: '';
+  background-color: #F3D4BD;
+  padding: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -13px;
+  z-index: 1;
+}
+
+.sectionContent .content .casePosts .casePagination {
+  margin-bottom: 105px;
+}
+
+.sectionContent .content .singleCase__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sectionContent .content .singleCase__info article {
+  margin-top: 74px;
+}
+
+.sectionContent .content .singleCase__info article img {
+  width: 100%;
+  height: auto;
+}
+
+.sectionContent .content .singleCase__info .data .title h2 {
+  width: 721px;
+  margin-bottom: 31px;
+  color: #2C2528;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 21px;
+  text-align: left;
+}
+
+.sectionContent .content .singleCase__info .data .text p {
+  width: 721px;
+  font-size: 17px;
+  line-height: 24px;
+  color: #353434;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin-bottom: 84px;
+}
+
+.sectionContent .content .singleCase__info .box {
+  margin-bottom: 61px;
+}
+
+.sectionContent .content .singleCase__info .box .img {
+  position: relative;
+  margin-bottom: 21px;
+}
+
+.sectionContent .content .singleCase__info .box .img img {
+  max-width: 1095px;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.sectionContent .content .singleCase__info .box .img .title {
+  position: absolute;
+  bottom: 61px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.sectionContent .content .singleCase__info .box .img .title p {
+  color: #F3D4BD;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  line-height: 49px;
+  font-size: 35px;
+}
+
+.sectionContent .content .singleCase__info .box__content {
+  width: 100%;
+  background-color: #fff;
+  padding: 68px 0 57px 84px;
+  display: flex;
+  text-align: left;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.sectionContent .content .singleCase__info .box__content .data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sectionContent .content .singleCase__info .box__content .data div {
+  display: flex;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  color: #4F4B4B;
+  font-weight: 400;
+}
+
+.sectionContent .content .singleCase__info .box__content .data div .name {
+  width: 170px;
+  min-width: 170px;
+  padding-bottom: 8px;
+  margin-right: 80px;
+}
+
+.sectionContent .content .singleCase__info .box__content .data div .field {
+  padding-bottom: 8px;
+  border-left: 1px solid rgba(79, 75, 75, 0.2);
+  padding-left: 64px;
+  padding-right: 20px;
+}
+
+.sectionContent .content .singleCase__info .caseImg1 img {
+  max-width: 1095px;
+  object-fit: contain;
+  width: calc(100% - 30px);
+  height: auto;
+}
+
+.sectionContent .content .singleCase__info .secData .title {
+  margin-top: 84px;
+}
+
+.sectionContent .content .singleCase__info .secData .text p {
+  margin-bottom: 74px;
+}
+
+.sectionContent .content .singleCase__info .hrLine {
+  height: 1px;
+  width: 100%;
+  background-color: #4F4B4B;
+  opacity: 0.3;
+}
+
+.sectionContent .content .singleCase__info .thirdData .title {
+  margin-top: 79px;
+}
+
+.sectionContent .content .singleCase__info .thirdData .text p {
+  margin-bottom: 84px;
+}
+
+.sectionContent .content .singleCase__info .fourthData .title {
+  margin-top: 83px;
+}
+
+.sectionContent .content .singleCase__info .fourthData .text p {
+  margin-bottom: 113px;
+}
+
+.sectionContent .content .caseForm {
+  margin-bottom: 110px;
+}
+
+@media (max-width: 945px) {
+  .sectionContent .content .casePosts__content .box__content .data div .name, .sectionContent .content .singleCase__info__content .box__content .data div .name {
+    margin-right: 25px;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div .field, .sectionContent .content .singleCase__info__content .box__content .data div .field {
+    padding-left: 34px;
+  }
+  .sectionContent .content .casePosts__content .box .button, .sectionContent .content .singleCase__info__content .box .button {
+    margin-bottom: 65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionContent .content .casePosts, .sectionContent .content .singleCase__info {
+    width: 100%;
+  }
+  .sectionContent .content .casePosts__content, .sectionContent .content .singleCase__info__content {
+    width: 100%;
+  }
+  .sectionContent .content .casePosts__content .box .img .title p, .sectionContent .content .singleCase__info__content .box .img .title p {
+    font-size: 21px;
+    line-height: 26px;
+  }
+  .sectionContent .content .casePosts__content .box__content, .sectionContent .content .singleCase__info__content .box__content {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+  .sectionContent .content .casePosts__content .box__content .data, .sectionContent .content .singleCase__info__content .box__content .data {
+    margin-top: 0;
+    padding-left: 0;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div, .sectionContent .content .singleCase__info__content .box__content .data div {
+    letter-spacing: 0.02em;
+    color: #4F4B4B;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div .name,
+  .sectionContent .content .casePosts__content .box__content .data div .field, .sectionContent .content .singleCase__info__content .box__content .data div .name,
+  .sectionContent .content .singleCase__info__content .box__content .data div .field {
+    padding-bottom: 5px;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div .name, .sectionContent .content .singleCase__info__content .box__content .data div .name {
+    margin-right: 0;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div .field, .sectionContent .content .singleCase__info__content .box__content .data div .field {
+    padding-left: 20px;
+  }
+  .sectionContent .content .casePosts__content .box .button, .sectionContent .content .singleCase__info__content .box .button {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .sectionContent .content .casePosts__content .box .button a, .sectionContent .content .singleCase__info__content .box .button a {
+    padding: 15px 30px;
+    font-size: 14px;
+    outline: none;
+  }
+  .sectionContent .content .singlePost .singleCase__info .data .title h2 {
+    width: auto;
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+  .sectionContent .content .singlePost .singleCase__info .data .text p {
+    width: auto;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 50px;
+  }
+  .sectionContent .content .singlePost .singleCase__info article img {
+    width: 100%;
+    height: auto;
+  }
+  .sectionContent .content .singlePost .singleCase__info .caseImg1 img {
+    width: 100%;
+    height: auto;
+  }
+  .sectionContent .content .singlePost .singleCase__info .secData .title,
+  .sectionContent .content .singlePost .singleCase__info .thirdData .title,
+  .sectionContent .content .singlePost .singleCase__info .fourthData .title {
+    margin-top: 50px;
+  }
+  .sectionContent .content .caseForm {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 526px) {
+  .sectionContent .content .casePosts__content .box__content, .sectionContent .content .singleCase__info__content .box__content {
+    display: flex;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div .name, .sectionContent .content .singleCase__info__content .box__content .data div .name {
+    margin-right: 20px;
+    min-width: 85px;
+    width: 85px;
+  }
+  .sectionContent .content .casePosts__content .box__content .data div .field, .sectionContent .content .singleCase__info__content .box__content .data div .field {
+    padding-right: 0;
+  }
+  .sectionContent .content .casePosts__content .box .button, .sectionContent .content .singleCase__info__content .box .button {
+    margin-bottom: 25px;
+  }
 }
 
 .sectionContent .faq {
-  background-image: url("/wp-content/themes/makiato/images/faq.png") !important;
-}
-
-.sectionContent .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
-}
-
-.sectionContent .content .text__box h1 {
-  margin-bottom: 46px;
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 56px;
-  color: #174045;
-}
-
-.sectionContent .content .text__box p {
-  width: 814px;
+  background-image: url("/wp-content/themes/makiato/images/faq.png");
 }
 
 .block-faq {
   padding: 0 10%;
   margin-top: 61px;
+  margin-bottom: 64px;
 }
 
 .block-faq .question {
   display: flex;
   justify-content: space-between;
-  align-content: center;
   flex-direction: row;
   padding: 20px;
   height: 61px;
@@ -1687,10 +2707,82 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .block-faq .answer p {
   padding: 4rem 2rem 3rem 2rem;
   opacity: 0.5;
+  text-align: left;
 }
 
 .block-faq .answer:last-of-type {
   border-bottom: .025rem solid #ececec;
+}
+
+.faqContent .input {
+  margin-bottom: 63px;
+}
+
+.faqContent .input a {
+  background-color: #F3D4BD;
+  color: #174045;
+  border: none;
+  padding: 25px 38px;
+  border-radius: 180px;
+  white-space: nowrap;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-size: 17px;
+  font-weight: 400;
+  text-decoration: none;
+  outline: none;
+  transition: ease .3s;
+  position: relative;
+  display: block;
+  width: 215px;
+}
+
+.faqContent .input a img {
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  transition: ease .3s;
+}
+
+.faqContent .input a:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.faqContent .input a:hover img {
+  transition: ease .3s;
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .sectionContent .content .block-faq .question {
+    font-size: 14px;
+    line-height: 21px;
+    margin-right: 30px;
+    height: auto;
+    margin-bottom: 0;
+  }
+  .sectionContent .content .block-faq .answer {
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+  }
+  .sectionContent .content .block-faq .answer p {
+    padding: 20px;
+  }
+  .sectionContent .faqContent .input {
+    margin-bottom: 20px;
+  }
+  .sectionContent .faqContent .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+    width: 175px;
+  }
+  .sectionContent .faqContent .input a img {
+    right: 21px;
+    top: 19px;
+    height: 14px;
+  }
 }
 
 @media (max-width: 549px) {
@@ -1702,37 +2794,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-.sectionContent .sectionBg {
-  background-image: url("/wp-content/themes/makiato/images/about-us.png");
-  height: 494px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .sectionContent .gallery {
-  background-image: url("/wp-content/themes/makiato/images/gallery.png") !important;
-}
-
-.sectionContent .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
-}
-
-.sectionContent .content .text__box h1 {
-  margin-bottom: 46px;
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 56px;
-  color: #174045;
-}
-
-.sectionContent .content .text__box p {
-  width: 814px;
+  background-image: url("/wp-content/themes/makiato/images/gallery.png");
 }
 
 @media (max-width: 549px) {
@@ -1741,6 +2804,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   .block-gallery .images .image a img {
     width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .customGallery .content {
+    padding: 82px 172px 0;
   }
 }
 
@@ -1757,14 +2826,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .block-gallery .responsive__box {
   display: flex !important;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .block-gallery .responsive__box .img {
-  background-image: url("/wp-content/themes/makiato/images/single-post-img1.png");
   height: 359px;
-  width: calc(100% / 2 - 30px);
+  width: 600px !important;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .block-gallery .responsive__box .img:nth-of-type(1), .block-gallery .responsive__box .img:nth-of-type(2) {
@@ -1773,10 +2843,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .block-gallery .responsive__box .img:nth-of-type(1), .block-gallery .responsive__box .img:nth-of-type(3) {
   margin-right: 20px;
-}
-
-.block-gallery .responsive__box .img:nth-of-type(even) {
-  background-image: url("/wp-content/themes/makiato/images/chess-img4.png");
 }
 
 .block-gallery .slider .pagination {
@@ -1866,38 +2932,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   z-index: 1;
 }
 
-.block-gallery .button {
-  text-align: center;
-  padding: 2rem 0 0rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.block-gallery .button button {
-  line-height: 20px;
-  letter-spacing: 0.02em;
-  font-size: 17px;
-  font-weight: 400;
-  cursor: pointer;
-  width: 227px;
-  height: 67px;
-  border-radius: 180px;
-  border: none;
-  font-size: 1.7rem;
-  text-decoration: none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 38px;
-  font-size: 17px;
-  background-color: #F3D4BD;
-  color: #174045;
-  font-size: 17px;
-  line-height: 17px;
-  font-weight: 400;
-}
-
 @media (min-width: 769px) {
   .block-gallery .sliderMobile {
     display: none !important;
@@ -1918,14 +2952,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     display: block;
   }
   .block-gallery .sliderMobile .responsiveMobile__box .img {
-    background-image: url("/wp-content/themes/makiato/images/single-post-img1.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 359px;
     width: 100%;
-  }
-  .block-gallery .sliderMobile .responsiveMobile__box:nth-of-type(even) .img {
-    background-image: url("/wp-content/themes/makiato/images/chess-img4.png");
   }
   .block-gallery .sliderMobile .pagination {
     display: flex;
@@ -2005,37 +3035,68 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-.sectionContent .sectionBg {
-  background-image: url("/wp-content/themes/makiato/images/about-us.png");
-  height: 494px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.block-gallery .input {
+  margin-bottom: 61px;
+  margin-top: 107px;
+  display: flex;
+  justify-content: center;
+}
+
+.block-gallery .input a {
+  background-color: #F3D4BD;
+  color: #174045;
+  border: none;
+  padding: 25px 38px;
+  border-radius: 180px;
+  white-space: nowrap;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  font-size: 17px;
+  outline: none;
+  transition: ease .3s;
+  width: 215px;
+}
+
+.block-gallery .input a img {
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  transition: ease .3s;
+}
+
+.block-gallery .input a:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.block-gallery .input a:hover img {
+  transition: ease .3s;
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .block-gallery .input {
+    margin-bottom: 40px;
+    margin-top: 80px;
+  }
+  .block-gallery .input a {
+    padding: 15px 30px;
+    font-size: 14px;
+    width: 170px;
+  }
+  .block-gallery .input a img {
+    right: 21px;
+    top: 19px;
+    height: 14px;
+  }
 }
 
 .sectionContent .offer {
-  background-image: url("/wp-content/themes/makiato/images/offer.png") !important;
-}
-
-.sectionContent .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background-color: #E5E5E5;
-  padding: 71px 172px 115px 172px;
-}
-
-.sectionContent .content .text__box h1 {
-  margin-bottom: 46px;
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 56px;
-  color: #174045;
-}
-
-.sectionContent .content .text__box p {
-  width: 814px;
+  background-image: url("/wp-content/themes/makiato/images/offer.png");
 }
 
 .sectionContent .content .offerContent {
@@ -2143,35 +3204,39 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
-@media (max-width: 761px) {
-  .sectionContent .content .offerContent__box {
-    padding: 62px 50px 99px 50px;
-    height: auto;
-  }
-  .sectionContent .content .offerContent__box ul li {
-    padding: 29px 0;
-    height: auto;
-  }
-}
-
-@media (max-width: 515px) {
-  .sectionContent .content .offerContent .options {
-    justify-content: space-between;
+@media (max-width: 768px) {
+  .sectionContent .content .offerContent {
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   .sectionContent .content .offerContent .options .basic, .sectionContent .content .offerContent .options .extra {
     padding: 10px;
   }
-  .sectionContent .content .offerContent .options .basic {
-    margin-right: 1px;
-    margin-left: 0;
+  .sectionContent .content .offerContent .options .basic p, .sectionContent .content .offerContent .options .extra p {
+    font-size: 14px;
+    line-height: 21px;
   }
   .sectionContent .content .offerContent__box {
-    padding: 62px 50px 99px 50px;
+    height: auto;
+    padding: 0 20px 50px;
   }
   .sectionContent .content .offerContent__box ul li {
     padding: 29px 0;
     height: auto;
+    font-size: 14px;
+    line-height: 21px;
   }
+}
+
+@media (max-width: 356px) {
+  .sectionContent .content .offerContent .options .basic {
+    margin-left: 0;
+    margin-right: 1px;
+  }
+}
+
+.sectionContent .contactBg {
+  background-image: url("/wp-content/themes/makiato/images/kontakt.png");
 }
 
 /* Import Partials
@@ -2189,7 +3254,7 @@ header .menu {
   position: absolute;
 }
 
-@media (max-width: 1999px) {
+@media (max-width: 1199px) {
   header .menu .menuDesktop {
     display: none;
   }
@@ -2197,17 +3262,17 @@ header .menu {
     z-index: 99999;
     display: none;
     position: fixed;
-    bottom: -100%;
+    bottom: -120%;
     left: 50%;
     transform: translate(-50%, -20%);
-    height: 80vh;
+    height: 75vh;
     width: 90vw;
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transition: all ease .5s;
+    transition: all ease .5s !important;
     margin: 0;
   }
   header .menu .menuMobile::before {
@@ -2240,13 +3305,15 @@ header .menu {
     line-height: 24px;
     font-weight: 500;
     outline: none;
+    transition: ease .3s;
   }
   header .menu .menuMobile__items li a:hover {
-    color: #27C55D;
+    opacity: .8;
+    transition: ease .3s;
   }
   header .menu .menuMobile--active {
-    bottom: -12%;
-    top: 30%;
+    bottom: -3%;
+    transition: all ease .5s !important;
   }
   header .menu .menuMobile--active li a {
     color: #4F4B4B;
@@ -2255,8 +3322,8 @@ header .menu {
   }
   header .menu .menu__icon {
     position: fixed;
-    top: 25px;
-    right: 30px;
+    top: 30px;
+    left: calc(100% - 116px);
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -2297,12 +3364,45 @@ header .menu {
     font-weight: 600;
     line-height: 24px;
     letter-spacing: 0.02em;
+    transition: ease .3s;
+  }
+  header .menu .menuDesktop ul li a:hover {
+    opacity: .8;
+    transition: ease .3s;
   }
   header .menu .menuMobile {
     display: none;
   }
   header .menu .menu__icon {
     display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  header .menu .menuMobile::before {
+    left: calc(100% - 53px);
+  }
+}
+
+@media (max-width: 1072px) {
+  header .menu .menuMobile::before {
+    left: calc(100% - 61px);
+  }
+}
+
+@media (max-width: 922px) {
+  header .menu .menuMobile::before {
+    left: calc(100% - 70px);
+  }
+}
+
+@media (max-width: 768px) {
+  header .menu .menuMobile::before {
+    left: calc(100% - 43px);
+  }
+  header .menu .menu__icon {
+    right: 30px;
+    left: auto;
   }
 }
 
@@ -2344,15 +3444,31 @@ footer .socialMedia {
 
 footer .socialMedia div {
   margin-right: 52px;
+}
+
+footer .socialMedia div:nth-last-of-type(1) {
+  margin-right: 0;
+}
+
+footer .socialMedia div a {
   color: #fff;
   cursor: pointer;
   letter-spacing: 0.02em;
   font-size: 17px;
   line-height: 24px;
+  text-decoration: none;
+  transition: ease .3s;
+  outline: none;
 }
 
-footer .socialMedia div:nth-last-of-type(1) {
-  margin-right: 0;
+footer .socialMedia div a:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+footer .socialMedia div a img {
+  margin-right: 10px;
+  margin-bottom: -5px;
 }
 
 footer .socialMedia .media {
@@ -2361,34 +3477,62 @@ footer .socialMedia .media {
 }
 
 footer .socialMedia .media div {
+  transition: ease .3s;
   margin-right: 18px;
+}
+
+footer .socialMedia .media div:hover {
+  opacity: .8;
+  transition: ease .3s;
 }
 
 footer .socialMedia .media div:nth-last-of-type(1) {
   margin-right: 0;
 }
 
-@media (max-width: 845px) {
+footer .socialMedia .media .insta, footer .socialMedia .media .fb {
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 768px) {
   footer {
-    padding: 45px 50px;
+    padding: 40px 20px;
+  }
+  footer .text h1 {
+    line-height: 24px;
+    font-size: 21px;
   }
   footer .text p {
-    width: auto !important;
+    font-size: 14px;
+    line-height: 24px;
+    width: auto;
+  }
+  footer .socialMedia .tel, footer .socialMedia .email {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  footer .socialMedia .tel img, footer .socialMedia .email img {
+    height: 18px;
   }
 }
 
-@media (max-width: 483px) {
-  footer {
-    padding: 45px 30px;
+@media (max-width: 476px) {
+  footer .text p {
+    margin-bottom: 25px;
+  }
+  footer .socialMedia {
+    flex-direction: column;
   }
   footer .socialMedia div {
-    margin-right: 25px;
+    margin-right: 0;
+    margin-bottom: 5px;
   }
-}
-
-@media (max-width: 409px) {
+  footer .socialMedia .tel, footer .socialMedia .email {
+    margin-right: 0;
+  }
   footer .socialMedia .media {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
@@ -2444,7 +3588,12 @@ footer .socialMedia .media div:nth-last-of-type(1) {
   margin-bottom: 28px;
 }
 
-.contact .contactForm__box:nth-of-type(4) input {
+.contact .contactForm__box:nth-of-type(4) {
+  display: flex;
+  justify-content: center;
+}
+
+.contact .contactForm__box:nth-of-type(4) button {
   background-color: #F3D4BD;
   width: 245px;
   height: 67px;
@@ -2452,6 +3601,31 @@ footer .socialMedia .media div:nth-last-of-type(1) {
   margin-bottom: 0;
   color: #174045;
   cursor: pointer;
+  border: none;
+  outline: none;
+  margin-bottom: 90px;
+  transition: ease .3s;
+  position: relative;
+  display: block;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+
+.contact .contactForm__box:nth-of-type(4) button img {
+  position: absolute;
+  right: 28px;
+  top: 27px;
+  transition: ease .3s;
+}
+
+.contact .contactForm__box:nth-of-type(4) button:hover {
+  opacity: .8;
+  transition: ease .3s;
+}
+
+.contact .contactForm__box:nth-of-type(4) button:hover img {
+  transition: ease .3s;
+  transform: translateX(5px);
 }
 
 @media (max-width: 948px) {
@@ -2472,6 +3646,37 @@ footer .socialMedia .media div:nth-last-of-type(1) {
   }
   .contact .contactForm__box textarea {
     width: 650px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 30px 20px 40px;
+  }
+  .contact .title h2 {
+    line-height: 24px;
+    font-size: 21px;
+  }
+  .contact .description p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .contact .contactForm {
+    margin-top: 50px;
+  }
+  .contact .contactForm__box:nth-of-type(4) button {
+    width: 205px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 0;
+  }
+  .contact .contactForm__box:nth-of-type(4) button img {
+    right: 16px;
+    top: 19px;
+    height: 14px;
   }
 }
 
@@ -2497,4 +3702,25 @@ footer .socialMedia .media div:nth-last-of-type(1) {
 
 /* Import Partials
 --------------------------------------------- */
+.menuScroll {
+  overflow-y: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.formAlert {
+  border-radius: 5px;
+  padding: 11px 10px 11px 21px;
+  margin-bottom: 30px;
+}
+
+.formAlert--success {
+  border: 1px solid green;
+}
+
+.formAlert--error {
+  border: 1px solid red;
+}
 /*# sourceMappingURL=style.css.map */

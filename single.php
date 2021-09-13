@@ -12,7 +12,7 @@ get_header();
 
 	<section class="singlePost">
     	<div class="singlePostBg">
-			<h2>Mollis aliquam pellentesque maecenas viverra tincidunt scelerisque orci aliquam, suspendisse. </h2>
+			<h2><?php the_field('singlePost__title');?></h2>
 		</div>
 		<div class="content">
 			<div class="singlePost__info">
@@ -24,41 +24,33 @@ get_header();
 					endwhile;
 				?> 
 				<div class="text">
-					<p>
-						Augue eget tristique egestas non pulvinar egestas posuere. Elit eget quisque duis dis tortor feugiat. Quam consequat cum lorem vulputate. Risus nisi nulla ornare odio tortor, massa mauris risus pellentesque. Odio vel nulla arcu vestibulum ac. Aliquet dui risus arcu sit phasellus. Netus dolor commodo pretium neque varius ullamcorper leo, mi amet.
-						Blandit ullamcorper gravida euismod vulputate. In aliquam euismod ut lectus. Nulla fermentum nunc, nisl ornare ac. Sit proin enim et scelerisque congue.
-					</p>
+					<p><?php the_field('singlePost__description'); ?></p>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="blogPostImg"></section>
+	<section class="blogPostImg" style="background-image: url('<?php the_field('singlePost__bannerCaffee')['url']; ?>')"></section>
 	<section class="singlePost">
 		<div class="content">
 			<div class="singlePost__info">
 				<div class="title">
-						<h2>Blandit ullamcorper gravida euismod vulputate. In aliquam euismod ut lectus. Nulla fermentum nunc, nisl ornare ac. Sit proin enim et scelerisque congue.</h2>
+						<h2><?php the_field('singlePost__underBanner__title'); ?></h2>
 				</div>
 				<div class="text">
-					<p>
-						Augue eget tristique egestas non pulvinar egestas posuere. Elit eget quisque duis dis tortor feugiat. Quam consequat cum lorem vulputate. Risus nisi nulla ornare odio tortor, massa mauris risus pellentesque. Odio vel nulla arcu vestibulum ac. Aliquet dui risus arcu sit phasellus. Netus dolor commodo pretium neque varius ullamcorper leo, mi amet.
-						Blandit ullamcorper gravida euismod vulputate. In aliquam euismod ut lectus. Nulla fermentum nunc, nisl ornare ac. Sit proin enim et scelerisque congue.
-					</p>
+					<p><?php the_field('singlePost__underBanner__description'); ?></p>
 				</div>
 			</div>
 			<div class="singlePost__gallery">
 				<div class="left">
-					<img src="<?php echo get_template_directory_uri() . '/images/single-post-img1.png'?>" alt="img-post-1">
+					<img src="<?php the_field('singlePost__firstImg')['url']; ?>" alt="<?php the_field('singlePost__firstImg')['alt'] ?>">
 				</div>
 				<div class="right">
-					<img src="<?php echo get_template_directory_uri() . '/images/single-post-img2.png'?>" alt="img-post-2">
+					<img src="<?php the_field('singlePost__secImg')['url']; ?>" alt="<?php the_field('singlePost__secImg')['alt'] ?>">
 				</div>
 			</div>
 			<div class="singlePost__info">
 				<div class="text">
-					<p>
-						Faucibus interdum nibh imperdiet sagittis. Dui quisque venenatis donec neque. Id mus nunc fringilla odio. Nibh lorem pharetra elit turpis euismod sit malesuada leo, vulputate. Eu varius sapien dui, sit erat ornare eget. Feugiat ultrices enim, purus diam sit risus. Urna maecenas velit integer vitae erat magnis. Amet sit aliquam bibendum magna.
-					</p>
+					<p><?php the_field('singlePost__underImg__description');?></p>
 				</div>
 			</div>
 		</div>

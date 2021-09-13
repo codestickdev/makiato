@@ -11,7 +11,7 @@ header {
         justify-content: center;
         padding-top: 30px;
         position: absolute;
-        @media(max-width: 1999px) {
+        @media(max-width: 1199px) {
             .menuDesktop {
                 display: none;
             }
@@ -19,18 +19,18 @@ header {
                 z-index: 99999;
                 display: none;
                 position: fixed;
-                bottom: -100%;
+                bottom: -120%;
                 // top: -100%;
                 left: 50%;
                 transform: translate(-50%, -20%);
-                height: 80vh;
+                height: 75vh;
                 width: 90vw;
                 background-color: $white;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                transition: all ease .5s;
+                transition: all ease .5s !important;
                 margin: 0;
                 &::before {
                     content: "";
@@ -60,15 +60,17 @@ header {
                             line-height: $line-height-normal;
                             font-weight: $font-weight-medium;
                             outline: none;
+                            transition: ease .3s;
                             &:hover {
-                                color: $color-3;
+                                opacity: .8;
+                                transition: ease .3s;
                             }
                         }
                     }
                 }
                 &--active {
-                    bottom: -12%;
-                    top: 30%;
+                    bottom: -3%;
+                    transition: all ease .5s !important;
                     li {
                         a {
                             color: $color-text2;
@@ -80,8 +82,8 @@ header {
             }
             .menu__icon {
                 position: fixed;
-                top: 25px;
-                right: 30px;
+                top: 30px;
+                left: calc(100% - 116px);
                 height: 35px;
                 width: 35px;
                 border-radius: 50%;
@@ -118,6 +120,11 @@ header {
                             font-weight: $font-weight-medium2;
                             line-height: $line-height-normal;
                             letter-spacing: $normal-spacing;
+                            transition: ease .3s;
+                            &:hover {
+                                opacity: .8;
+                                transition: ease .3s;
+                            }
                         }
                     }
                 }
@@ -127,6 +134,38 @@ header {
             }
             .menu__icon {
                 display: none;
+            }
+        }
+        @media(max-width: 1199px) {
+            .menuMobile {
+                &::before {
+                    left: calc(100% - 53px);
+                }
+            }
+        }
+        @media(max-width: 1072px){
+            .menuMobile {
+                &::before {
+                    left: calc(100% - 61px);
+                }
+            }
+        }
+        @media(max-width: 922px){
+            .menuMobile {
+                &::before {
+                    left: calc(100% - 70px);
+                }
+            }
+        }
+        @media(max-width: 768px) {
+            .menuMobile {
+                &::before {
+                    left: calc(100% - 43px);
+                }
+            }
+            .menu__icon {
+                right: 30px;
+                left: auto;
             }
         }
     }

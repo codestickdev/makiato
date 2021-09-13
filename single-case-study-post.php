@@ -9,84 +9,132 @@
 
 get_header();
 ?>
+<section class="sectionContent caseContent">
+    <div class="sectionBg caseStudy">
+        <div class="logo">
+        <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="text__box">
+            <h1><?php the_field('caseStudy__title');?></h1>
+            <p><?php the_field('caseStudy__description');?></p>
+        </div>
+        <section class="singlePost">
+            <div>
+                <div class="singleCase__info">
+                    <div class="singleCase__info__content">
+                        <div class="box">
+                            <div class="img">
+                            <?php
+                                while ( have_posts() ) :
+                                    the_post();
+                                    get_template_part( 'template-parts/content', get_post_type() );
 
-	<section class="singlePost">
-    	<div class="singlePostBg">
-			<h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero autem et doloremque deserunt, molestias pariatur repellat nam! Fugit incidunt illo totam, quia temporibus vitae nostrum esse nemo quaerat tempore alias.
-            </h2>
-		</div>
-		<div class="content">
-			<div class="singlePost__info">
-				 <?php
-					while ( have_posts() ) :
-						the_post();
-						get_template_part( 'template-parts/content', get_post_type() );
-
-					endwhile;
-				?> 
-				<div class="text">
-					<p>
-						Augue eget tristique egestas non pulvinar egestas posuere. Elit eget quisque duis dis tortor feugiat. Quam consequat cum lorem vulputate. Risus nisi nulla ornare odio tortor, massa mauris risus pellentesque. Odio vel nulla arcu vestibulum ac. Aliquet dui risus arcu sit phasellus. Netus dolor commodo pretium neque varius ullamcorper leo, mi amet.
-						Blandit ullamcorper gravida euismod vulputate. In aliquam euismod ut lectus. Nulla fermentum nunc, nisl ornare ac. Sit proin enim et scelerisque congue.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="blogPostImg"></section>
-	<section class="singlePost">
-		<div class="content">
-			<div class="singlePost__info">
-				<div class="title">
-						<h2>Blandit ullamcorper gravida euismod vulputate. In aliquam euismod ut lectus. Nulla fermentum nunc, nisl ornare ac. Sit proin enim et scelerisque congue.</h2>
-				</div>
-				<div class="text">
-					<p>
-						Augue eget tristique egestas non pulvinar egestas posuere. Elit eget quisque duis dis tortor feugiat. Quam consequat cum lorem vulputate. Risus nisi nulla ornare odio tortor, massa mauris risus pellentesque. Odio vel nulla arcu vestibulum ac. Aliquet dui risus arcu sit phasellus. Netus dolor commodo pretium neque varius ullamcorper leo, mi amet.
-						Blandit ullamcorper gravida euismod vulputate. In aliquam euismod ut lectus. Nulla fermentum nunc, nisl ornare ac. Sit proin enim et scelerisque congue.
-					</p>
-				</div>
-			</div>
-			<div class="singlePost__gallery">
-				<div class="left"></div>
-				<div class="right"></div>
-			</div>
-			<div class="singlePost__info">
-				<div class="text">
-					<p>
-						Faucibus interdum nibh imperdiet sagittis. Dui quisque venenatis donec neque. Id mus nunc fringilla odio. Nibh lorem pharetra elit turpis euismod sit malesuada leo, vulputate. Eu varius sapien dui, sit erat ornare eget. Feugiat ultrices enim, purus diam sit risus. Urna maecenas velit integer vitae erat magnis. Amet sit aliquam bibendum magna.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="blogPost">
-		<div class="content">
-			<div class="posts">
-				<h2>zobacz inne nasze wpisy</h2>
-				<div class="content__post">
-					<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-						$args = array( 'post_type' => 'post', 'order' => 'ASC' ,'posts_per_page' => 2, 'paged' => $paged );
-						$wp_query = new WP_Query($args);
-						while ( have_posts() ) : the_post(); ?>
-						<div class="box">
-							<a href="<?php the_permalink() ?>">
-								<div class="img">
-									<div class="data">
-										<?php echo get_the_date('d.m Y'); ?>
-									</div>
-									<?php the_post_thumbnail(); ?>
-								</div>
-								<div class="title">
-									<p><?php the_title() ?></p>
-								</div>
-							</a>
-						</div>
-					<?php endwhile; ?>
-				</div>
-			</div>
-		</div>
-	</section>
+                                endwhile;
+                                ?>
+                            </div>
+                            <div class="box__content">
+                                <div class="data">
+                                    <div>
+                                        <div class="name">Miejsce</div>
+                                        <div class="field"><?php the_field('caseStudy__place'); ?></div>
+                                    </div>
+                                    <div>
+                                        <div class="name">Termin</div>
+                                        <div class="field"><?php the_field('caseStudy__data'); ?></div>
+                                    </div>
+                                    <div>
+                                        <div class="name">Imiona Pary Młodej</div>
+                                        <div class="field"><?php the_field('caseStudy__names'); ?></div>
+                                    </div>
+                                    <div>
+                                        <div class="name">Liczba Gości</div>
+                                        <div class="field"><?php the_field('caseStudy__guests'); ?></div>
+                                    </div>
+                                    <div>
+                                        <div class="name">Usługi</div>
+                                        <div class="field"><?php the_field('caseStudy__offer'); ?></div>
+                                    </div>
+                                    <div>
+                                        <div class="name">Życzenia dodatkowe</div>
+                                        <div class="field"><?php the_field('caseStudy__extra'); ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="title">
+                            <h2><?php the_field('caseStudy__caffeeTitle');?></h2>
+                        </div>
+                        <div class="text">
+                            <p><?php the_field('caseStudy__caffeeDescription');?></p>
+                        </div>
+                    </div>
+                    <div class="caseImg1">
+                    <img src="<?php the_field('caseStudy__img1')['url']; ?>" alt="<?php the_field('caseStudy__img1')['alt'] ?>">
+                    </div>
+                    <div class="data secData">
+                        <div class="title">
+                            <h2><?php the_field('caseStudy__underImgTitle');?></h2>
+                        </div>
+                        <div class="text">
+                            <p><?php the_field('caseStudy__underImgDescription');?></p>
+                        </div>
+                    </div>
+                    <div class="hrLine"></div>
+                    <div class="data thirdData">
+                        <div class="title">
+                            <h2><?php the_field('caseStudy__underLineTitle');?></h2>
+                        </div>
+                        <div class="text">
+                            <p><?php the_field('caseStudy__underLineDescription');?></p>
+                        </div>
+                    </div>
+                    <div class="caseImg1">
+                            <img src="<?php the_field('caseStudy__img2')['url']; ?>" alt="<?php the_field('caseStudy__img2')['alt'] ?>">
+                    </div>
+                    <div class="data fourthData">
+                        <div class="title">
+                            <h2><?php the_field('caseStudy__underImgTitle2');?></h2>
+                        </div>
+                        <div class="text">
+                            <p><?php the_field('caseStudy__underImgDescription2');?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="contact caseForm">
+            <div class="title">
+                <h2><?php the_field('caseStudy__formTitle');?></h2>
+            </div>
+            <div class="description">
+                <p><?php the_field('caseStudy__formDescription');?></p>
+            </div>
+            <form class="contactForm">
+                <div class="contactForm__box">
+                    <input type="text" name="form_name" placeholder="Adam Kowalski" required>
+                </div>
+                <div class="contactForm__box">
+                    <input type="text" name="form_email" placeholder="adam.kowal" required>
+                </div>
+                <div class="contactForm__box">
+                    <textarea name="form_textarea" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
+                </div>
+                <div class="contactForm__box">
+                    <button>
+                        Wyślij wiadomość
+                        <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 <?php
 get_sidebar();
 get_footer();

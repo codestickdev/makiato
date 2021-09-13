@@ -9,13 +9,15 @@
 <section class="sectionContent">
     <div class="sectionBg contactBg">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+    <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
     </div>
     </div>
     <div class="content">
         <div class="text__box">
-            <h1>odezwij się</h1>
-            <p>Egestas sed suscipit eu in urna eu cras pulvinar. Vitae pretium nam bibendum at imperdiet sit vel faucibus at. Arcu at praesent ornare aenean. Sed quis faucibus dolor consectetur. Auctor porta sit volutpat malesuada molestie. Dui auctor id eget neque, consectetur magna nulla suscipit elit. Rhoncus sed netus urna morbi. Mauris, magna felis, etiam enim malesuada molestie pharetra, placerat ut. Lorem viverra.</p>
+            <h1><?php the_field('contact__title');?></h1>
+            <p><?php the_field('contact__description');?></p>
         </div>
         <div class="contact">
             <form class="contactForm">
@@ -26,10 +28,13 @@
                     <input type="text" name="form_email" placeholder="adam.kowal" required>
                 </div>
                 <div class="contactForm__box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
+                    <textarea name="form_textarea" cols="30" rows="10" placeholder="Treść wiadomości" required></textarea>
                 </div>
                 <div class="contactForm__box">
-                    <input type="submit" name="form_submit" value="Wyślij wiadomość">
+                    <button name="form_submit">
+                        Wyślij wiadomość
+                        <img src="<?php echo get_template_directory_uri() . '/images/icons/right-arrow.svg'?>" alt="right-arrow">
+                    </button>
                 </div>
             </form>
         </div>

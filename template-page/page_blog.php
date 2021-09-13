@@ -9,73 +9,49 @@
 <section class="sectionContent">
     <div class="sectionBg blog">
         <div class="logo">
-            <img src="<?php echo get_template_directory_uri() . '/images/Logo.svg'?>" alt="makiato">
+        <a href="/">
+            <img src="<?php the_field('header__logo', 'option')['url'];?>" alt="<?php the_field('header__logo', 'option')['alt'];?>">
+        </a>
         </div>
     </div>
-    <div class="content">
+    <div class="content blogText">
         <div class="text__box">
             <div>
-                <h1>kawowy blog</h1>
-                <p>Podwójne espresso newsów i wskazówek </p>
+                <h1><?php the_field('blog__title'); ?></h1>
+                <p><?php the_field('blog__description');?> </p>
             </div>
         </div>
 </section>
 <section>
     <div class="blogInfo">
-        <p>Jaki bar kawowy na wesele jest najlepszy?
-            </br>
-            Czym różni się macchiato od flat white?
-            </br>
-            Dlaczego dobry barista na wesele zapewnia więcej niż pyszną kawę?
-        </p>
+        <p><?php the_field('blog__banner');?></p>
     </div>
 </section>
 <section class="sectionContent">
     <div class="content">
         <div class="posts">
-            <div class="pagination">
-                <?php 
-                    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
-                    $args = array(  
-                        'post_type' => 'post',
-                        'posts_per_page'         => '4',
-                        'paged'                  => $paged
-                    );
-                    query_posts( $args );
-                    $posts= get_posts( $args );
-		    if ($posts) {
-			    ?>
-                <div class="content__post">
-                    <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array( 'post_type' => 'post', 'order' => 'ASC' ,'posts_per_page' => 4, 'paged' => $paged );
-                        $wp_query = new WP_Query($args);
-                        while ( have_posts() ) : the_post(); ?>
-                            <div class="box">
-                                <a href="<?php the_permalink() ?>">
-                                    <div class="img">
-                                        <div class="data">
-                                            <?php echo get_the_date('d.m Y'); ?>
-                                        </div>
-                                        <?php the_post_thumbnail(); ?>
-                                    </div>
-                                    <div class="title">
-                                        <p><?php the_title() ?></p>
-                                    </div>
-                                </a>
+            <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array( 'post_type' => 'post', 'order' => 'ASC' ,'posts_per_page' => 4, 'paged' => $paged );
+            $wp_query = new WP_Query($args); ?>
+            <div class="content__post">
+                <?php while ( have_posts() ) : the_post(); ?>
+                <div class="box">
+                    <a href="<?php the_permalink() ?>">
+                        <div class="img">
+                            <div class="data">
+                                <?php echo get_the_date('d.m Y'); ?>
                             </div>
-                        <?php endwhile; ?>
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <div class="title">
+                            <p><?php the_title() ?></p>
+                        </div>
+                    </a>
                 </div>
-                <?php
-                    the_posts_pagination( array(
-                        'mid_size'=>3,
-                        'prev_text' => _( ' Previous'),
-                        'next_text' => _( 'Next »'),
-                        ) );
-                    }
-                else{
-                    echo '<p>No post found..</p>';
-                }
-                ?>
+                <?php endwhile; ?>
+            </div>
+            <div class="pagination">
+                <?php pagination(); ?>
             </div>
         </div>
 </section>

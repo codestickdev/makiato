@@ -4,35 +4,10 @@
 //aboutUs
 
 .sectionContent {
-    .sectionBg {
-        background-image: url('/wp-content/themes/makiato/images/about-us.png');
-        height: 494px;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
     .offer {
-        background-image: url('/wp-content/themes/makiato/images/offer.png') !important;
+        background-image: url('/wp-content/themes/makiato/images/offer.png');
     }
     .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        background-color: $color-bg;
-        padding: 71px 172px 115px 172px;
-        .text__box {
-            h1 {
-                margin-bottom: 46px;
-                font-size: $font-extra-heading;
-                font-weight: $font-weight-medium2;
-                line-height: $line-height-big;
-                color: $color-1;
-            }
-            p {
-                width: 814px;
-            }
-        }
         .offerContent {
             margin-top: 76px;
             margin-bottom: 133px;
@@ -140,17 +115,30 @@
     }  
 }
 
-@media(max-width: 761px) {
+@media(max-width: 768px) {
     .sectionContent {
         .content {
             .offerContent {
+                margin-top: 50px;
+                margin-bottom: 50px;
+                .options {
+                    .basic, .extra {
+                        padding: 10px;
+                        p {
+                            font-size: $font-mobile-p;
+                            line-height: $line-height-mobile-p;
+                        }
+                    }
+                }
                 &__box {
-                    padding: 62px 50px 99px 50px;
                     height: auto;
+                    padding: 0 20px 50px;
                     ul {
                         li {
                             padding: 29px 0;
                             height: auto;
+                            font-size: $font-mobile-p;
+                            line-height: $line-height-mobile-p;
                         }
                     }
                 }
@@ -159,30 +147,17 @@
     }  
 }
 
-@media (max-width: 515px) {
+@media(max-width: 356px) {
     .sectionContent {
         .content {
             .offerContent {
                 .options {
-                    justify-content: space-between;
-                    .basic, .extra {
-                        padding: 10px;
-                    }
                     .basic {
-                        margin-right: 1px;
                         margin-left: 0;
+                        margin-right: 1px;
                     }
                 }
-                &__box {
-                    padding: 62px 50px 99px 50px;
-                    ul {
-                        li {
-                            padding: 29px 0;
-                            height: auto;
-                        }
-                    }
-                }
-            } 
+            }
         }
-    }  
+    }
 }
