@@ -127,7 +127,7 @@
                 justify-content: center;
                 list-style-type: none;
                 li {
-                    margin-right: 22px;
+                    margin: 0 11px;
                     border: 2px solid transparent;
                     a {
                         text-decoration: none;
@@ -137,9 +137,6 @@
                         line-height: $line-height-normal;
                         font-size: $font-desctiption;
                         outline: none;
-                    }
-                    &:nth-last-of-type(2) {
-                        margin-right: 0;
                     }
                 }
                 .active {

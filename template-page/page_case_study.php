@@ -74,10 +74,10 @@
 			</div>
         <div class="contact">
             <div class="title">
-                <h2><?php the_field('caseStudy__formTitle'); ?></h2>
+                <h2><?php the_field('caseStudy__formTitle', 35); ?></h2>
             </div>
             <div class="description">
-                <p><?php the_field('caseStudy__formDescription'); ?></p>
+                <p><?php the_field('caseStudy__formDescription', 35); ?></p>
             </div>
             <form class="contactForm">
                 <div class="contactForm__box">

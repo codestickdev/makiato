@@ -51,6 +51,14 @@ $(document).ready(function(){
     }
 });
 
+/* gallery count img */
+
+$(document).ready(function(){
+    if($('.countImg').length == 3) {
+        $('.responsive__box').addClass('responsive__box--special');
+    }
+});
+
 /* Contact form */
 $(document).ready(function() {
 

@@ -1309,14 +1309,11 @@
     }
 
     .content {
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
         margin: 0 auto;
         position: relative;
         .testimonialeSlider {
             .box {
-                width: 304px;
+                // width: 304px;
                 text-align: center;
                 p {
                     color: $color-heading;
@@ -1326,6 +1323,7 @@
                     letter-spacing: $normal-spacing;
                     width: 304px;
                     padding: 0 10px;
+                    margin: 0 auto;
                 }
             }
         }
@@ -1333,6 +1331,14 @@
             display: none;
         }
         .pagination {
+            position: absolute !important;
+            // width: 500px;
+            width: calc(100% - 65%);
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 43%;
+            transform: translate(0, -50%);
             .testimonatsPrev, .testimonatsNext {
                 button {
                     border: none;
@@ -1342,13 +1348,27 @@
             }
             .testimonatsPrev {
                 position: absolute;
-                top: 5%;
-                left: -15px;
+                top: 0;
+                left: 0;
             }
             .testimonatsNext {
                 position: absolute;
-                top: 5%;
-                right: -15px;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 1350px) {
+    .testimoniale {
+        .content {
+            .testimonialeSlider {
+                .box {
+                    p {
+                        width: 90%;
+                    }
+                }
             }
         }
     }
@@ -1372,7 +1392,7 @@
                 p {
                     font-size: $font-mobile-p2 !important;
                     line-height: $line-height-mobile-p !important;
-                    width: auto !important;
+                    // width: auto !important;
                 }
             }
         }
@@ -1413,6 +1433,7 @@
                 p {
                     font-size: $font-mobile-p !important;
                     line-height: $line-height-mobile-p !important;
+                    width: auto;
                 }
             }
 

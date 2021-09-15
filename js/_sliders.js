@@ -13,8 +13,8 @@ $(document).ready(function() {
         arrows: true,
         infinite: false,
         speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         appendDots: $('.sliderDots'),
         prevArrow: $('.preArrow'),
         nextArrow: $('.nextArrow'),
@@ -23,7 +23,7 @@ $(document).ready(function() {
       $('.responsiveMobile').slick({
         dots: true,
         arrows: true,
-        infinite: false,
+        infinite: true,
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -35,7 +35,7 @@ $(document).ready(function() {
       $('.testimonialeSlider').slick({
         dots: false,
         arrows: true,
-        infinite: false,
+        infinite: true,
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -46,7 +46,7 @@ $(document).ready(function() {
       $('.testimonialeMobileSlider').slick({
         dots: false,
         arrows: true,
-        infinite: false,
+        infinite: true,
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,

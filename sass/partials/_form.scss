@@ -173,9 +173,10 @@
     }
 }
 
-@media(max-width: 549px) {
+@media(max-width: 575px) {
     .contact {
         padding: 0;
+        width: 100%;
         .contactForm {
             &__box {
                 input,textarea {
